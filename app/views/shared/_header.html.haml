@@ -3,6 +3,8 @@
 - else
   = link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"
 
+  %ul
+    %li= link_to "All Templates", all_templates_path
 #search_box
   = form_tag "/search", :method => :get do
     = label_tag "search"

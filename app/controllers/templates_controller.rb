@@ -1,10 +1,19 @@
 class TemplatesController < InheritedResources::Base
   respond_to :html
-  before_filter :authenticate_githubber!, :except => [:show, :download]
+  before_filter :authenticate_githubber!, :only => [:new, :create, :edit, :update, :destroy]
   
   def download
     @template = Template.find(params[:id])
     send_data @template.download!
+  end
+  
+  def work
+    @template = Template.find(params[:id])
+    if current_githubber.work(@template)
+      render :json => @template
+    else
+      render :json => @template.errors, :status => 406
+    end
   end
 
   def show
@@ -33,7 +42,15 @@ class TemplatesController < InheritedResources::Base
       redirect_to new_repo_path
     end
   end
-
+  
+  def all
+    @templates = Template.latest.except(:limit).paginate(:page => params[:page])
+  end
+  
+  def index
+    @templates = current_githubber.templates.paginate(:page => params[:page])
+  end
+  
   private
   def begin_association_chain
     current_githubber

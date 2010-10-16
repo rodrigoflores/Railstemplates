@@ -15,6 +15,7 @@ class Template < ActiveRecord::Base
   scope :ranked, limit(5).joins(:likes).group('templates.id').order('count(likes.id) DESC')
 
   has_many :likes
+  has_many :thumbs
   belongs_to :githubber
   validates :title, :gist_file, :presence => true
   
@@ -30,6 +31,14 @@ class Template < ActiveRecord::Base
     increment(:download_counter)
     save
     content
+  end
+  
+  def works
+    self.thumbs.count(:conditions => { :up => true })
+  end
+  
+  def not_works
+    self.thumbs.count(:conditions => { :up => false })
   end
 
 end

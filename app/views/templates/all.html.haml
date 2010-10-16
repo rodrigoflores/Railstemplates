@@ -1,0 +1,9 @@
+%table
+  - @templates.each do |template|
+    %tr
+      %td= link_to template.title, template
+      %td= pluralize(template.download_counter, "download")
+      %td= pluralize(template.likes.count, "like")
+      
+
+= will_paginate @templates

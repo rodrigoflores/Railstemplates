@@ -5,7 +5,6 @@ feature "My Templates", %q{
   As a user
   I want to edit, delete, update and view my templates
 } do
-  
 
   background do 
     stub_oauth!
@@ -14,7 +13,7 @@ feature "My Templates", %q{
   end
 
   scenario "Listing templates" do
-    templates = 10.times.map  { Factory(:template, :githubber => current_githubber) }
+    templates = 3.times.map  { Factory(:template, :githubber => current_githubber) }
     click_link "My Templates"
     
     templates.each do |template|

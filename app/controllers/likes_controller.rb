@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @template = Template.find(params[:template_id])
-    if current_githubber.like(@template)
+    if current_githubber.like_it(@template)
       render :json => @template
     else
       render :json => @template.errors, :status => 406

@@ -18,14 +18,12 @@ class Githubber < ActiveRecord::Base
     end
   end
   
-  def like(template)
-    like = Like.new(:githubber => self, :template => template)
-    like.save
+  def like_it(template)
+    likes.create(:template => template)
   end
   
   def work(template, work)
-    work = Thumb.new(:githubber => self, :template => template, :up => work)
-    work.save
+    thumbs.create(:template => template, :work => work)
   end
   
 end

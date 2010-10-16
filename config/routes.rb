@@ -14,12 +14,11 @@ Railstemplates::Application.routes.draw do
   end
 
   get "/download/:id", :to => "templates#download", :as => :download
-
   devise_for :githubbers
   
   get "/search", :to => "searches#search", :as => :search
+  get '/all', :to => "templates#all", :as => :all_templates
   root :to => "pages#index"
-  
   constraints(DownloadConstraint) do
     match "/:id",  :to => "templates#download"
   end

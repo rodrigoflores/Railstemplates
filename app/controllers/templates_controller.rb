@@ -1,6 +1,6 @@
 class TemplatesController < InheritedResources::Base
   respond_to :html
-  before_filter :authenticate_githubber!, :except => [:show, :download]
+  before_filter :authenticate_githubber!, :only => [:new, :create, :edit, :update, :destroy]
   
   def download
     @template = Template.find(params[:id])
@@ -33,7 +33,12 @@ class TemplatesController < InheritedResources::Base
       redirect_to new_repo_path
     end
   end
-
+  
+  def all
+    # TODO: Paginate
+    @templates = Template.latest.except(:limit)
+  end
+  
   private
   def begin_association_chain
     current_githubber

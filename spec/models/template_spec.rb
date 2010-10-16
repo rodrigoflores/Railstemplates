@@ -6,13 +6,8 @@ describe Template do
 
   describe "content" do
     before do
-      gist = mock
-      gist.stub!(:body).and_return("GIST CONTENT")
-      HTTParty.stub!(:get).with("http://gist.github.com/raw/1337/template.rb").and_return(gist)
-
-      repo = mock
-      repo.stub!(:body).and_return("REPO CONTENT")
-      HTTParty.stub!(:get).with("http://github.com/sabbre/base-template/raw/master/template.rb").and_return(repo)
+      stub_request "http://gist.github.com/raw/1337/template.rb", "GIST CONTENT"
+      stub_request "http://github.com/sabbre/base-template/raw/master/template.rb", "REPO CONTENT"
     end
 
     it "fetches the content from a given gist" do
@@ -21,6 +16,17 @@ describe Template do
 
     it "fetches the content from a file" do
       Template.new(:gist_file => "http://github.com/sabbre/base-template/raw/master/template.rb").content.should == "REPO CONTENT"
+    end
+    
+    describe "content sample" do
+      before do
+        stub_request "http://gist.github.com/raw/999/large_gist",  "GIST CONTENT\n" * 60
+      end
+      it "returns only 50 lines" do
+        template = Template.new(:gist_file => "http://gist.github.com/raw/999/large_gist")
+        template.sample.should_not == template.content
+        template.sample.split("\n").size.should == 50
+      end
     end
   end
 

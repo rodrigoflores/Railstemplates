@@ -19,12 +19,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  # config.before(:each) do
-  #   Capybara.current_driver = :selenium if example.metadata[:js]
-  # end
-  # 
-  # config.after(:each) do
-  #   Capybara.use_default_driver if example.metadata[:js]
-  # end  
+  config.before(:each) do
+    Capybara.current_driver = :selenium if example.metadata[:js]
+  end
+
+  config.after(:each) do
+    Capybara.use_default_driver if example.metadata[:js]
+  end
 
 end

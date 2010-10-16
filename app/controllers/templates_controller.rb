@@ -1,24 +1,15 @@
-class TemplatesController < ApplicationController
+class TemplatesController < InheritedResources::Base
   respond_to :html
   before_filter :authenticate_githubber!, :except => [:show, :download]
   
-  def like
+  def download
     @template = Template.find(params[:id])
-    if current_githubber.like(@template)
-      render :json => @template
-    else
-      render :json => @template.errors, :status => 406
-    end
+    send_data @template.download!
   end
 
   def show
     @template = Template.find(params[:id])
     respond_with(@template)
-  end
-
-  def download
-    @template = Template.find(params[:id])
-    send_data @template.download!
   end
 
   def new
@@ -43,14 +34,9 @@ class TemplatesController < ApplicationController
     end
   end
 
-  def destroy
-    @template = current_githubber.templates.find(params[:id])
-    @template.destroy
-
-    respond_to do |format|
-      # TODO: Redirects to the user dashboard
-      format.html { redirect_to(templates_url) }
-    end
+  private
+  def begin_association_chain
+    current_githubber
   end
   
 end

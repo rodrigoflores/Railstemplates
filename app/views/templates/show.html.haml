@@ -1,4 +1,3 @@
-
 %h1
   =link_to @template.title, download_url(@template)
 
@@ -8,7 +7,7 @@
   #downloads
   = pluralize_with_html @template.download_counter, "Download"
 
-  = link_to 'Like', like_template_path(@template), :method => :put, :id => 'like_button', :remote => true
+  = link_to 'Like', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
 
 %p
   %strong Download Link

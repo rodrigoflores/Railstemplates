@@ -1,7 +1,6 @@
-%h1 Editing template
-
-= render 'form'
-
-= link_to 'Show', @template
-\|
-= link_to 'Back', templates_path
+= semantic_form_for @template, :url => template_path do |form|
+  = form.inputs do
+    = form.input :title
+    = form.input :description
+  = form.buttons do
+    = form.commit_button

@@ -2,18 +2,16 @@ Railstemplates::Application.routes.draw do
 
   authenticate :githubber do
     
-    resources :my_templates, :as => 'my_templates', :controller => 'githubbers/templates', :only => [:index, :edit, :show, :update, :destroy]
-
-    resources :templates, :only => [:new, :create, :show] do
-      put :like, :on => :member
+    resources :templates, :except => [:index] do
+      resources :likes, :only => :create
     end
     resources :gists, :only => [:new, :create]
     resources :repos, :only => [:new, :create]
     
     get '/dashboard' => "pages#dashboard", :as => :dashboard
-  end
-  
 
+    get '/mine', :to => "templates#index", :as => :mine_templates
+  end
 
   get "/download/:id", :to => "templates#download", :as => :download
 

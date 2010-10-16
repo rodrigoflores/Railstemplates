@@ -28,6 +28,8 @@ module OauthHelpers
         click_link "Sign in using Github"
       end
       
+      let(:current_githubber) { Githubber.find_by_email("tyler@soapfactory.com") }
+
     end
   end
 end

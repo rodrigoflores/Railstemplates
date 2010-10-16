@@ -6,48 +6,46 @@ feature "My Templates", %q{
   I want to edit, delete, update and view my templates
 } do
   
+
   background do 
     stub_oauth!
     sign_in!
-    @current_user = Githubber.find_by_email('tyler@soapfactory.com')
-
+    visit homepage
   end
 
   scenario "Listing templates" do
-    @templates = 10.times.map do 
-      Factory(:template, :githubber => @current_user)
-    end
+    templates = 10.times.map  { Factory(:template, :githubber => current_githubber) }
+    click_link "My Templates"
     
-    visit '/my_templates'
-    
-    @templates.each do |template|
+    templates.each do |template|
       page.should have_content(template.title)      
     end
   end
   
   scenario "Show templates" do
-    @template = Factory(:template, :githubber => @current_user, :description => "ahndfiasfndpia")
-    visit '/my_templates'
-    click_link "show"
-    page.should have_content(@template.title)
-    page.should have_content(@template.description)
+    template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
+    click_link "My Templates"
+    click_link template.title
+    page.should have_content template.title
+    page.should have_content template.description
   end
   
   scenario "Edit template" do
-    @template = Factory(:template, :githubber => @current_user, :description => "ahndfiasfndpia")
-    visit '/my_templates'
+    template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
+    click_link "My Templates"
     click_link "edit"
     fill_in 'Title', :with => "Asisaca"
     fill_in "Description", :with => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     click_button "Update"
-    page.should have_content(@template.reload.title)
-    page.should have_content(@template.reload.description)
+    page.should have_content template.reload.title
+    page.should have_content template.reload.description
   end
   
   scenario "Delete template" do
-    @template = Factory(:template, :githubber => @current_user, :description => "ahndfiasfndpia")
-    visit '/my_templates'
+    template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
+    click_link "My Templates"
     click_link "delete"
-    page.should_not have_content(@template.title)
+    page.should_not have_content template.title
   end
+  
 end

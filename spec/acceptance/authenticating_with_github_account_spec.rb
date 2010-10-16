@@ -13,6 +13,7 @@ feature "Authenticating With Github Account", %q{
   scenario "succesfully sign in" do
     visit homepage
     click_link "Sign in using Github"
+    should_be_on "dashboard"
     page.should have_content "Tyler Durden"
   end
   
@@ -21,5 +22,6 @@ feature "Authenticating With Github Account", %q{
     click_link "Sign in using Github"
     click_link "Sign out"
     should_be_on "/"
+    page.should have_link "Sign in using Github"
   end
 end

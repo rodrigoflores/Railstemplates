@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(:version => 20101016141341) do
     t.string   "login"
   end
 
-  add_index "githubbers", ["email"], :name => "index_githubbers_on_email", :unique => true
-
   create_table "likes", :force => true do |t|
     t.integer  "githubber_id"
     t.integer  "template_id"

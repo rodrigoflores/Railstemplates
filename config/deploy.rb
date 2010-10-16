@@ -10,3 +10,5 @@ end
 ssh_opts = '-A'
 
 user = 'deploy'
+
+app_folder = '/home/deploy/rails_templates'

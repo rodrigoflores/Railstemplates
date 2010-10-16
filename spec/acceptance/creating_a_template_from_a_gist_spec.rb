@@ -26,9 +26,11 @@ feature "Creating A Template", %q{
     
     fill_in 'Title', :with => "My awesome template"
     fill_in 'Description', :with => "Blablablablablablablablabla"
+    fill_in 'Tag list', :with => "rails, mysql"
     select "main.rb", :from => "Gist file"
     click "Create!"
     page.should have_css "h1", :text => "My awesome template"
+    page.should have_content("rails, mysql")
   end
   
   scenario "checking for required title" do
@@ -37,6 +39,7 @@ feature "Creating A Template", %q{
     
     fill_in 'Title', :with => ""
     fill_in 'Description', :with => "Blablablablablablablablabla"
+    fill_in 'Tag list', :with => "rails, mysql"
     select "main.rb", :from => "Gist file"
     click "Create!"
     within :css, "#template_title_input" do
@@ -50,9 +53,13 @@ feature "Creating A Template", %q{
     
     fill_in 'Title', :with => "My awesome template"
     fill_in 'Description', :with => "Blablablablablablablablabla"
+    fill_in 'Tag list', :with => "rails, mysql"
+  
+    
     click "Create!"
   
     page.should have_css "h1", :text => "My awesome template"
+    page.should have_content("rails, mysql")
   end
   
   scenario "checking for required title" do
@@ -61,6 +68,7 @@ feature "Creating A Template", %q{
     
     fill_in 'Title', :with => ""
     fill_in 'Description', :with => "Blablablablablablablablabla"
+    fill_in 'Tag list', :with => "rails, mysql"
     click "Create!"
   
     within :css, "#template_title_input" do

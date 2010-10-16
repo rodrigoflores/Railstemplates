@@ -5,6 +5,9 @@ class Template < ActiveRecord::Base
   define_index do
     indexes title
     indexes description
+    indexes tags(:name), :as => :tags
+    indexes githubber(:name), :as => :githubber_name
+    indexes githubber(:login), :as => :githubber_login
   end
   
   has_many :likes
@@ -16,7 +19,7 @@ class Template < ActiveRecord::Base
   end
   
   def sample
-    content.split("\n")[0,50].join("\n")
+    content.split("\n")[0,20].join("\n")
   end
   
   def download!

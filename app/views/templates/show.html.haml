@@ -1,14 +1,26 @@
 
-%h1= @template.title
+%h1
+  =link_to @template.title, download_url(@template)
 
+#stats
+  #likes
+    = pluralize_with_html @template.likes.count, "Like"
+  #downloads
+  = pluralize_with_html @template.download_counter, "Download"
 
+  = link_to 'Like', like_template_path(@template), :method => :put, :id => 'like_button', :remote => true
 
-= link_to download_url(@template), download_url
-= clippy download_url(@template)
+%p
+  %strong Download Link
+  = link_to download_url(@template), download_url
+  = clippy download_url(@template)
 
-= pluralize @template.download_counter, "download"
-= link_to 'Like', like_template_path(@template), :method => :put, :id => 'like-this-template'
 
 = @template.description
 
-= simple_format(@template.sample.gsub(" ","&nbsp;"))
+%p= @template.tag_list
+
+
+#sample
+  %h2 Sample
+  = simple_format(@template.sample.gsub(" ","&nbsp;"))

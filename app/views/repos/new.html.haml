@@ -1,6 +1,11 @@
+%h1 Second Step
+
+explanation text goes here
+
 = semantic_form_for @template, :url => repos_path do |form|
   = form.inputs do
     = form.input :title
     = form.input :description, :as => :text
+    = form.input :tag_list
   = form.buttons do
     = form.submit 'Create!'

@@ -2,6 +2,6 @@
 
 Factory.define :template do |f|
   f.gist_file "http://gist.github.com/496469"
-  f.sequence(:title) { |n| 'wylkon wylson#{n}'}
+  f.sequence(:title) { |n| "wylkon wylson#{n}" }
   f.githubber { |x| x.association :githubber }
 end

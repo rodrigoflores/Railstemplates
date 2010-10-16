@@ -7,3 +7,6 @@
   - @templates.each do |template| 
     %tr
       %td= template.title
+      %td= link_to 'show', my_template_path(template)
+      %td= link_to 'edit', edit_my_template_path(template)
+      %td= link_to 'delete', my_template_path(template), :method => :delete

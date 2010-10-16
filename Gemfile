@@ -9,6 +9,7 @@ gem 'orm_adapter', :git => 'http://github.com/ianwhite/orm_adapter.git'
 gem 'oauth2'
 
 gem 'jquery_tag'
+gem 'jammit'
 gem 'inploy'
 
 gem 'mysql2'

@@ -60,6 +60,7 @@ GEM
     cgi_multipart_eof_fix (2.5.0)
     childprocess (0.0.8)
       ffi (~> 0.6.3)
+    closure-compiler (0.3.3)
     configuration (1.1.0)
     culerity (0.2.12)
     daemons (1.1.0)
@@ -87,6 +88,9 @@ GEM
       railties (~> 3.0)
     i18n (0.4.1)
     inploy (1.6.8)
+    jammit (0.5.3)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
     jquery_tag (0.0.1)
     json_pure (1.4.6)
     launchy (0.3.7)
@@ -165,6 +169,7 @@ GEM
     tzinfo (0.3.23)
     warden (1.0.1)
       rack (>= 1.0.0)
+    yui-compressor (0.9.1)
 
 PLATFORMS
   ruby
@@ -177,6 +182,7 @@ DEPENDENCIES
   factory_girl_rails
   haml-rails
   inploy
+  jammit
   jquery_tag
   launchy
   mongrel

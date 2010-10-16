@@ -15,6 +15,6 @@ Railstemplates::Application.routes.draw do
 
   devise_for :githubbers
   
-  match 'search/', :controller => 'searches', :action => 'search'
+  get "/search", :to => "searches#search", :as => :search
   root :to => "pages#index"
 end

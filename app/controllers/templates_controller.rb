@@ -1,4 +1,10 @@
 class TemplatesController < ApplicationController
+  
+  def build
+    @template = Template.new
+    @gist = Gist.new(params[:gist_url])
+  end
+  
   # GET /templates
   # GET /templates.xml
   def index

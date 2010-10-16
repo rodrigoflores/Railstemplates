@@ -1,5 +1,13 @@
-%h1 New template
+/ %h1 New template
+/ 
+/ = render 'form'
+/ 
+/ = link_to 'Back', templates_path
 
-= render 'form'
 
-= link_to 'Back', templates_path
+Url from github
+= form_tag :action => :build do
+  = text_field_tag :gist_url
+  = submit_tag 'Next'
+  
+ 

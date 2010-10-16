@@ -1,0 +1,13 @@
+
+= form_for @template do |form|
+
+  = form.label :gist_file
+  = form.select :gist_file, @gist.files
+
+  = form.label :title
+  = form.text_field :title
+
+  = form.label :description
+  = form.text_area :description
+
+  = form.submit 'Create!'

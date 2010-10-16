@@ -43,5 +43,3 @@ module Railstemplates
     config.filter_parameters += [:password]
   end
 end
-
-require 'lib/gist'

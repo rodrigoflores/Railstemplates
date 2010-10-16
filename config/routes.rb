@@ -17,4 +17,8 @@ Railstemplates::Application.routes.draw do
   
   get "/search", :to => "searches#search", :as => :search
   root :to => "pages#index"
+  
+  constraints(DownloadConstraint) do
+    match "/:id",  :to => "templates#download"
+  end
 end

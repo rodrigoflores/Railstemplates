@@ -29,6 +29,7 @@ class TemplatesController < ApplicationController
   def create
     @github = Github.new(params[:github_url])
     if @github.invalid?
+      #TODO: Set flash message
       redirect_to new_template_path 
       return
     end
@@ -47,6 +48,7 @@ class TemplatesController < ApplicationController
     @template.destroy
 
     respond_to do |format|
+      # TODO: Redirects to the user dashboard
       format.html { redirect_to(templates_url) }
     end
   end

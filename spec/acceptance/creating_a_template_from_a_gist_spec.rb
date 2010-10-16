@@ -11,12 +11,13 @@ feature "Creating A Template", %q{
     sign_in!
     click_link "Create a new template"
 
-    json_response = { "gists" => [ {"files" => ["main.rb", "Gemfile"] } ] }
-    HTTParty.stub!(:get).with("http://gist.github.com/api/v1/json/1337").and_return(json_response)
+    stub_request "http://gist.github.com/api/v1/json/1337",  { "gists" => [ {"files" => ["main.rb", "Gemfile"] } ] }
+    stub_request "http://gist.github.com/raw/1337/main.rb", "GIST CONTENT"
 
-    http_response = mock
-    http_response.stub(:success?).and_return(true)
-    HTTParty.stub!(:get).with("http://github.com/sabbre/base-template/raw/master/template.rb").and_return(http_response)
+    stub_request "http://github.com/sabbre/base-template/raw/master/template.rb" do |response|
+      response.stub(:success?).and_return(true)
+      response.stub(:body).and_return("REPO TEMPLATE")
+    end
   end
 
   scenario "successfully creating a template from a gist" do

@@ -15,3 +15,15 @@ describe Like do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: likes
+#
+#  id           :integer(4)      not null, primary key
+#  githubber_id :integer(4)
+#  template_id  :integer(4)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

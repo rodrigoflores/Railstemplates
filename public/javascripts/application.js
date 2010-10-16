@@ -11,8 +11,7 @@ var Application = {
   // }
 };
 
-$(document).ready( function() {
-  Application.like();
-  Application.work();
-  
+$(function() {
+  // Application.like();
+  // Application.work();  
 });

@@ -22,5 +22,14 @@ Railstemplates::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  Devise.setup do |config|
+    config.oauth :github, '08515630d6a14b9f6227', '77b5fb1c16bbc1aefe957d65e413f1147ef667a6',
+       :site => 'https://github.com/',
+       :authorize_path => '/login/oauth/authorize',
+       :access_token_path => '/login/oauth/access_token',
+       :scope => %w(user public_repo)    
+  end
+  
 end
 

@@ -7,8 +7,6 @@
   #downloads
   = pluralize_with_html @template.download_counter, "Download"
   = pluralize_with_html @template.works, "Work"
-  
-
 
   = link_to 'Like', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
   = link_to 'work', template_works_path(@template, :work => true), :method => :put, :id => 'work_button', :remote => true
@@ -19,12 +17,11 @@
   = link_to download_url(@template), download_url
   = clippy download_url(@template)
 
-
 = @template.description
 
 %p= @template.tag_list
 
 
-#sample
+#sample{:'data-url' => @template.gist_file}
   %h2 Sample
-  = simple_format(@template.sample.gsub(" ","&nbsp;"))
+  / = simple_format(@template.sample.gsub(" ","&nbsp;"))

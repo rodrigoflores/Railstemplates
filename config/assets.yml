@@ -3,10 +3,12 @@ embed_images: datauri
 javascripts:
   base:
     - public/javascripts/rails.js
+    - public/javascripts/plugins/prettify.js
     - public/javascripts/application.js
 
 stylesheets:
   base:
     - public/stylesheets/application.css
+    - public/stylesheets/prettify/prettify.css
   admin:
     - public/stylesheets/admin/application.css

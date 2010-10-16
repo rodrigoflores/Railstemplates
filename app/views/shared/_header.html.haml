@@ -1,7 +1,7 @@
 #search_box
   = form_tag "/search", :method => :get do
     = text_field_tag(:search, nil, :placeholder=>'Search')
-    = submit_tag "search", :class => "search-button"
+    = submit_tag "search", :class => "search-button", :title => "Search"
 
 .break
 - if githubber_signed_in?

@@ -50,7 +50,7 @@ body {
         background: url("../images/embed/backgrounds/common.png") repeat;
         padding: 4px; }
       body header #current_githubber img:hover {
-        background: url("../images/embed/backgrounds/common2.png") repeat; }
+        background: url("../images/embed/backgrounds/common3.png") repeat; }
       body header #current_githubber p {
         float: left;
         font-size: 18px;
@@ -67,11 +67,12 @@ body {
         float: left;
         margin: 0 10px 0 0; }
         body header #menu li a {
-          padding: 3px;
+          font-size: 14px;
+          padding: 3px 5px;
           background: url("../images/embed/backgrounds/common.png") repeat; }
         body header #menu li a:hover {
           text-decoration: none;
-          background: url("../images/embed/backgrounds/common2.png") repeat; }
+          background: url("../images/embed/backgrounds/common3.png") repeat; }
     body header .sign-in {
       float: right; }
     body header #search_box {

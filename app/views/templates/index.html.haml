@@ -4,3 +4,5 @@
       %td= link_to template.title, template
       %td= link_to 'edit', edit_template_path(template)
       %td= link_to 'delete', template_path(template), :method => :delete
+
+= will_paginate @templates

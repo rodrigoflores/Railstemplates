@@ -14,6 +14,7 @@ gem 'inploy'
 gem 'mysql'
 gem 'formtastic'
 gem 'acts-as-taggable-on'
+gem 'will_paginate'
 
 gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
 gem 'acts-as-taggable-on'

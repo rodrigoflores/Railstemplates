@@ -191,6 +191,7 @@ GEM
     tzinfo (0.3.23)
     warden (1.0.1)
       rack (>= 1.0.0)
+    will_paginate (2.3.15)
     yui-compressor (0.9.1)
 
 PLATFORMS
@@ -224,3 +225,4 @@ DEPENDENCIES
   rspec-rails (~> 2.0.0)
   steak (>= 1.0.0.rc.1)
   thinking-sphinx (= 2.0.0.rc1)
+  will_paginate

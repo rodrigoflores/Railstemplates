@@ -19,7 +19,7 @@ class TemplatesController < ApplicationController
 
   def create
     @github = Github.new(params[:github_url])
-    redirect_to :new if @github.invalid?
+    redirect_to new_template_path if @github.invalid?
     
     githubber_session[:github_url] = @github.original_url
     

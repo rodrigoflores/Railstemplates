@@ -11,6 +11,14 @@ class Github
       [f, "http://gist.github.com/raw/#{gist}/#{f}"]
     end
   end
+  
+  def raw_url
+    @original_url.gsub("/blob/", "/raw/")
+  end
+
+  def raw
+    HTTParty.get(original_url).body
+  end
 
   def gist?
     /^(http|https):\/\/gist.*$/ =~ @original_url
@@ -26,7 +34,7 @@ class Github
 
   private
   def valid_file?
-    HTTParty.get(@original_url.gsub("/blob/", "/raw/")).success?
+    HTTParty.get(raw_url).success?
   end
 
 end

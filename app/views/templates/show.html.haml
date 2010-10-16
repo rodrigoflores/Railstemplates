@@ -1,5 +1,10 @@
 
 %h1= @template.title
 
-= link_to 'Like', like_template_path(@template), :method => :put
 
+
+
+= @template.description
+
+
+= link_to 'Like', like_template_path(@template), :method => :put

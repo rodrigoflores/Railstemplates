@@ -7,7 +7,12 @@ class Template < ActiveRecord::Base
   
   has_many :likes
   belongs_to :githubber
-  validates :title, :presence => true
+  validates :title, :gist_file, :presence => true
+  
+  def content
+    Github.new(self.gist_file).raw
+  end
+  
 end
 
 # == Schema Information

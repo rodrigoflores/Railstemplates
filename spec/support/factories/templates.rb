@@ -1,7 +1,7 @@
 # Read about factories at http://github.com/thoughtbot/factory_girl
 
 Factory.define :template do |f|
-  f.title 'wylkon wylson'
   f.gist_file "http://gist.github.com/496469"
+  f.sequence(:title) { |n| 'wylkon wylson#{n}'}
   f.githubber { |x| x.association :githubber }
 end

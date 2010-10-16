@@ -16,6 +16,7 @@ gem 'formtastic'
 
 gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
 gem 'acts-as-taggable-on'
+gem 'inherited_resources', '1.1.2'
 
 group :development do
   gem 'annotate'

@@ -8,7 +8,7 @@ describe Like do
   
   describe 'validations do' do
     it do
-      @user = Factory(:githubber)
+      @user = Factory(:githubber, :email => 'aaaa@bbb.com')
       @template = Factory(:template, :githubber => @user)
       @like = Factory(:like, :githubber => @user, :template => @template)
       should validate_uniqueness_of(:template_id, :scope => [:githubber_id])

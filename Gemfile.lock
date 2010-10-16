@@ -99,7 +99,11 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    has_scope (0.5.0)
     i18n (0.4.1)
+    inherited_resources (1.1.2)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6.0)
     inploy (1.6.8)
     jammit (0.5.3)
       closure-compiler (>= 0.1.0)
@@ -156,6 +160,7 @@ GEM
       remarkable (~> 4.0.0.alpha4)
       remarkable_activemodel (~> 4.0.0.alpha4)
       rspec (>= 2.0.0.alpha11)
+    responders (0.6.2)
     riddle (1.1.0)
     rspec (2.0.0)
       rspec-core (= 2.0.0)
@@ -201,6 +206,7 @@ DEPENDENCIES
   formtastic
   haml-rails
   httparty!
+  inherited_resources (= 1.1.2)
   inploy
   jammit
   jquery_tag

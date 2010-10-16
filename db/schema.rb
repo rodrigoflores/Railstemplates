@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20101016075903) do
-=======
-ActiveRecord::Schema.define(:version => 20101016070941) do
->>>>>>> 3911aa55564f1aeb594e1e7f284341067ece3503
 
   create_table "githubbers", :force => true do |t|
     t.string   "email",                             :default => "", :null => false

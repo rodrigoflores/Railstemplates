@@ -1,5 +1,8 @@
 Railstemplates::Application.routes.draw do
+
   devise_for :githubbers
+  get '/dashboard' => "pages#dashboard", :as => :dashboard
+  root :to => "pages#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

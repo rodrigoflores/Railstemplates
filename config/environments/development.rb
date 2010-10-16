@@ -24,12 +24,12 @@ Railstemplates::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   Devise.setup do |config|
-    config.oauth :github, '08515630d6a14b9f6227', '77b5fb1c16bbc1aefe957d65e413f1147ef667a6',
-       :site => 'https://github.com/',
-       :authorize_path => '/login/oauth/authorize',
-       :access_token_path => '/login/oauth/access_token',
-       :scope => %w(user public_repo)    
-  end
+    config.oauth :github, 'fed31d1e80ac6fc16cea', '224005972731157427bba7ddda6828bbf07ee3be',
+     :site => 'https://github.com/',
+     :authorize_path => '/login/oauth/authorize',
+     :access_token_path => '/login/oauth/access_token',
+     :scope => %w(user public_repo)
+   end
   
 end
 

@@ -6,6 +6,10 @@ feature "Authenticating With Github Account", %q{
   I want to authenticate using my github account
 } do
 
+  background do
+    stub_oauth!
+  end
+  
   scenario "succesfully sign in" do
     visit homepage
     click_link "Sign in using Github"

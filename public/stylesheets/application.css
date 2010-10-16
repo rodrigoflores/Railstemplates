@@ -20,6 +20,15 @@ a:hover {
   text-indent: -999999px;
   display: block; }
 
+.link-default {
+  margin: 11px 0 0;
+  font-size: 14px;
+  padding: 4px 26px 4px 5px;
+  background: url("../images/embed/icons/github.png") right -32px no-repeat;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+
 .line-divisor {
   margin: 25px 0;
   float: left;
@@ -31,6 +40,7 @@ a:hover {
   border-radius: 6px; }
 
 body {
+  color: #36424a;
   font: 12px "Trebuchet MS", arial, sans-serif;
   background: url("../images/embed/backgrounds/main.jpg") repeat; }
   body article {
@@ -66,7 +76,6 @@ body {
       body header #current_githubber a {
         float: right;
         display: block;
-        padding: 0 0 0 0;
         margin: 11px 0 0;
         font-size: 14px;
         padding: 4px 26px 4px 5px;
@@ -151,18 +160,18 @@ body {
         font-size: 40px;
         font-weight: normal;
         background: url("../images/embed/texts/title1.png") no-repeat;
-        width: 852px;
+        width: 949px;
         height: 48px;
         float: left;
-        margin: 20px; }
+        margin: 20px 15px; }
       body #holder-home #home-message h2 {
         float: right;
         font-size: 26px;
         font-weight: normal;
         background: url("../images/embed/texts/title2.png") no-repeat;
         height: 25px;
-        width: 495px;
-        margin: 20px; }
+        width: 775px;
+        margin: 10px 20px 20px 20px; }
   body #ranked,
   body #latest {
     margin: 30px 0 0 0;
@@ -198,6 +207,12 @@ body {
         body #ranked ul li a,
         body #latest ul li a {
           margin: 0 5px 0 0; }
+        body #ranked ul li span,
+        body #latest ul li span {
+          color: #36424a; }
+          body #ranked ul li span em,
+          body #latest ul li span em {
+            color: #cccaa9; }
       body #ranked ul .one,
       body #latest ul .one {
         background: url("../images/embed/backgrounds/common2.png") repeat; }

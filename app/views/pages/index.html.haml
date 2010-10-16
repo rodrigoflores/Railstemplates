@@ -7,17 +7,16 @@
   %h2 # Most Downloaded
   %ul
     - @latest.each do |template|
-      - 5.times do
-        %li{ :class => cycle( "one", "two")}
-          = link_to template.title, template
-          %span
-            %em -
-            = time_ago_in_words(template.created_at)
+      %li{ :class => cycle( "one", "two")}
+        = link_to template.title, template
+        %span
+          %em -
+          = time_ago_in_words(template.created_at)
 
 #ranked
   %h2 # Most Liked
   %ul
     - @ranked.each do |ranked|
-      %li
+      %li{ :class => cycle( "one", "two")}
         = link_to ranked.title, ranked
         %span= pluralize(ranked.likes.count, "Like")

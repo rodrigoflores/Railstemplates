@@ -1,5 +1,6 @@
 class TemplatesController < ApplicationController
   respond_to :html
+  before_filter :authenticate_githubber!, :except => [:show, :download]
   
   def like
     @template = Template.find(params[:id])
@@ -39,7 +40,7 @@ class TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.find(params[:id])
+    @template = current_githubber.templates.find(params[:id])
     @template.destroy
 
     respond_to do |format|

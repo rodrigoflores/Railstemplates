@@ -30,6 +30,19 @@ describe Template do
     end
   end
 
+  describe "tags" do
+    subject do
+      Factory.build(:template)
+    end
+    
+    context "when assigning" do
+      it "should accept a list of tags" do
+        subject.tag_list = "rails, mysql, solr"
+        subject.save
+        subject.tags.map(&:name).should == ["rails", "mysql", "solr"]
+      end
+    end
+  end
 end
 
 

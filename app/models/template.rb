@@ -5,6 +5,9 @@ class Template < ActiveRecord::Base
   define_index do
     indexes title
     indexes description
+    indexes tags(:name), :as => :tags
+    indexes githubber(:name), :as => :githubber_name
+    indexes githubber(:login), :as => :githubber_login
   end
   
   has_many :likes

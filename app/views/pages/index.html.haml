@@ -1,2 +1,14 @@
-%h1 Pages#index
-%p Find me in app/views/pages/index.html.haml
+%h1 Some Title
+%h2 Subtitle
+
+%ul#latest
+  - @latest.each do |template|
+    %li
+      = link_to template.title, template
+      %span= time_ago_in_words(template.created_at)
+
+%ul#ranked
+  - @ranked.each do |ranked|
+    %li
+      = link_to ranked.title, ranked
+      %span= pluralize(ranked.likes.count, "Like")

@@ -10,6 +10,10 @@ class Template < ActiveRecord::Base
     indexes githubber(:login), :as => :githubber_login
   end
   
+  scope :latest, limit(5).order("created_at DESC")
+
+  scope :ranked, limit(5).joins(:likes).group('templates.id').order('count(likes.id) DESC')
+
   has_many :likes
   belongs_to :githubber
   validates :title, :gist_file, :presence => true

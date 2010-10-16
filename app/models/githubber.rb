@@ -16,15 +16,6 @@ class Githubber < ActiveRecord::Base
     end
   end
   
-  def gists
-    Gist.find(self.login).map { |g| [g['repo'], format_gist(g)] }
-  end
-  
-  
-  private
-  def format_gist(gist)
-    "#{gist['repo']} - #{gist['description']} (#{gist['created_at']})"
-  end
 end
 
 # == Schema Information

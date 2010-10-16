@@ -16,6 +16,10 @@ class Github
     @original_url.gsub("/blob/", "/raw/")
   end
 
+  def raw
+    HTTParty.get(original_url).body
+  end
+
   def gist?
     /^(http|https):\/\/gist.*$/ =~ @original_url
   end

@@ -8,6 +8,11 @@ class Template < ActiveRecord::Base
   
   belongs_to :githubber
   validates :title, :gist_file, :presence => true
+  
+  def content
+    Github.new(self.gist_file).raw
+  end
+  
 end
 
 # == Schema Information

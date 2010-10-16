@@ -1,3 +1,6 @@
+%h1 Second Step
+
+explanation text goes here
 = semantic_form_for @template, :url => gists_path do |form|
   = form.inputs do
     = form.input :gist_file, :as => :select, :collection => @github.gist_files, :prompt => false

@@ -3,8 +3,11 @@ class TemplatesController < ApplicationController
   
   def like
     @template = Template.find(params[:id])
-    current_githubber.like(@template)
-    redirect_to template_path(@template)
+    if current_githubber.like(@template)
+      render :json => @template
+    else
+      render :json => @template.errors, :status => 406
+    end
   end
 
   def show

@@ -24,4 +24,16 @@ feature "Authenticating With Github Account", %q{
     should_be_on "/"
     page.should have_link "Sign in using Github"
   end
+  
+  scenario "updating my infos on github" do
+    visit homepage
+    click_link "Sign in using Github"
+    page.should have_content "Hello, Tyler Durden"
+    click_link "Sign out"
+    updating_github_values :name => 'Wylkon Cardoso' do
+      visit homepage
+      click_link "Sign in using Github"
+      page.should have_content "Hello, Wylkon Cardoso"
+    end
+  end
 end

@@ -10,7 +10,8 @@ class Githubber < ActiveRecord::Base
     data = ActiveSupport::JSON.decode(access_token.get('/api/v2/json/user/show'))["user"]
 
     if account = signed_in_resource || Githubber.find_by_email(data["email"])
-      account.update_attribute(:github_token, access_token.token)
+      account.update_attributes(:github_token => access_token.token, :name => data["name"], 
+        :email => data["email"])
       account
     else
       Githubber.create!(:name => data["name"], :email => data["email"], :login => data["login"],

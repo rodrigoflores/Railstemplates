@@ -28,6 +28,15 @@ module OauthHelpers
         click_link "Sign in using Github"
       end
       
+      def updating_github_values(values = {})
+        original = GITHUB_INFO[:user].dup
+        GITHUB_INFO[:user].merge!(values)
+        begin
+          yield 
+        ensure
+          GITHUB_INFO[:user].merge!(original)
+        end
+      end
       let(:current_githubber) { Githubber.find_by_email("tyler@soapfactory.com") }
 
     end

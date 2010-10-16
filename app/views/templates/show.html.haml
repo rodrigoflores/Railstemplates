@@ -7,5 +7,6 @@
 = clippy download_url(@template)
 = @template.description
 
+= pluralize @template.download_counter, "download"
 
 = link_to 'Like', like_template_path(@template), :method => :put, :id => 'like-this-template'

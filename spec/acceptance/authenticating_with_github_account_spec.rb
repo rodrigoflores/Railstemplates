@@ -15,4 +15,11 @@ feature "Authenticating With Github Account", %q{
     click_link "Sign in using Github"
     page.should have_content "Tyler Durden"
   end
+  
+  scenario "signin out" do
+    visit homepage
+    click_link "Sign in using Github"
+    click_link "Sign out"
+    should_be_on "/"
+  end
 end

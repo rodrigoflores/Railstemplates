@@ -1,5 +1,5 @@
 template = 'rails3'
-application = 'rails_templates'
+application = 'rails3templates'
 repository = 'git@github.com:railsrumble/rr10-team-108.git'
 hosts = %w(railstemplates)
 
@@ -11,4 +11,4 @@ ssh_opts = '-A'
 
 user = 'deploy'
 path = '/home/deploy'
-app_folder = 'rails_templates'
+app_folder = 'rails3templates'

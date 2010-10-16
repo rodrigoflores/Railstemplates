@@ -7,7 +7,7 @@ class Template < ActiveRecord::Base
   
   
   belongs_to :githubber
-  validates :title, :presence => true
+  validates :title, :gist_file, :presence => true
 end
 
 # == Schema Information

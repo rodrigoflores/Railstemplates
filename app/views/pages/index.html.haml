@@ -1,14 +1,14 @@
 %h1 Some Title
 %h2 Subtitle
-
-%ul#latest
-  - @latest.each do |template|
-    %li
-      = link_to template.title, template
-      %span= time_ago_in_words(template.created_at)
-
-%ul#ranked
-  - @ranked.each do |ranked|
-    %li
-      = link_to ranked.title, ranked
-      %span= pluralize(ranked.likes.count, "Like")
+#latest
+  %ul
+    - @latest.each do |template|
+      %li
+        = link_to template.title, template
+        %span= time_ago_in_words(template.created_at)
+#ranked
+  %ul
+    - @ranked.each do |ranked|
+      %li
+        = link_to ranked.title, ranked
+        %span= pluralize(ranked.likes.count, "Like")

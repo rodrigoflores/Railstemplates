@@ -1,18 +1,90 @@
 * {
-  margin: 0 0 0 0;
-  outline: none;
-  padding: 0; }
+  margin: 0;
+  padding: 0;
+  outline: none; }
+
+a {
+  text-decoration: none;
+  color: white; }
+  a img {
+    border: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+.break {
+  clear: both;
+  height: 0px; }
+
+.replacement {
+  text-indent: -999999px;
+  display: block; }
 
 body {
+  font: 12px "Trebuchet MS", arial, sans-serif;
   background: url("../images/embed/backgrounds/main.jpg") repeat; }
+  body #rr10sash {
+    width: 200px !important;
+    height: 200px !important; }
   body #wrap {
     margin: 0 auto;
     width: 1000px; }
-  body header #rails-rumble {
-    background: url("../images/embed/logos/rails_templates.png") repeat;
-    text-indent: -99999px;
-    display: block;
+  body header {
+    width: 100%;
     float: left;
-    width: 417px;
-    height: 54px;
-    margin: 20px 0 0 0; }
+    margin: 36px 0 0 0; }
+    body header #rails-templates {
+      background: url("../images/embed/logos/rails_templates.png") repeat;
+      text-indent: -99999px;
+      display: block;
+      float: left;
+      width: 417px;
+      height: 54px; }
+    body header #current_githubber {
+      float: right;
+      width: 400px; }
+      body header #current_githubber img {
+        float: left;
+        background: url("../images/embed/backgrounds/common.png") repeat;
+        padding: 4px; }
+      body header #current_githubber p {
+        float: left;
+        font-size: 10px; }
+      body header #current_githubber em {
+        float: left;
+        color: white;
+        font-size: 12px;
+        margin: 2px 5px; }
+      body header #current_githubber a {
+        float: left;
+        margin: 2px 0; }
+    body header #search_box {
+      float: right;
+      width: 324px;
+      height: 47px;
+      background: url("../images/embed/backgrounds/common.png") repeat; }
+      body header #search_box label {
+        display: none; }
+      body header #search_box input {
+        float: left;
+        padding: 2px;
+        width: 264px;
+        height: 35px;
+        margin: 4px 0 0 4px;
+        border: none;
+        font-size: 18px;
+        color: white;
+        background: url("../images/embed/backgrounds/common2.png") repeat; }
+      body header #search_box input.search-button {
+        float: right;
+        width: 26px;
+        height: 25px;
+        background: url("../images/embed/icons/search-button.png") 0 bottom repeat;
+        border: none;
+        text-indent: -99999px;
+        line-height: 0;
+        font-size: 0;
+        margin: 10px 12px 0 0;
+        cursor: pointer; }
+      body header #search_box input.search-button:hover {
+        background-position: 0 top; }

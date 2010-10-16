@@ -1,19 +1,93 @@
+// All Structure ----------------
 *
-  margin: 0 0 0 0
-  outline: none
+  margin: 0
   padding: 0
+  outline: none
 
+a
+  text-decoration: none
+  color: #fff
+  img
+    border: none
+
+a:hover
+  text-decoration: underline
+
+// Default ----------------------
+.break
+  clear: both
+  height: 0px
+
+.replacement
+  text-indent: -999999px
+  display: block
+
+// Structure --------------------
 body
+  font: 12px "Trebuchet MS", arial, sans-serif
   background: url("../images/embed/backgrounds/main.jpg") repeat
+  #rr10sash
+    width: 200px !important
+    height: 200px !important
   #wrap
     margin: 0 auto
     width: 1000px
   header
-    #rails-rumble
+    width: 100%
+    float: left
+    margin: 36px 0 0 0
+    #rails-templates
       background: url("../images/embed/logos/rails_templates.png") repeat
       text-indent: -99999px
       display: block
       float: left
       width: 417px
       height: 54px
-      margin:  20px 0 0 0
+    #current_githubber
+      float: right
+      width: 400px
+      img
+        float: left
+        background: url("../images/embed/backgrounds/common.png") repeat
+        padding: 4px
+      p
+        float: left
+        font-size: 10px
+      em
+        float: left
+        color: #fff
+        font-size: 12px
+        margin: 2px 5px
+      a
+        float: left
+        margin: 2px 0
+    #search_box
+      float: right
+      width: 324px
+      height: 47px
+      background: url("../images/embed/backgrounds/common.png") repeat
+      label
+        display: none
+      input
+        float: left
+        padding: 2px
+        width: 264px
+        height: 35px
+        margin: 4px 0 0 4px
+        border: none
+        font-size: 18px
+        color: #fff
+        background: url("../images/embed/backgrounds/common2.png") repeat
+      input.search-button
+        float: right
+        width: 26px
+        height: 25px
+        background: url("../images/embed/icons/search-button.png") 0 bottom repeat
+        border: none
+        text-indent: -99999px
+        line-height: 0
+        font-size: 0
+        margin: 10px 12px 0 0
+        cursor: pointer
+      input.search-button:hover
+        background-position: 0 top

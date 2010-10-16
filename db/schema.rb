@@ -11,6 +11,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20101016141341) do
+
   create_table "githubbers", :force => true do |t|
     t.string   "email",                             :default => ""
     t.string   "encrypted_password", :limit => 128, :default => "", :null => false
@@ -25,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20101016141341) do
     t.datetime "updated_at"
     t.string   "login"
   end
+
+  add_index "githubbers", ["email"], :name => "index_githubbers_on_email", :unique => true
 
   create_table "likes", :force => true do |t|
     t.integer  "githubber_id"

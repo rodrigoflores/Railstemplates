@@ -1,12 +1,13 @@
 #current_githubber
-  %h2
+  %p
     - if githubber.email
       = gravatar_for githubber
-      Hello,
-      = githubber.name
-      = link_to "Sign out", destroy_githubber_session_path
+    Hello,
+    = githubber.name
+  %em -
+  = link_to "Sign out", destroy_githubber_session_path
 
-  %ul
-    %li= link_to "My Templates", mine_templates_path
-    %li= link_to "Create a new template", new_template_path
-    %li= link_to "All Templates", all_templates_path
+  / %ul
+  /   %li= link_to "My Templates", mine_templates_path
+  /   %li= link_to "Create a new template", new_template_path
+  /   %li= link_to "All Templates", all_templates_path

@@ -1,12 +1,12 @@
+#search_box
+  = form_tag "/search", :method => :get do
+    = text_field_tag(:search, nil, :placeholder=>'Search')
+    = submit_tag "search", :class => "search-button"
+
+
 - if githubber_signed_in?
   = render :partial => 'shared/current_githubber', :locals => { :githubber => current_githubber }
 - else
-  = link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"
-
   %ul
     %li= link_to "All Templates", all_templates_path
-#search_box
-  = form_tag "/search", :method => :get do
-    = label_tag "search"
-    = text_field_tag :search
-    = submit_tag "search"
+  = link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"

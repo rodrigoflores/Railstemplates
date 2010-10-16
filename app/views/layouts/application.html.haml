@@ -2,25 +2,36 @@
 
 %html{ :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en" }
   %head
+
+    / Title Page ------------------------
     %title RailsTemplates.org
+
+    / Meta Tags ------------------------
     %meta{ "http-equiv" => "content-type", :content => "text/html; charset=UTF-8" }
     %meta{ "http-equiv" => "content-language", :content => "en" }
     %meta{ :name => "distribution", :content => "global" }
     %meta{ :name => "revisit-after", :content => "30 days" }
+
+    / Stylesheets ------------------------
     = include_stylesheets :base
+
+    / CSRF Meta Tag ------------------------
     = csrf_meta_tag
+
   %body
+    //  WRAP
     #wrap
+      // HEADER / NAVIGATION / SEARCH
       %header
-        %h1
-          = link_to "Rails Templates", root_path, :id => "rails-rumble"
-          = render :partial => 'shared/header'
+        = link_to "Rails Templates", root_path, :id => "rails-templates"
+        = render :partial => 'shared/header'
+      // MAIN CONTENT
       #main
         = yield
+      // FOOTER
       #footer
         = render :partial => 'shared/footer'
-    
-    
+
     = jquery_tag
     = include_javascripts :base
     = javascript_include_tag 'http://blog.railsrumble.com/javascripts/rumble-r10-sash.js'

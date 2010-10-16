@@ -48,7 +48,6 @@ feature "My Templates", %q{
     @template = Factory(:template, :githubber => @current_user, :description => "ahndfiasfndpia")
     visit '/my_templates'
     click_link "delete"
-    page.should have_no_content(@template.reload.title)
-    page.should have_no_content(@template.reload.description)
+    page.should have_no_content(@template.title)
   end
 end

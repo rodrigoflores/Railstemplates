@@ -14,6 +14,8 @@ gem 'inploy'
 
 gem 'mysql2'
 
+gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
+
 group :development do
   gem 'annotate'
   gem 'rails3-generators'
@@ -36,4 +38,3 @@ group :test do
   gem 'launchy'
 end
 
-  

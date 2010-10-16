@@ -2,7 +2,9 @@ Railstemplates::Application.routes.draw do
 
   authenticate :githubber do
 
-    resources :templates, :only => [:new, :create, :show]
+    resources :templates, :only => [:new, :create, :show] do
+      put :like, :on => :member
+    end
     resources :gists, :only => [:new, :create]
     resources :repos, :only => [:new, :create]
     

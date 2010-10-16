@@ -5,7 +5,7 @@ class Template < ActiveRecord::Base
     indexes description
   end
   
-  
+  has_many :likes
   belongs_to :githubber
   validates :title, :presence => true
 end

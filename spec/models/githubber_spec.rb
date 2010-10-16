@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Githubber do
+  
+  describe 'associations' do
+    it { should have_many :likes }
+  end
 
 end
 

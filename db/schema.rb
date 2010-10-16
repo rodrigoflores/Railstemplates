@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016023653) do
+ActiveRecord::Schema.define(:version => 20101016053938) do
 
   create_table "githubbers", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20101016023653) do
   end
 
   add_index "githubbers", ["email"], :name => "index_githubbers_on_email", :unique => true
+
+  create_table "likes", :force => true do |t|
+    t.integer  "githubber_id"
+    t.integer  "template_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "templates", :force => true do |t|
     t.string   "title"

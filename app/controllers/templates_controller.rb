@@ -1,5 +1,11 @@
 class TemplatesController < ApplicationController
   respond_to :html
+  
+  def like
+    @template = Template.find(params[:id])
+    current_githubber.like(@template)
+    redirect_to template_path(@template)
+  end
 
   def show
     @template = Template.find(params[:id])

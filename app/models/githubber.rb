@@ -1,5 +1,6 @@
 class Githubber < ActiveRecord::Base
   has_many :templates
+  has_many :likes
   devise :database_authenticatable, :trackable, :oauthable
 
   attr_accessible :name, :email, :login, :password, :github_token
@@ -14,6 +15,11 @@ class Githubber < ActiveRecord::Base
       Githubber.create!(:name => data["name"], :email => data["email"], :login => data["login"],
         :password => Devise.friendly_token) { |u| u.github_token = access_token.token }
     end
+  end
+  
+  def like(template)
+    like = Like.new(:githubber => self, :template => template)
+    like.save
   end
   
 end

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Template do
   it { should validate_presence_of :title }
+  it { should have_many :likes }
 end
 
 # == Schema Information

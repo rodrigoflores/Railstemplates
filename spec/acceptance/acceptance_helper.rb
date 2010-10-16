@@ -14,7 +14,9 @@ RSpec.configure do |config|
 
   config.before(:each, :type => :acceptance) do
    # Capybara.reset_sessions! 
-   #  DatabaseCleaner.clean
+    DatabaseCleaner.strategy = :truncation
+
+    DatabaseCleaner.clean
   end
 
   # config.before(:each) do

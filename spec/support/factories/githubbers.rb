@@ -2,6 +2,6 @@
 
 Factory.define :githubber do |f|
   f.name "Wylkon wylson"
-  f.sequence(:github_token) { |n| "dnasldfnsaljdfndljfndljasfbnljagbfs#{n}" }
+  f.sequence(:email) { |n| "dnasldfnsaljdfndljfndljasfbnljagbfs#{n}@a.com" }
   f.login "wylkon"
 end

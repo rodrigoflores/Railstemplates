@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Template do
-  it { should validate_presence_of :title }
   it { should have_many :likes }
+  it { should validate_presence_of :title, :gist_file }
 end
 
 # == Schema Information

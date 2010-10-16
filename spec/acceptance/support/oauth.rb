@@ -5,7 +5,8 @@ ACCESS_TOKEN = {
   GITHUB_INFO = {
     :user => {
       :name  => 'Tyler Durden',
-      :email => 'tyler@soapfactory.com'
+      :email => 'tyler@soapfactory.com',
+      :login => 'tyler'
     }
   }
 

@@ -13,6 +13,10 @@ class Template < ActiveRecord::Base
     Github.new(self.gist_file).raw
   end
   
+  def sample
+    content.split("\n")[0,50].join("\n")
+  end
+  
   def download!
     increment(:download_counter)
     save

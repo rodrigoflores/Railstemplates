@@ -5,8 +5,10 @@
 
 = link_to download_url(@template), download_url
 = clippy download_url(@template)
-= @template.description
 
 = pluralize @template.download_counter, "download"
-
 = link_to 'Like', like_template_path(@template), :method => :put, :id => 'like-this-template'
+
+= @template.description
+
+= simple_format(@template.sample.gsub(" ","&nbsp;"))

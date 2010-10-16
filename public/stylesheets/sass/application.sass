@@ -22,29 +22,38 @@ a:hover
   text-indent: -999999px
   display: block
 
+.line-divisor
+  margin: 25px 0
+  float: left
+  width: 996px
+  padding: 2px
+  background: url("../images/embed/backgrounds/common3.png") repeat
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  border-radius: 6px
+
 // Structure --------------------
 body
   font: 12px "Trebuchet MS", arial, sans-serif
   background: url("../images/embed/backgrounds/main.jpg") repeat
-  #rr10sash
-    width: 200px !important
-    height: 200px !important
-  #wrap
+  article
     margin: 0 auto
     width: 1000px
+
+  // HEADER ----------------------
   header
-    border-bottom: 1px solid #fff
-    padding: 0 0 20px
+    margin: 36px 0 0
     width: 100%
     float: left
-    margin: 36px 0
+
+    // LOGO ---------------------
     #rails-templates
       background: url("../images/embed/logos/rails_templates.png") repeat
-      text-indent: -99999px
-      display: block
       float: left
       width: 417px
       height: 54px
+
+    // USER ---------------------
     #current_githubber
       float: right
       width: 324px
@@ -56,16 +65,26 @@ body
         background: url("../images/embed/backgrounds/common3.png") repeat
       p
         float: left
-        font-size: 18px
+        font-size: 16px
         margin: 15px 0 0 10px
         color: #fff
       a
         float: right
-        margin: 18px 0 0
+        display: block
+        padding: 0 0 0 0
+        margin: 11px 0 0
+        font-size: 14px
+        padding: 4px 26px 4px 5px
+        background: url("../images/embed/icons/github.png") right -32px no-repeat
+      a:hover
+        text-decoration: none
+        background: url("../images/embed/icons/github.png") right -2px no-repeat
+
+    // MENU --------------------
     #menu
       float: left
       list-style: none
-      margin: 19px 0 0 0
+      margin: 15px 0 0
       li
         float: left
         margin: 0 10px 0 0
@@ -78,6 +97,8 @@ body
           background: url("../images/embed/backgrounds/common3.png") repeat
     .sign-in
       float: right
+
+    // SEARCH AREA --------------
     #search_box
       float: right
       width: 324px
@@ -108,3 +129,38 @@ body
         cursor: pointer
       input.search-button:hover
         background-position: 0 top
+
+  // FOOTER -------------------
+  #footer
+    margin: 0
+
+  // HOME ---------------------
+  #holder-home
+    width: 980px
+    float: left
+    padding: 10px
+    background: url("../images/embed/backgrounds/common3.png") repeat
+    -moz-border-radius: 6px
+    -webkit-border-radius: 6px
+    border-radius: 6px
+    #home-message
+      background: url("../images/embed/backgrounds/common2.png") repeat
+      color: #fff
+      float: left
+      width: 100%
+      h1
+        font-size: 40px
+        font-weight: normal
+        background: url("../images/embed/texts/title1.png") no-repeat
+        width: 852px
+        height: 48px
+        float: left
+        margin: 20px
+      h2
+        float: right
+        font-size: 26px
+        font-weight: normal
+        background: url("../images/embed/texts/title2.png") no-repeat
+        height: 25px
+        width: 495px
+        margin: 20px

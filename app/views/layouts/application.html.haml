@@ -20,16 +20,18 @@
 
   %body
     //  WRAP
-    #wrap
+    %article
       // HEADER / NAVIGATION / SEARCH
       %header
-        = link_to "Rails Templates", root_path, :id => "rails-templates"
+        = link_to "Rails Templates", root_path, :id => "rails-templates", :class => "replacement"
         = render :partial => 'shared/header'
+      .line-divisor
       // MAIN CONTENT
-      #main
+      %section#main
         = yield
       // FOOTER
-      #footer
+      .line-divisor
+      %section#footer
         = render :partial => 'shared/footer'
 
     = jquery_tag

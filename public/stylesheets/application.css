@@ -20,25 +20,28 @@ a:hover {
   text-indent: -999999px;
   display: block; }
 
+.line-divisor {
+  margin: 25px 0;
+  float: left;
+  width: 996px;
+  padding: 2px;
+  background: url("../images/embed/backgrounds/common3.png") repeat;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px; }
+
 body {
   font: 12px "Trebuchet MS", arial, sans-serif;
   background: url("../images/embed/backgrounds/main.jpg") repeat; }
-  body #rr10sash {
-    width: 200px !important;
-    height: 200px !important; }
-  body #wrap {
+  body article {
     margin: 0 auto;
     width: 1000px; }
   body header {
-    border-bottom: 1px solid white;
-    padding: 0 0 20px;
+    margin: 36px 0 0;
     width: 100%;
-    float: left;
-    margin: 36px 0; }
+    float: left; }
     body header #rails-templates {
       background: url("../images/embed/logos/rails_templates.png") repeat;
-      text-indent: -99999px;
-      display: block;
       float: left;
       width: 417px;
       height: 54px; }
@@ -53,16 +56,24 @@ body {
         background: url("../images/embed/backgrounds/common3.png") repeat; }
       body header #current_githubber p {
         float: left;
-        font-size: 18px;
+        font-size: 16px;
         margin: 15px 0 0 10px;
         color: white; }
       body header #current_githubber a {
         float: right;
-        margin: 18px 0 0; }
+        display: block;
+        padding: 0 0 0 0;
+        margin: 11px 0 0;
+        font-size: 14px;
+        padding: 4px 26px 4px 5px;
+        background: url("../images/embed/icons/github.png") right -32px no-repeat; }
+      body header #current_githubber a:hover {
+        text-decoration: none;
+        background: url("../images/embed/icons/github.png") right -2px no-repeat; }
     body header #menu {
       float: left;
       list-style: none;
-      margin: 19px 0 0 0; }
+      margin: 15px 0 0; }
       body header #menu li {
         float: left;
         margin: 0 10px 0 0; }
@@ -105,3 +116,34 @@ body {
         cursor: pointer; }
       body header #search_box input.search-button:hover {
         background-position: 0 top; }
+  body #footer {
+    margin: 0; }
+  body #holder-home {
+    width: 980px;
+    float: left;
+    padding: 10px;
+    background: url("../images/embed/backgrounds/common3.png") repeat;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px; }
+    body #holder-home #home-message {
+      background: url("../images/embed/backgrounds/common2.png") repeat;
+      color: white;
+      float: left;
+      width: 100%; }
+      body #holder-home #home-message h1 {
+        font-size: 40px;
+        font-weight: normal;
+        background: url("../images/embed/texts/title1.png") no-repeat;
+        width: 852px;
+        height: 48px;
+        float: left;
+        margin: 20px; }
+      body #holder-home #home-message h2 {
+        float: right;
+        font-size: 26px;
+        font-weight: normal;
+        background: url("../images/embed/texts/title2.png") no-repeat;
+        height: 25px;
+        width: 495px;
+        margin: 20px; }

@@ -3,12 +3,12 @@ class Github
 
   def initialize(url)
     @original_url = url
-    @gist_id = url.split('/').last
   end
 
-  def files
-    @files ||= HTTParty.get("http://gist.github.com/api/v1/json/#{@gist_id}")['gists'].first['files'].map do |f|
-      [f, "http://gist.github.com/raw/#{@gist_id}/#{f}"]
+  def gist_files
+    gist = original_url.split('/').last
+    @files ||= HTTParty.get("http://gist.github.com/api/v1/json/#{gist}")['gists'].first['files'].map do |f|
+      [f, "http://gist.github.com/raw/#{gist}/#{f}"]
     end
   end
 

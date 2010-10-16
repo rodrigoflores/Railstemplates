@@ -5,6 +5,13 @@ GIT
     orm_adapter (0.0.3)
 
 GIT
+  remote: http://github.com/jnunemaker/httparty.git
+  revision: 582e36b27fa0721c55fb79066caf4c9cdb298b1e
+  specs:
+    httparty (0.6.1)
+      crack (= 0.1.8)
+
+GIT
   remote: http://github.com/plataformatec/devise.git
   revision: c42a86957ae3ce5955e9da2eaf604e1e3125693e
   branch: v1.2.oauth
@@ -80,6 +87,10 @@ GEM
     fastthread (1.0.7)
     ffi (0.6.3)
       rake (>= 0.8.7)
+    formtastic (1.1.0)
+      actionpack (>= 2.3.0)
+      activesupport (>= 2.3.0)
+      i18n (>= 0.4.0)
     gem_plugin (0.2.3)
     haml (3.0.21)
     haml-rails (0.3.4)
@@ -87,8 +98,6 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-    httparty (0.6.1)
-      crack (= 0.1.8)
     i18n (0.4.1)
     inploy (1.6.8)
     jammit (0.5.3)
@@ -187,8 +196,9 @@ DEPENDENCIES
   database_cleaner
   devise!
   factory_girl_rails
+  formtastic
   haml-rails
-  httparty
+  httparty!
   inploy
   jammit
   jquery_tag

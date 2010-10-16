@@ -2,9 +2,9 @@ Railstemplates::Application.routes.draw do
 
   authenticate :githubber do
 
-    resources :templates, :except => [:edit, :update] do
-      post :build, :on => :collection
-    end
+    resources :templates, :only => [:new, :create, :show]
+    resources :gists, :only => [:new, :create]
+    resources :repos, :only => [:new, :create]
     
     get '/dashboard' => "pages#dashboard", :as => :dashboard
   end

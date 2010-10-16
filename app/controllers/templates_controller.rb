@@ -1,68 +1,36 @@
 class TemplatesController < ApplicationController
-  
-  def build
-    @template = Template.new
-    @gist = Gist.new(params[:gist_url])
-  end
-  
-  # GET /templates
-  # GET /templates.xml
-  def index
-    @templates = Template.all
+  respond_to :html
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @templates }
-    end
-  end
-
-  # GET /templates/1
-  # GET /templates/1.xml
   def show
     @template = Template.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @template }
-    end
+    respond_with(@template)
   end
 
-  # GET /templates/new
-  # GET /templates/new.xml
   def new
     @template = Template.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @template }
-    end
+    respond_with(@template)
   end
 
-  # POST /templates
-  # POST /templates.xml
   def create
-    @template = Template.new(params[:template])
-
-    respond_to do |format|
-      if @template.save
-        format.html { redirect_to(@template, :notice => 'Template was successfully created.') }
-        format.xml  { render :xml => @template, :status => :created, :location => @template }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @template.errors, :status => :unprocessable_entity }
-      end
+    @github = Github.new(params[:github_url])
+    redirect_to :new if @github.invalid?
+    
+    githubber_session[:github_url] = @github.original_url
+    
+    if @github.gist?
+      redirect_to new_gist_path
+    else
+      redirect_to new_repo_path
     end
   end
 
-  # DELETE /templates/1
-  # DELETE /templates/1.xml
   def destroy
     @template = Template.find(params[:id])
     @template.destroy
 
     respond_to do |format|
       format.html { redirect_to(templates_url) }
-      format.xml  { head :ok }
     end
   end
+  
 end

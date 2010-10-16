@@ -1,0 +1,21 @@
+%h1 Listing templates
+
+%table
+  %tr
+    %th Gist file
+    %th Githubber
+    %th
+    %th
+    %th
+
+  - @templates.each do |template|
+    %tr
+      %td= template.gist_file
+      %td= template.githubber
+      %td= link_to 'Show', template
+      %td= link_to 'Edit', edit_template_path(template)
+      %td= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Template', new_template_path

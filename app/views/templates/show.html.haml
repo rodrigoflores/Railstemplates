@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Gist file:
+  = @template.gist_file
+%p
+  %b Githubber:
+  = @template.githubber
+
+= link_to 'Edit', edit_template_path(@template)
+\|
+= link_to 'Back', templates_path

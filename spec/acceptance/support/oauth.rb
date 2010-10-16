@@ -22,6 +22,12 @@ module OauthHelpers
           client.get('/api/v2/json/user/show?access_token=railstemplates') { [200, {}, GITHUB_INFO.to_json] }
         end
       end
+      
+      def sign_in!
+        visit homepage
+        click_link "Sign in using Github"
+      end
+      
     end
   end
 end

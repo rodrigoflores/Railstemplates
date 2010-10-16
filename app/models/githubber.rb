@@ -1,5 +1,5 @@
 class Githubber < ActiveRecord::Base
-
+  has_many :templates
   devise :database_authenticatable, :trackable, :oauthable
 
   attr_accessible :name, :email, :login, :password, :github_token

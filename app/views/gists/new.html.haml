@@ -6,5 +6,6 @@ explanation text goes here
     = form.input :gist_file, :as => :select, :collection => @github.gist_files, :prompt => false
     = form.input :title
     = form.input :description, :as => :text
+    = form.input :tag_list
   = form.buttons do
     = form.submit 'Create!'

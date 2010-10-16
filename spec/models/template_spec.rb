@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Template do
   it { should have_many :likes }
+  it { should have_many :thumbs}
+  it { should belong_to :githubber}
   it { should validate_presence_of :title, :gist_file }
 
   describe "content" do
@@ -24,7 +26,7 @@ describe Template do
       end
       it "returns only 20 lines" do
         template = Template.new(:gist_file => "http://gist.github.com/raw/999/large_gist")
-        template.sample.should_not == template.content
+         template.sample.should_not == template.content
         template.sample.split("\n").size.should == 20
       end
     end

@@ -6,8 +6,13 @@
     = pluralize_with_html @template.likes.count, "Like"
   #downloads
   = pluralize_with_html @template.download_counter, "Download"
+  = pluralize_with_html @template.works, "Work"
+  
+
 
   = link_to 'Like', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
+  = link_to 'work', template_works_path(@template, :work => true), :method => :put, :id => 'work_button', :remote => true
+  = link_to "don't work", template_works_path(@template, :work => false), :method => :put, :id => 'work_button', :remote => true
 
 %p
   %strong Download Link

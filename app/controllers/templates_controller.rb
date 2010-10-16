@@ -6,6 +6,15 @@ class TemplatesController < InheritedResources::Base
     @template = Template.find(params[:id])
     send_data @template.download!
   end
+  
+  def work
+    @template = Template.find(params[:id])
+    if current_githubber.work(@template)
+      render :json => @template
+    else
+      render :json => @template.errors, :status => 406
+    end
+  end
 
   def show
     @template = Template.find(params[:id])

@@ -4,6 +4,9 @@ describe Githubber do
   
   describe 'associations' do
     it { should have_many :likes }
+    it { should have_many :templates }
+    it { should have_many :thumbs }
+    
   end
 
 end

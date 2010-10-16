@@ -6,6 +6,7 @@ require 'rails/all'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 require 'lib/template_creator'
+require 'lib/download_constraint'
 
 module Railstemplates
   class Application < Rails::Application

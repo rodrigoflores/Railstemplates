@@ -15,6 +15,12 @@ class Template < ActiveRecord::Base
     Github.new(self.gist_file).raw
   end
   
+  def download!
+    increment(:download_counter)
+    save
+    content
+  end
+
 end
 
 # == Schema Information

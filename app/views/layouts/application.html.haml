@@ -11,6 +11,16 @@
     = include_stylesheets :base
     = csrf_meta_tag
   %body
+  
+  
+    %h1 Rails Templates
+    
+    #user_info
+      = render :partial => 'shared/user_box'
+      
     = yield
+    
+    
+    
     = jquery_tag
     = include_javascripts :base

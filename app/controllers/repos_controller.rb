@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
-  before_filter :load_github_from_session
+  before_filter :authenticate_githubber!, :load_github_from_session
   before_filter :set_github_path, :only => :create
   include TemplateCreator
   

@@ -1,5 +1,6 @@
 class TemplatesController < ApplicationController
   respond_to :html
+  before_filter :authenticate_githubber!, :except => [:show, :download]
   
   def like
     @template = Template.find(params[:id])
@@ -15,6 +16,11 @@ class TemplatesController < ApplicationController
     respond_with(@template)
   end
 
+  def download
+    @template = Template.find(params[:id])
+    send_data @template.download!
+  end
+
   def new
     @template = Template.new
     respond_with(@template)
@@ -22,7 +28,10 @@ class TemplatesController < ApplicationController
 
   def create
     @github = Github.new(params[:github_url])
-    redirect_to new_template_path if @github.invalid?
+    if @github.invalid?
+      redirect_to new_template_path 
+      return
+    end
     
     githubber_session[:github_url] = @github.original_url
     
@@ -34,7 +43,7 @@ class TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.find(params[:id])
+    @template = current_githubber.templates.find(params[:id])
     @template.destroy
 
     respond_to do |format|

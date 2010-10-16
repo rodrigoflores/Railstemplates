@@ -2,6 +2,6 @@
 
 Factory.define :template do |f|
   f.title 'wylkon wylson'
-  f.gist_file "MyString"
+  f.gist_file "http://gist.github.com/496469"
   f.githubber { |x| x.association :githubber }
 end

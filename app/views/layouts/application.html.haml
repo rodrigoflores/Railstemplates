@@ -1,4 +1,4 @@
-!!! 1.0
+!!!
 
 %html{ :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en" }
   %head
@@ -10,14 +10,15 @@
     = include_stylesheets :base
     = csrf_meta_tag
   %body
-    %h1
-      = link_to "Rails Templates", root_path
-    #header
-      = render :partial => 'shared/header'
-    #main
-      = yield
-    #footer
-      = render :partial => 'shared/footer'
+    #wrap
+      %header
+        %h1
+          = link_to "Rails Templates", root_path, :id => "rails-rumble"
+          = render :partial => 'shared/header'
+      #main
+        = yield
+      #footer
+        = render :partial => 'shared/footer'
     
     
     = jquery_tag

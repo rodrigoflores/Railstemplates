@@ -11,7 +11,7 @@ feature "Visiting The Home Page", %q{
     10.times do |n|
       template = Factory(:template, :githubber => current_githubber)
       (n % 4).times do
-        Factory(:githubber).like(template)
+        Factory(:githubber).like_it(template)
       end
     end
   end

@@ -2,7 +2,7 @@ Railstemplates::Application.routes.draw do
 
   authenticate :githubber do
     
-    resources :templates, :except => [:index] do
+    resources :templates, :except => [:index, :show] do
       resources :likes, :only => :create
       resources :works, :only => :create
     end
@@ -14,6 +14,7 @@ Railstemplates::Application.routes.draw do
     get '/mine', :to => "templates#index", :as => :mine_templates
   end
 
+  resources :templates, :only => :show
   get "/download/:id", :to => "templates#download", :as => :download
   devise_for :githubbers
   

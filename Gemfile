@@ -7,7 +7,7 @@ gem 'haml-rails'
 gem 'devise', :git => 'http://github.com/plataformatec/devise.git', :branch => 'v1.2.oauth'
 gem 'orm_adapter', :git => 'http://github.com/ianwhite/orm_adapter.git'
 gem 'oauth2'
-
+gem 'httparty'
 gem 'jquery_tag'
 gem 'jammit'
 gem 'inploy'

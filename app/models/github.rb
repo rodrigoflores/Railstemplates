@@ -30,7 +30,7 @@ class Github
 
   private
   def valid_file?
-    HTTParty.get(raw_path).success?
+    HTTParty.get(raw_url).success?
   end
 
 end

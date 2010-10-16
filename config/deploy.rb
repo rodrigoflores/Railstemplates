@@ -9,4 +9,4 @@ end
 
 ssh_opts = '-A'
 
-user = 'web'
+user = 'deploy'

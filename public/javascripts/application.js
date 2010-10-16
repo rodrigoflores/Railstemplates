@@ -21,11 +21,18 @@ var Templates = {
 				prettyPrint();
 			});
 		}
-	},
+	}
+}
+
+var Html5 = {
+	placeholder: function() {
+		$("input[placeholder]").placeholder();
+	}
 }
 
 $(function() {
 	Templates.preview();
+	Html5.placeholder();
   // Application.like();
   // Application.work();  
 });

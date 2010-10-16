@@ -1,7 +1,11 @@
 Railstemplates::Application.routes.draw do
 
+  authenticate :githubber do
+    resources :templates, :except => [:edit, :update]
+    get '/dashboard' => "pages#dashboard", :as => :dashboard
+  end
+
   devise_for :githubbers
-  get '/dashboard' => "pages#dashboard", :as => :dashboard
   root :to => "pages#index"
 
   # The priority is based upon order of creation:

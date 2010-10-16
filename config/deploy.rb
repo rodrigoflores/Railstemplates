@@ -1,5 +1,5 @@
 template = 'rails3'
-application = 'rails_template'
+application = 'rails_templates'
 repository = 'git@github.com:railsrumble/rr10-team-108.git'
 hosts = %w(railstemplates)
 

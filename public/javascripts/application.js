@@ -16,7 +16,7 @@ var Templates = {
 		var sample = $("#sample[data-url]");
 		if(sample.size()) {
 			$.getJSON("http://jsonproxy.heroku.com/fetch?path=" + sample.attr("data-url") + "&callback=?", function(response) {
-				var preview = $("<code class='prettyprint />");
+				var preview = $("<code class='prettyprint' />");
 				sample.append(preview.html(response.content.replace(/\n/ig, '<br />')));
 				prettyPrint();
 			});
@@ -34,5 +34,5 @@ $(function() {
 	Templates.preview();
 	Html5.placeholder();
   // Application.like();
-  // Application.work();  
+  // Application.work();
 });

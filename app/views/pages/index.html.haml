@@ -2,13 +2,20 @@
   #home-message
     %h1.replacement Take a shortcut to your templates
     %h2.replacement Find the best to kick off your project
+
 #latest
+  %h2 # Most Downloaded
   %ul
     - @latest.each do |template|
-      %li
-        = link_to template.title, template
-        %span= time_ago_in_words(template.created_at)
+      - 5.times do
+        %li{ :class => cycle( "one", "two")}
+          = link_to template.title, template
+          %span
+            %em -
+            = time_ago_in_words(template.created_at)
+
 #ranked
+  %h2 # Most Liked
   %ul
     - @ranked.each do |ranked|
       %li

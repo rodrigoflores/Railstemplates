@@ -61,13 +61,17 @@ body
         float: left
         background: url("../images/embed/backgrounds/common.png") repeat
         padding: 4px
+        opacity: 0.8
       img:hover
         background: url("../images/embed/backgrounds/common3.png") repeat
+        opacity: 1
       p
         float: left
         font-size: 16px
         margin: 15px 0 0 10px
         color: #fff
+      em
+        color: #36424A
       a
         float: right
         display: block
@@ -76,6 +80,9 @@ body
         font-size: 14px
         padding: 4px 26px 4px 5px
         background: url("../images/embed/icons/github.png") right -32px no-repeat
+        -moz-border-radius: 6px
+        -webkit-border-radius: 6px
+        border-radius: 6px
       a:hover
         text-decoration: none
         background: url("../images/embed/icons/github.png") right -2px no-repeat
@@ -92,11 +99,17 @@ body
           font-size: 14px
           padding: 3px 5px
           background: url("../images/embed/backgrounds/common.png") repeat
+          -moz-border-radius: 6px
+          -webkit-border-radius: 6px
+          border-radius: 6px
         a:hover
           text-decoration: none
           background: url("../images/embed/backgrounds/common3.png") repeat
     .sign-in
       float: right
+      -moz-border-radius: 6px
+      -webkit-border-radius: 6px
+      border-radius: 6px
 
     // SEARCH AREA --------------
     #search_box
@@ -104,6 +117,9 @@ body
       width: 324px
       height: 47px
       background: url("../images/embed/backgrounds/common.png") repeat
+      -moz-border-radius: 6px
+      -webkit-border-radius: 6px
+      border-radius: 6px
       label
         display: none
       input
@@ -132,7 +148,7 @@ body
 
   // FOOTER -------------------
   #footer
-    margin: 0
+    float: left
 
   // HOME ---------------------
   #holder-home
@@ -164,3 +180,45 @@ body
         height: 25px
         width: 495px
         margin: 20px
+
+  // Most downloaded ---------
+  #ranked,
+  #latest
+    margin: 30px 0 0 0
+    width: 465px
+    padding: 10px
+    float: left
+    background: url("../images/embed/backgrounds/common.png") repeat
+    -moz-border-radius: 6px
+    -webkit-border-radius: 6px
+    border-radius: 6px
+    h2
+      float: left
+      width: 100%
+      color: #fff
+      margin: 0 0 20px
+      font-size: 16px
+    ul
+      list-style: none
+      float: left
+      width: 100%
+      li
+        float: left
+        width: 457px
+        padding: 8px 4px
+        a,
+        span
+          float: left
+        a
+          margin: 0 5px 0 0
+
+
+
+      .one
+        background: url("../images/embed/backgrounds/common2.png") repeat
+      li:hover
+        background: url("../images/embed/backgrounds/common4.png") repeat
+
+  #ranked
+    float: right
+  // Most ranked ---------

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016053938) do
+ActiveRecord::Schema.define(:version => 20101016070941) do
 
   create_table "githubbers", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20101016053938) do
     t.integer  "githubber_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "download_counter", :default => 0
   end
 
 end

@@ -15,6 +15,11 @@ class TemplatesController < ApplicationController
     respond_with(@template)
   end
 
+  def download
+    @template = Template.find(params[:id])
+    send_data @template.download!
+  end
+
   def new
     @template = Template.new
     respond_with(@template)

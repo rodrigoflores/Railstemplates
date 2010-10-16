@@ -1,9 +1,10 @@
 #current_githubber
   %h2
-    = gravatar_for githubber
-    Hello,
-    = githubber.name
-    = link_to "Sign out", destroy_githubber_session_path
+    - if githubber.email
+      = gravatar_for githubber
+      Hello,
+      = githubber.name
+      = link_to "Sign out", destroy_githubber_session_path
 
   %ul
     %li= link_to "My Templates", mine_templates_path

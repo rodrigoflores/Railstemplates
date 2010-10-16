@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016093409) do
+ActiveRecord::Schema.define(:version => 20101016141341) do
 
   create_table "githubbers", :force => true do |t|
-    t.string   "email",                             :default => "", :null => false
+    t.string   "email",                             :default => ""
     t.string   "encrypted_password", :limit => 128, :default => "", :null => false
     t.string   "name"
     t.string   "github_token"

@@ -11,6 +11,8 @@ Railstemplates::Application.routes.draw do
     get '/dashboard' => "pages#dashboard", :as => :dashboard
   end
 
+  get "/download/:id", :to => "templates#download", :as => :download
+
   devise_for :githubbers
   
   match 'search/', :controller => 'searches', :action => 'search'

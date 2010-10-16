@@ -26,7 +26,7 @@ group :development do
   gem 'factory_girl_rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'mongrel'
-
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
 group :test do

@@ -6,4 +6,5 @@ log/*
 tmp/**/*
 capybara-*
 db/sphinx/*
+db/development.sqlite
 config/development.sphinx.conf

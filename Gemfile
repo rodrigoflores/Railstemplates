@@ -28,6 +28,7 @@ group :development do
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'mongrel'
   gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'metric_fu'
 end
 
 group :test do

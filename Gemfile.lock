@@ -51,6 +51,7 @@ GEM
       activemodel (= 3.0.1)
       activesupport (= 3.0.1)
     activesupport (3.0.1)
+    acts-as-taggable-on (2.0.6)
     addressable (2.2.2)
     annotate (2.4.0)
     arel (1.0.1)
@@ -191,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   annotate
   capybara
   database_cleaner

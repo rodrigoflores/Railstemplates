@@ -15,6 +15,7 @@ gem 'mysql'
 gem 'formtastic'
 
 gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'annotate'
@@ -23,6 +24,7 @@ group :development do
   gem 'factory_girl_rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'mongrel'
+
 end
 
 group :test do

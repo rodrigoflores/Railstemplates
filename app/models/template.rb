@@ -1,5 +1,7 @@
 class Template < ActiveRecord::Base
   
+  acts_as_taggable
+  
   define_index do
     indexes title
     indexes description

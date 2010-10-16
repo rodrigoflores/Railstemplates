@@ -24,5 +24,8 @@ feature "Searching", %q{
         page.should have_content("belem do para")
       end
     end
+    
+    click_link("belem do para")
+    # page.should have_css "h1", :text => "belem do para"
   end
 end

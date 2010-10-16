@@ -8,4 +8,4 @@
   = "\'#{params[:search]}\'"
 %ul
   - @templates.each do |template|
-    %li= template.title
+    %li= link_to template.title, template_path(template)

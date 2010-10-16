@@ -13,7 +13,7 @@ feature "Searching", %q{
     fill_in "search", :with => "belem"
     ThinkingSphinx.stub!(:search).with('belem').and_return([@template])
     click_button "search"
-    save_and_open_page
+
     page.should have_content("I have found 1 results for 'belem'")
     within(:css, 'ul') do
       within(:css, 'li') do

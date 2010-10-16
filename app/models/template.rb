@@ -16,7 +16,7 @@ class Template < ActiveRecord::Base
   end
   
   def sample
-    content.split("\n")[0,50].join("\n")
+    content.split("\n")[0,20].join("\n")
   end
   
   def download!

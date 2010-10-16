@@ -22,10 +22,10 @@ describe Template do
       before do
         stub_request "http://gist.github.com/raw/999/large_gist",  "GIST CONTENT\n" * 60
       end
-      it "returns only 50 lines" do
+      it "returns only 20 lines" do
         template = Template.new(:gist_file => "http://gist.github.com/raw/999/large_gist")
         template.sample.should_not == template.content
-        template.sample.split("\n").size.should == 50
+        template.sample.split("\n").size.should == 20
       end
     end
   end

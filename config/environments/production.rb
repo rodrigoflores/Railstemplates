@@ -47,11 +47,4 @@ Railstemplates::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  Devise.setup do |config|
-    config.oauth :github, '700cd6ab1cb8bb360393', 'd7bd202a6c2d367f5563c8b62030e617ab546d67',
-     :site => 'https://github.com/',
-     :authorize_path => '/login/oauth/authorize',
-     :access_token_path => '/login/oauth/access_token',
-     :scope => %w(user public_repo)
-   end
 end

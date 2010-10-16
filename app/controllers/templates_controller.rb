@@ -35,16 +35,11 @@ class TemplatesController < InheritedResources::Base
   end
   
   def all
-    # TODO: Paginate
-    scope = Template.latest.except(:limit)
-    @size = scope.count
-    @templates = scope.paginate(:page => params[:page])
+    @templates = Template.latest.except(:limit).paginate(:page => params[:page])
   end
   
   def index
-    scope = current_githubber.templates
-    @size = scope.count
-    @templates = scope.paginate(:page => params[:page])
+    @templates = current_githubber.templates.paginate(:page => params[:page])
   end
   
   private

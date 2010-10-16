@@ -5,6 +5,7 @@ config/database.yml
 .rvmrc
 log/*
 tmp/**/*
+tmp/*
 capybara-*
 db/sphinx/*
 db/development.sqlite

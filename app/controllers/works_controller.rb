@@ -1,4 +1,4 @@
-class LikesController < ApplicationController
+class WorksController < ApplicationController
   before_filter :authenticate_githubber!
 
   def create

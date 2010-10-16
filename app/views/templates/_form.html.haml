@@ -6,11 +6,14 @@
         - @template.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field  
+    = f.label :title
+    = f.text_field :title
+    
     = f.label :gist_file
     = f.text_field :gist_file
-  .field
-    = f.label :githubber
-    = f.text_field :githubber
+    
+    = f.label :description
+    = f.text_area :description
   .actions
     = f.submit 'Save'

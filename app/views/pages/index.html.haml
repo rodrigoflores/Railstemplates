@@ -2,3 +2,10 @@
 %p Find me in app/views/pages/index.html.haml
 
 = link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"
+
+- form_tag 'search' do |form|
+
+  %label{:for => 'search'} search
+  = text_field_tag :search
+  
+  = submit_tag "search"

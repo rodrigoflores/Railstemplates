@@ -1,0 +1,11 @@
+%h2= "Searching for #{params[:search]}"
+
+
+%p
+  I have found 
+  = @templates.size
+  results for  
+  = "\'#{params[:search]}\'"
+%ul
+  - @templates.each do |template|
+    %li= template.title

@@ -2,5 +2,8 @@
 db/*.sqlite3
 config/database.yml
 .rvmrc
-log/*.log
+log/*
 tmp/**/*
+capybara-*
+db/sphinx/*
+config/development.sphinx.conf

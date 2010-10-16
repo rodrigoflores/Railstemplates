@@ -2,5 +2,5 @@
 
 Factory.define :template do |f|
   f.gist_file "MyString"
-  f.githubber ""
+  f.githubber { |x| x.association :githubber }
 end

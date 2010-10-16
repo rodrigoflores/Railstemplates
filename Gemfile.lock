@@ -111,7 +111,7 @@ GEM
       gem_plugin (>= 0.2.3)
     multi_json (0.0.4)
     multipart-post (1.0.1)
-    mysql2 (0.2.4)
+    mysql (2.8.1)
     nokogiri (1.4.3.1)
     oauth2 (0.1.0)
       faraday (~> 0.5.0)
@@ -194,7 +194,7 @@ DEPENDENCIES
   jquery_tag
   launchy
   mongrel
-  mysql2
+  mysql
   oauth2
   orm_adapter!
   rails (= 3.0.1)

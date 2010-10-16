@@ -1,0 +1,193 @@
+GIT
+  remote: http://github.com/ianwhite/orm_adapter.git
+  revision: a5b28d2bdede7f5ae865d8bb84acc96043c74811
+  specs:
+    orm_adapter (0.0.3)
+
+GIT
+  remote: http://github.com/plataformatec/devise.git
+  revision: c42a86957ae3ce5955e9da2eaf604e1e3125693e
+  branch: v1.2.oauth
+  specs:
+    devise (1.2.oauth)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.2)
+      warden (~> 1.0.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    abstract (1.0.0)
+    actionmailer (3.0.1)
+      actionpack (= 3.0.1)
+      mail (~> 2.2.5)
+    actionpack (3.0.1)
+      activemodel (= 3.0.1)
+      activesupport (= 3.0.1)
+      builder (~> 2.1.2)
+      erubis (~> 2.6.6)
+      i18n (~> 0.4.1)
+      rack (~> 1.2.1)
+      rack-mount (~> 0.6.12)
+      rack-test (~> 0.5.4)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.1)
+      activesupport (= 3.0.1)
+      builder (~> 2.1.2)
+      i18n (~> 0.4.1)
+    activerecord (3.0.1)
+      activemodel (= 3.0.1)
+      activesupport (= 3.0.1)
+      arel (~> 1.0.0)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.1)
+      activemodel (= 3.0.1)
+      activesupport (= 3.0.1)
+    activesupport (3.0.1)
+    addressable (2.2.2)
+    annotate (2.4.0)
+    arel (1.0.1)
+      activesupport (~> 3.0.0)
+    bcrypt-ruby (2.1.2)
+    builder (2.1.2)
+    capybara (0.3.9)
+      culerity (>= 0.2.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (>= 0.0.3)
+    cgi_multipart_eof_fix (2.5.0)
+    childprocess (0.0.8)
+      ffi (~> 0.6.3)
+    configuration (1.1.0)
+    culerity (0.2.12)
+    daemons (1.1.0)
+    database_cleaner (0.5.2)
+    diff-lcs (1.1.2)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
+    factory_girl (1.3.2)
+    factory_girl_rails (1.0)
+      factory_girl (~> 1.3)
+      rails (>= 3.0.0.beta4)
+    faraday (0.5.1)
+      addressable (~> 2.2.2)
+      multipart-post (~> 1.0.1)
+      rack (~> 1.2.1)
+    fastthread (1.0.7)
+    ffi (0.6.3)
+      rake (>= 0.8.7)
+    gem_plugin (0.2.3)
+    haml (3.0.21)
+    haml-rails (0.3.3)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0.18)
+      railties (~> 3.0)
+    i18n (0.4.1)
+    inploy (1.6.8)
+    jquery_tag (0.0.1)
+    json_pure (1.4.6)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
+    mail (2.2.7)
+      activesupport (>= 2.3.6)
+      mime-types
+      treetop (>= 1.4.5)
+    mime-types (1.16)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
+    multi_json (0.0.4)
+    multipart-post (1.0.1)
+    mysql2 (0.2.4)
+    nokogiri (1.4.3.1)
+    oauth2 (0.1.0)
+      faraday (~> 0.5.0)
+      multi_json (~> 0.0.4)
+    polyglot (0.3.1)
+    rack (1.2.1)
+    rack-mount (0.6.13)
+      rack (>= 1.0.0)
+    rack-test (0.5.6)
+      rack (>= 1.0)
+    rails (3.0.1)
+      actionmailer (= 3.0.1)
+      actionpack (= 3.0.1)
+      activerecord (= 3.0.1)
+      activeresource (= 3.0.1)
+      activesupport (= 3.0.1)
+      bundler (~> 1.0.0)
+      railties (= 3.0.1)
+    rails3-generators (0.14.0)
+    railties (3.0.1)
+      actionpack (= 3.0.1)
+      activesupport (= 3.0.1)
+      rake (>= 0.8.4)
+      thor (~> 0.14.0)
+    rake (0.8.7)
+    remarkable (4.0.0.alpha4)
+      rspec (>= 2.0.0.alpha11)
+    remarkable_activemodel (4.0.0.alpha4)
+      remarkable (~> 4.0.0.alpha4)
+      rspec (>= 2.0.0.alpha11)
+    remarkable_activerecord (4.0.0.alpha4)
+      remarkable (~> 4.0.0.alpha4)
+      remarkable_activemodel (~> 4.0.0.alpha4)
+      rspec (>= 2.0.0.alpha11)
+    rspec (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+      rspec-mocks (= 2.0.0)
+    rspec-core (2.0.0)
+    rspec-expectations (2.0.0)
+      diff-lcs (>= 1.1.2)
+    rspec-mocks (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+    rspec-rails (2.0.1)
+      rspec (~> 2.0.0)
+    rubyzip (0.9.4)
+    selenium-webdriver (0.0.29)
+      childprocess (>= 0.0.7)
+      ffi (~> 0.6.3)
+      json_pure
+      rubyzip
+    steak (1.0.0.rc.1)
+      rspec
+    thor (0.14.3)
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.23)
+    warden (1.0.1)
+      rack (>= 1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  annotate
+  capybara
+  database_cleaner
+  devise!
+  factory_girl_rails
+  haml-rails
+  inploy
+  jquery_tag
+  launchy
+  mongrel
+  mysql2
+  oauth2
+  orm_adapter!
+  rails (= 3.0.1)
+  rails3-generators
+  remarkable (>= 4.0.0.alpha4)
+  remarkable_activemodel (>= 4.0.0.alpha4)
+  remarkable_activerecord (>= 4.0.0.alpha4)
+  rspec (~> 2.0.0)
+  rspec-rails (~> 2.0.0)
+  steak (>= 1.0.0.rc.1)

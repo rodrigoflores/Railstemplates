@@ -30,9 +30,11 @@ body {
     margin: 0 auto;
     width: 1000px; }
   body header {
+    border-bottom: 1px solid white;
+    padding: 0 0 20px;
     width: 100%;
     float: left;
-    margin: 36px 0 0 0; }
+    margin: 36px 0; }
     body header #rails-templates {
       background: url("../images/embed/logos/rails_templates.png") repeat;
       text-indent: -99999px;
@@ -42,22 +44,36 @@ body {
       height: 54px; }
     body header #current_githubber {
       float: right;
-      width: 400px; }
+      width: 324px; }
       body header #current_githubber img {
         float: left;
         background: url("../images/embed/backgrounds/common.png") repeat;
         padding: 4px; }
+      body header #current_githubber img:hover {
+        background: url("../images/embed/backgrounds/common2.png") repeat; }
       body header #current_githubber p {
         float: left;
-        font-size: 10px; }
-      body header #current_githubber em {
-        float: left;
-        color: white;
-        font-size: 12px;
-        margin: 2px 5px; }
+        font-size: 18px;
+        margin: 15px 0 0 10px;
+        color: white; }
       body header #current_githubber a {
+        float: right;
+        margin: 18px 0 0; }
+    body header #menu {
+      float: left;
+      list-style: none;
+      margin: 19px 0 0 0; }
+      body header #menu li {
         float: left;
-        margin: 2px 0; }
+        margin: 0 10px 0 0; }
+        body header #menu li a {
+          padding: 3px;
+          background: url("../images/embed/backgrounds/common.png") repeat; }
+        body header #menu li a:hover {
+          text-decoration: none;
+          background: url("../images/embed/backgrounds/common2.png") repeat; }
+    body header .sign-in {
+      float: right; }
     body header #search_box {
       float: right;
       width: 324px;

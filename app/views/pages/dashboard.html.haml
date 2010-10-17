@@ -10,11 +10,12 @@
               %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
               %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template", :confirm => "Are you sure? There's no undo!"
   .break
+  - reset_cycle
   #liked.rounded-all
     %h2 # Favourite templates
     %ul
-      - 10.times do
+      - current_githubber.likes.each do |like|
         %li{ :class => cycle( "one", "two")}
-          = link_to "Title", "#"
+          = link_to like.template.title, like.template
 %section#right
   = link_to "Create a new template", new_template_path, :class => "link-default rounded-all"

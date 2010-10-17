@@ -267,11 +267,6 @@ body {
           float: right;
           color: #36424a;
           padding: 0 0 0 20px; }
-        body #ranked ul li .hours,
-        body #latest ul li .hours,
-        body #liked ul li .hours,
-        body #my-templates ul li .hours {
-          background: url("/images/embed/icons/clock.png") no-repeat; }
         body #ranked ul li .liked,
         body #latest ul li .liked,
         body #liked ul li .liked,

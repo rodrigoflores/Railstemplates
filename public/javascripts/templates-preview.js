@@ -47,13 +47,11 @@ $(function() {
 			elements.attr("href", "javascript:;");
 		};
 
-		elements.bind('ajax:success', UpdateStats).bind('ajax:loading',
-		function() {
-		    loader.show();
-		}).bind('ajax:complete',
-		function() {
-		    loader.hide();
-		});
+		elements
+		.bind('ajax:before', function() { return $(this).attr("disabled") != "disabled"; })
+		.bind('ajax:success', UpdateStats)
+		.bind('ajax:loading', function() { loader.show(); elements.attr("disabled", "disabled"); })
+		.bind('ajax:complete', function() { loader.hide(); });
 	}
 
 	function likeStatus() {

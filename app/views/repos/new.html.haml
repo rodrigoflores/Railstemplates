@@ -1,11 +1,10 @@
-%h1 Second Step
-
-explanation text goes here
-
-= semantic_form_for @template, :url => repos_path do |form|
-  = form.inputs do
-    = form.input :title
-    = form.input :description, :as => :text
-    = form.input :tag_list
-  = form.buttons do
-    = form.submit 'Create!'
+%h1.parent-title Create a new template
+#create-template.rounded-all
+  %h2 Step 2
+  = semantic_form_for @template, :url => repos_path do |form|
+    = form.inputs do
+      = form.input :title, :input_html => { :placeholder => "Your template title" }
+      = form.input :description, :as => :text, :input_html => { :placeholder => "Some cool description" }
+      = form.input :tag_list, :input_html => { :placeholder => "Comma separated tags" }
+    = form.buttons do
+      = form.submit 'Create!', :class => "rounded-all"

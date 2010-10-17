@@ -3,7 +3,7 @@ class WorksController < ApplicationController
 
   def create
     @template = Template.find(params[:template_id])
-    if current_githubber.work(@template, params[:work])
+    if current_githubber.work(@template, params[:work].present?)
       render :json => @template
     else
       render :json => @template.errors, :status => 406

@@ -34,6 +34,24 @@ describe Template do
       end
     end
   end
+  
+  context "vote status" do
+    before do
+      @template = Factory(:template)
+      @blank = Factory(:template)
+      2.times { Factory(:githubber).vote(@template, true) }
+    end
+    
+    it "summarizes the percentages" do
+      @template.stats[:working].should == [2, 100.0]
+      @template.stats[:not_working].should == [0, 0.0]
+
+      @blank.stats[:working].should == [0, 0.0]
+      @blank.stats[:not_working].should == [0, 0.0]
+
+    end
+    
+  end
 end
 
 

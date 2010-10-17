@@ -2,6 +2,5 @@
 
 Factory.define :thumb do |f|
   f.up true
-  f.template  {   |x| x.association :template }
-  
+  f.template { |f| f.association :template }
 end

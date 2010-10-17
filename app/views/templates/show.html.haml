@@ -1,3 +1,5 @@
+- content_for :javascripts, include_javascripts(:preview)
+
 #template-view
 
   // Left Column
@@ -44,8 +46,7 @@
               .link-default.rounded-all= link_to 'Yes', template_works_path(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
             %li
               .holder-content.rounded-all
-                .work{ :title => "Work"}
-                .doesnt-work{ :title => "Doesn't Work"}
+                = render :partial => 'working_stats', :locals => { :template => @template }
             %li
               .link-default.rounded-all= link_to "No", template_works_path(@template, :work => false), :method => :POST, :id => 'not_work_button', :remote => true
           - else
@@ -53,8 +54,7 @@
               .link-default.rounded-all= link_to 'Yes', new_githubber_session_path, :id => 'work_button'
             %li
               .holder-content.rounded-all
-                .work{ :title => "Work"}
-                .doesnt-work{ :title => "Doesn't Work"}
+                = render :partial => 'working_stats', :locals => { :template => @template }
             %li
               .link-default.rounded-all= link_to 'No', new_githubber_session_path, :id => 'not_work_button'
       .line-divisor.rounded-all

@@ -4,9 +4,11 @@ javascripts:
   base:
     - public/javascripts/plugins/jquery-ui.js
     - public/javascripts/rails.js
-    - public/javascripts/plugins/prettify.js
     - public/javascripts/plugins/jquery.placeholder-1.0.1.js
     - public/javascripts/application.js
+  preview:
+    - public/javascripts/templates-preview.js
+    - public/javascripts/plugins/prettify.js
 stylesheets:
   base:
     - public/stylesheets/application.css

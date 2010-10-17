@@ -35,6 +35,15 @@ class Template < ActiveRecord::Base
   def downvotes
     self.thumbs.where(:up => false).count
   end
+  
+  def stats
+    @stats ||= Hash.new.tap do |status|
+       total = self.thumbs.count
+       total = 1 if total == 0 #avoidin NaN
+       status[:working] = [upvotes, (upvotes / total.to_f) * 100]
+       status[:not_working] = [downvotes, (downvotes / total.to_f) * 100]
+     end
+  end
 end
 
 

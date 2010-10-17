@@ -29,7 +29,7 @@ feature "Creating A Template", %q{
     fill_in 'Tag list', :with => "rails, mysql"
     select "main.rb", :from => "Gist file"
     click "Create!"
-    page.should have_css "h1", :text => "My awesome template"
+    page.should have_css "h2", :text => "My awesome template"
     page.should have_content("rails, mysql")
   end
   
@@ -58,7 +58,7 @@ feature "Creating A Template", %q{
     
     click "Create!"
   
-    page.should have_css "h1", :text => "My awesome template"
+    page.should have_css "h2", :text => "My awesome template"
     page.should have_content("rails, mysql")
   end
   

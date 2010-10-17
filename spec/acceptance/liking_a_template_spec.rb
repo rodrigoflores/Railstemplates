@@ -17,11 +17,11 @@ feature "Liking a template", %q{
     click_link "All templates"
     click_link template.title
     
-    page.should have_css "strong", :text => '0'
-    click_link 'Like it'
+    page.should have_content "0 people like it"
+    click_link 'I Like it'
 
     click_link "All templates"
     click_link template.title
-    page.should have_css "strong", :text => '1'
+    page.should have_content "1 person like it"
   end
 end

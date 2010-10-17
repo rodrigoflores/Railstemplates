@@ -7,9 +7,8 @@ class Github
 
   def gist_files
     gist = original_url.split('/').last
-    @files ||= HTTParty.get("http://gist.github.com/api/v1/json/#{gist}")['gists'].first['files'].map do |f|
-      [f, "http://gist.github.com/raw/#{gist}/#{f}"]
-    end
+    files = HTTParty.get("http://gist.github.com/api/v1/json/#{gist}")['gists'].first['files'].select { |f| /.*.rb$/ =~ f }
+    files.map { |f| [f, "http://gist.github.com/raw/#{gist}/#{f}"] }
   end
   
   def raw_url

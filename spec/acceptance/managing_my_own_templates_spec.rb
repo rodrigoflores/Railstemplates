@@ -41,9 +41,9 @@ feature "My Templates", %q{
   end
   
   scenario "Deleting template" do
-    template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
-    click_link "Dashboard"
-    pending "Selenium does not approve window.confirm :(" do
+    disabled "Selenium does not approve window.confirm :(" do
+      template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
+      click_link "Dashboard"
       click_link "Delete"
       page.should_not have_content template.title
     end

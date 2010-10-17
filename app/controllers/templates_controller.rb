@@ -35,7 +35,7 @@ class TemplatesController < InheritedResources::Base
   end
 
   def index
-    @templates = Template.latest.except(:limit).paginate(:page => params[:page])
+    @templates = Template.latest.except(:limit).paginate(:page => params[:page], :per_page => 10)
   end
 
   private

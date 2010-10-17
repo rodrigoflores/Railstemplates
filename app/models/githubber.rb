@@ -1,7 +1,7 @@
 class Githubber < ActiveRecord::Base
   has_many :templates
-  has_many :likes
-  has_many :thumbs
+  has_many :likes, :dependent => :delete_all
+  has_many :thumbs, :dependent => :delete_all
   devise :database_authenticatable, :trackable, :oauthable
 
   attr_accessible :name, :email, :login, :password, :github_token
@@ -23,18 +23,19 @@ class Githubber < ActiveRecord::Base
     likes.create(:template => template)
   end
   
-  def work(template, working)
+  def vote(template, working)
     thumbs.create(:template => template, :up => working)
   end
   
 end
+
 
 # == Schema Information
 #
 # Table name: githubbers
 #
 #  id                 :integer(4)      not null, primary key
-#  email              :string(255)     default(""), not null
+#  email              :string(255)     default("")
 #  encrypted_password :string(128)     default(""), not null
 #  name               :string(255)
 #  github_token       :string(255)

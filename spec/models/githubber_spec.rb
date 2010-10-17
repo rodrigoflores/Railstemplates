@@ -11,12 +11,13 @@ describe Githubber do
 
 end
 
+
 # == Schema Information
 #
 # Table name: githubbers
 #
 #  id                 :integer(4)      not null, primary key
-#  email              :string(255)     default(""), not null
+#  email              :string(255)     default("")
 #  encrypted_password :string(128)     default(""), not null
 #  name               :string(255)
 #  github_token       :string(255)

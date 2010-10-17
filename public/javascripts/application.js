@@ -1,14 +1,20 @@
 var Application = {
+	remotes: function() {
+		onSuccess = function(){
+			// ul > li > table > tbody > tr > td WTF
+			$(this).parents("li").fadeOut(function() {
+				$(this).remove();
+			})
+		};
+
+		$(".delete-template")
+			.bind('ajax:success', onSuccess);
+	}
   // like: function() {
   //    $("#like_button")
   //      .bind('ajax:success', function() { alert("deu certo");})
   //      .bind('ajax:failure', function() { alert("deu errado");});
   // },
-  // work: function() {
-  //    $("#work_button")
-  //      .bind('ajax:success', function() { alert("deu certo");})
-  //      .bind('ajax:failure', function() { alert("deu errado");});
-  // }
 };
 
 var Templates = {
@@ -31,6 +37,7 @@ var Html5 = {
 }
 
 $(function() {
+	Application.remotes();
 	Templates.preview();
 	Html5.placeholder();
   // Application.like();

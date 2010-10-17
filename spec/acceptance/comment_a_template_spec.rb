@@ -16,10 +16,15 @@ feature "Comment A Template", %q{
     sign_in!
     click_link "All templates"
     click_link @template.title
-    save_and_open_page
     fill_in "Comment this template", :with => "This template is fucking awesome"
     expect {
       click_button "Create Commentary"
     }.to change(@template.commentaries, :count).by(1)    
+  end
+  
+  scenario "should say that you must be logged in to comment" do
+    click_link "All templates"
+    click_link @template.title
+    page.should have_content("Log in to comment this template")
   end
 end

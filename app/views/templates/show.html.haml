@@ -16,7 +16,7 @@
     // Template's Name
     %h2
       = link_to @template.title, download_url(@template)
-      %br
+    .author
       by
       = link_to @template.githubber.name, "http://github.com/#{@template.githubber.login}"
 

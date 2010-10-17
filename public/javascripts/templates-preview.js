@@ -16,9 +16,9 @@ $(function() {
 	function workingStatus() {
 		
 		function UpdateStats(event, response) {
-			response = $.parseJSON(response);
-			$(".work").css({width: response[0] + "%"});
-			$(".doesnt-work").css({width: response[1] + "%"});
+			var stats = $.parseJSON(response);
+			$(".work").css({width: stats.working[1] + "%"}).attr("title", pluralize(stats.working[0], "vote", "votes"));
+			$(".doesnt-work").css({width: stats.not_working[1] + "%"}).attr("title", pluralize(stats.not_working[0], "vote", "votes"));
 		};
 		
 		$("#not_work_button[data-remote], #work_button[data-remote]")
@@ -41,6 +41,10 @@ $(function() {
 		
 		$("#like_button[data-remote]")
 			.bind('ajax:success', UpdateLikeStatus);
+	}
+	
+	function pluralize(count, singular, plural) {
+		return count + " " + (count == 1 ? singular : plural);
 	}
 
 	highlight();

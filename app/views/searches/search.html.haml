@@ -1,11 +1,11 @@
 %h1.parent-title= "Searching for #{params[:search]}"
 
-
-%p
-  I have found
+%p.search-counter
+  We have found
   = @total
   results for
   = "\'#{params[:search]}\'"
+
 #all-templates
   %ul
     - @templates.each do |template|
@@ -16,6 +16,4 @@
         %section#right.rounded-all
           %p.download= pluralize(template.download_counter, "person has downloaded it", "people have downloaded it")
           %p.liked= pluralize(template.likes.count, "person like it", "people like it")
-
-
   = will_paginate @templates

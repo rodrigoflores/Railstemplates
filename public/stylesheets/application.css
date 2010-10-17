@@ -161,17 +161,20 @@ body {
   body #main {
     display: block;
     float: left; }
+  body #explanation,
   body #holder-home {
     width: 980px;
     float: left;
     padding: 10px;
     background: url("/images/embed/backgrounds/common3.png") repeat; }
-    body #holder-home #home-message {
+    body #explanation .home-message,
+    body #holder-home .home-message {
       background: url("/images/embed/backgrounds/common2.png") repeat;
       color: white;
       float: left;
       width: 100%; }
-      body #holder-home #home-message h1 {
+      body #explanation .home-message h1,
+      body #holder-home .home-message h1 {
         font-size: 40px;
         font-weight: normal;
         background: url("/images/embed/texts/title1.png") no-repeat;
@@ -179,7 +182,8 @@ body {
         height: 48px;
         float: left;
         margin: 20px 15px; }
-      body #holder-home #home-message h2 {
+      body #explanation .home-message h2,
+      body #holder-home .home-message h2 {
         float: right;
         font-size: 26px;
         font-weight: normal;
@@ -187,6 +191,14 @@ body {
         height: 27px;
         width: 775px;
         margin: 10px 20px 20px 20px; }
+  body #explanation {
+    margin: 20px 0 0 0;
+    background: url("/images/embed/backgrounds/common4.png") repeat; }
+    body #explanation .home-message {
+      background: url("/images/embed/backgrounds/common3.png") repeat; }
+      body #explanation .home-message p {
+        margin: 10px;
+        font-size: 18px; }
   body #ranked,
   body #latest,
   body #liked,

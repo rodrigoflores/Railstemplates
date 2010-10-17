@@ -5,7 +5,6 @@ javascripts:
     - public/javascripts/plugins/jquery-ui.js
     - public/javascripts/rails.js
     - public/javascripts/plugins/jquery.placeholder-1.0.1.js
-    - public/javascripts/plugins/jquery.multiselect.js
     - public/javascripts/application.js
   preview:
     - public/javascripts/plugins/prettify.js
@@ -15,4 +14,3 @@ stylesheets:
   base:
     - public/stylesheets/application.css
     - public/stylesheets/prettify/prettify.css
-    - public/stylesheets/jquery.multiselect.css

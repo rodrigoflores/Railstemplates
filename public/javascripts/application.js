@@ -64,6 +64,4 @@ $(function() {
 	Application.remotes();
 	Html5.placeholder();
 	Application.commentaryCreation();
-	
-  $("#template_tag_list").multiselect();
 });

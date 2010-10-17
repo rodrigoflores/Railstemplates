@@ -247,30 +247,36 @@ body {
         width: 449px;
         padding: 8px; }
         body #ranked ul li a,
-        body #ranked ul li span,
+        body #ranked ul li p,
         body #latest ul li a,
-        body #latest ul li span,
+        body #latest ul li p,
         body #liked ul li a,
-        body #liked ul li span,
+        body #liked ul li p,
         body #my-templates ul li a,
-        body #my-templates ul li span {
+        body #my-templates ul li p {
           float: left; }
         body #ranked ul li a,
         body #latest ul li a,
         body #liked ul li a,
         body #my-templates ul li a {
           margin: 0 5px 0 0; }
-        body #ranked ul li span,
-        body #latest ul li span,
-        body #liked ul li span,
-        body #my-templates ul li span {
+        body #ranked ul li p,
+        body #latest ul li p,
+        body #liked ul li p,
+        body #my-templates ul li p {
           float: right;
-          color: #36424a; }
-          body #ranked ul li span em,
-          body #latest ul li span em,
-          body #liked ul li span em,
-          body #my-templates ul li span em {
-            color: #cccaa9; }
+          color: #36424a;
+          padding: 0 0 0 20px; }
+        body #ranked ul li .hours,
+        body #latest ul li .hours,
+        body #liked ul li .hours,
+        body #my-templates ul li .hours {
+          background: url("/images/embed/icons/clock.png") no-repeat; }
+        body #ranked ul li .liked,
+        body #latest ul li .liked,
+        body #liked ul li .liked,
+        body #my-templates ul li .liked {
+          background: url("/images/embed/icons/heart.png") no-repeat; }
       body #ranked ul .one,
       body #latest ul .one,
       body #liked ul .one,
@@ -294,7 +300,7 @@ body {
       width: 670px; }
       body section#left #my-templates li,
       body section#left #liked li {
-        width: 662px; }
+        width: 655px; }
   body section#right {
     display: block;
     float: right;
@@ -437,7 +443,7 @@ body {
         body #template-view #right .holder-content #working_status .holder-content {
           background: url("/images/embed/backgrounds/common3.png") repeat;
           float: left;
-          width: 142px;
+          width: 140px;
           margin: 0;
           padding: 5px; }
           body #template-view #right .holder-content #working_status .holder-content .work {

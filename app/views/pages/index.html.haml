@@ -13,8 +13,7 @@
     - @latest.each do |template|
       %li{ :class => cycle( "one", "two")}
         = link_to template.title, template
-        %span
-          = time_ago_in_words(template.created_at) + " ago"
+        %p.hours= time_ago_in_words(template.created_at) + " ago"
 
 - reset_cycle
 #ranked.rounded-all
@@ -23,4 +22,4 @@
     - @ranked.each do |ranked|
       %li{ :class => cycle( "one", "two")}
         = link_to ranked.title, ranked
-        %span= pluralize(ranked.likes.count, "Like")
+        %p.liked= pluralize(ranked.likes.count, "person like it", "people like it")

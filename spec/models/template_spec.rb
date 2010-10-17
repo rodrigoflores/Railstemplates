@@ -5,9 +5,7 @@ describe Template do
   it { should have_many :thumbs}
   it { should have_many :commentaries }
   it { should belong_to :githubber}
-  it { should validate_presence_of :title, :gist_file }
   it { should validate_presence_of :title, :source_url }
-
 
   describe "content" do
     before do

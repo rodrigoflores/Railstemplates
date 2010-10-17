@@ -374,8 +374,6 @@ body {
         float: left;
         padding: 10px;
         width: 640px; }
-      body #template-view #left .loading {
-        height: 300px; }
     body #template-view #right {
       margin: 20px 0 0 0;
       position: relative;
@@ -537,4 +535,5 @@ body {
       background: none; }
 
 #source_code.loading {
-  background: url("/images/embed/icons/loader.gif") no-repeat; }
+  height: 300px;
+  background: url("/images/embed/icons/loader.gif") no-repeat center 142px; }

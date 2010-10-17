@@ -3,9 +3,10 @@
   = semantic_form_for @template, :url => template_path do |form|
     %h4
       Your template file:
-      %strong= @template.gist_file
+      %strong=link_to @template.gist_file, @template.gist_file
     = form.inputs do
-      = form.input :title, :input_html => { :placeholder => "Title" }
-      = form.input :description, :as => :text, :input_html => { :placeholder => "Description" }
+      = form.input :title, :input_html => { :placeholder => "Your template title" }
+      = form.input :description, :as => :text, :input_html => { :placeholder => "Your template title" }
+      = form.input :tag_list, :input_html => { :placeholder => "Comma separated tags" }
     = form.buttons do
       = form.submit 'Update!', :class => "rounded-all"

@@ -25,7 +25,7 @@
         .holder-content.rounded-all
           = link_to download_url(@template), download_url
           #d_clip_button{ :title => "Copy to Clipboard"}
-          / = clippy download_url(@template)
+
         = pluralize(@template.download_counter, "person has downloaded it", "people have downloaded it")
       .line-divisor.rounded-all
       = render :partial => 'like_status', :locals => { :template => @template }

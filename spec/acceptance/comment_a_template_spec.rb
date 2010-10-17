@@ -13,13 +13,13 @@ feature "Comment A Template", %q{
   end
 
   scenario "valid comment", :js => true do
+    sign_in!
     click_link "All templates"
     click_link @template.title
+    save_and_open_page
     fill_in "Comment this template", :with => "This template is fucking awesome"
     expect {
       click_button "Create Commentary"
-    }.to change(@template.commentaries, :count).by(1)
-    page.should have_content("This template is fucking awesome")
-    
+    }.to change(@template.commentaries, :count).by(1)    
   end
 end

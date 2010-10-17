@@ -1,21 +1,48 @@
 %section#left
-  #my-templates.rounded-all
-    %h2 # My Templates
-    %ul
-      - current_githubber.templates.each do |template|
-        %li{ :class => cycle( "one", "two")}
-          %table
-            %tr
-              %td.name-template= link_to template.title, template
-              %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
-              %td= link_to 'Delete', template_path(template), :method => :delete, :remote => true, :class => "delete-template", :confirm => "Are you sure? There's no undo!"
-  .break
-  - reset_cycle
-  #liked.rounded-all
-    %h2 # Favourite templates
-    %ul
-      - current_githubber.likes.each do |like|
-        %li{ :class => cycle( "one", "two")}
-          = link_to like.template.title, like.template
+  - if current_githubber.likes.size > 0 or current_githubber.templates.size > 0
+    - if current_githubber.templates.size > 0
+      #my-templates.rounded-all.textbox
+        %h2 # My Templates
+        %ul
+          - current_githubber.templates.each do |template|
+            %li{ :class => cycle( "one", "two")}
+              %table
+                %tr
+                  %td.name-template= link_to template.title, template
+                  %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
+                  %td= link_to 'Delete', template_path(template), :method => :delete, :remote => true, :class => "delete-template", :confirm => "Are you sure? There's no undo!"
+        .break
+    - if current_githubber.likes.size > 0
+      - reset_cycle
+      #liked.rounded-all.textbox
+        %h2 # Favorite templates
+        %ul
+          - current_githubber.likes.each do |like|
+            %li{ :class => cycle( "one", "two")}
+              %table
+                %tr
+                  %td.name-template= link_to like.template.title, like.template
+                  %td.option= link_to "Unlike it", template_like_path(like.template, like), :class => "unlike-template", :method => :delete, :remote => true, :confirm => "Are you sure?"
+                  
+    #getting-started.rounded-all.textbox{ :style => "display: none" }
+      %h2 # Getting started
+      %p You don't have any templates yet. 
+      %p 
+        There are two ways to begin: 
+        %ol
+          %li= link_to "Create a new template", new_template_path
+          %li Search for someones using our search box at the top of the page and "like" the ones you enjoy.
+
+                  
+  - else
+    #getting-started.rounded-all.textbox
+      %h2 # Getting started
+      %p You don't have any templates yet. 
+      %p 
+        There are two ways to begin: 
+        %ol
+          %li= link_to "Create a new template", new_template_path
+          %li Search for someones using our search box at the top of the page and "like" the ones you enjoy.
+            
 %section#right
   = link_to "Create a new template", new_template_path, :class => "link-default rounded-all"

@@ -5,7 +5,7 @@ Railstemplates::Application.routes.draw do
   authenticate :githubber do
 
     resources :templates, :except => [:index, :show] do
-      resources :likes, :only => :create
+      resources :likes, :only => [:create, :destroy]
       resources :works, :only => :create
     end
     resources :gists, :only => [:new, :create]

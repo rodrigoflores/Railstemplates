@@ -56,6 +56,11 @@ table {
   -webkit-border-radius: 6px;
   border-radius: 6px; }
 
+.textbox p {
+  margin: 0 0 10px 0; }
+.textbox ol {
+  margin: 0 20px; }
+
 h2 {
   float: left;
   width: 100%;
@@ -237,7 +242,8 @@ body {
   body #ranked,
   body #latest,
   body #liked,
-  body #my-templates {
+  body #my-templates,
+  body #getting-started {
     margin: 30px 0 0 0;
     width: 465px;
     padding: 10px;
@@ -246,7 +252,8 @@ body {
     body #ranked h2,
     body #latest h2,
     body #liked h2,
-    body #my-templates h2 {
+    body #my-templates h2,
+    body #getting-started h2 {
       float: left;
       width: 100%;
       color: #36424a;
@@ -255,14 +262,16 @@ body {
     body #ranked ul,
     body #latest ul,
     body #liked ul,
-    body #my-templates ul {
+    body #my-templates ul,
+    body #getting-started ul {
       list-style: none;
       float: left;
       width: 100%; }
       body #ranked ul li,
       body #latest ul li,
       body #liked ul li,
-      body #my-templates ul li {
+      body #my-templates ul li,
+      body #getting-started ul li {
         float: left;
         width: 449px;
         padding: 8px; }
@@ -273,34 +282,41 @@ body {
         body #liked ul li a,
         body #liked ul li p,
         body #my-templates ul li a,
-        body #my-templates ul li p {
+        body #my-templates ul li p,
+        body #getting-started ul li a,
+        body #getting-started ul li p {
           float: left; }
         body #ranked ul li a,
         body #latest ul li a,
         body #liked ul li a,
-        body #my-templates ul li a {
+        body #my-templates ul li a,
+        body #getting-started ul li a {
           margin: 0 5px 0 0; }
         body #ranked ul li p,
         body #latest ul li p,
         body #liked ul li p,
-        body #my-templates ul li p {
+        body #my-templates ul li p,
+        body #getting-started ul li p {
           float: right;
           color: #36424a;
           padding: 0 0 0 20px; }
         body #ranked ul li .liked,
         body #latest ul li .liked,
         body #liked ul li .liked,
-        body #my-templates ul li .liked {
+        body #my-templates ul li .liked,
+        body #getting-started ul li .liked {
           background: url("/images/embed/icons/heart.png") no-repeat; }
       body #ranked ul .one,
       body #latest ul .one,
       body #liked ul .one,
-      body #my-templates ul .one {
+      body #my-templates ul .one,
+      body #getting-started ul .one {
         background: url("/images/embed/backgrounds/common2.png") repeat; }
       body #ranked ul li:hover,
       body #latest ul li:hover,
       body #liked ul li:hover,
-      body #my-templates ul li:hover {
+      body #my-templates ul li:hover,
+      body #getting-started ul li:hover {
         background: url("/images/embed/backgrounds/common4.png") repeat; }
   body #ranked {
     float: right; }
@@ -311,14 +327,19 @@ body {
     float: left;
     width: 700px; }
     body section#left #my-templates,
-    body section#left #liked {
-      width: 670px; }
+    body section#left #liked,
+    body section#left #getting-started {
+      width: 670px;
+      margin: 0 0 30px 0; }
       body section#left #my-templates li,
-      body section#left #liked li {
+      body section#left #liked li,
+      body section#left #getting-started li {
         width: 655px; }
-    body section#left #liked li a {
-      width: 100%;
-      background: url("/images/embed/icons/heart.png") right top no-repeat; }
+    body section#left #liked td.name-template {
+      width: 575px; }
+    body section#left #liked li a.unlike-template {
+      background: url("/images/embed/icons/heart.png") right top no-repeat;
+      padding: 0 20px 0 0; }
   body section#right {
     display: block;
     float: right;
@@ -332,9 +353,10 @@ body {
       list-style: none; }
     body #create-template h2 {
       margin-bottom: 5px; }
-    body #create-template h2.invalid {
-      text-align: center;
-      margin-top: 5px; }
+    body #create-template .invalid {
+      text-align: left;
+      margin-top: 5px;
+      color: #c22d0a; }
     body #create-template h4 {
       float: left;
       width: 960px;
@@ -373,6 +395,8 @@ body {
       body #create-template form fieldset.inputs textarea {
         height: 200px;
         font: 18px "Trebuchet MS", arial, sans-serif; }
+      body #create-template form fieldset.inputs select option {
+        background: url("/images/embed/backgrounds/common3.png") repeat; }
       body #create-template form fieldset.buttons input {
         float: right;
         margin: 10px 0 0 0;

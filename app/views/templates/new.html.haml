@@ -8,7 +8,7 @@
           = label_tag "Gist/Github File URL"
           = text_field_tag :github_url, nil, :placeholder=> 'Paste here your gist or github URL here...'
     - if flash[:invalid]
-      %h2.invalid= flash[:invalid]
+      .invalid= flash[:invalid]
     %fieldset.buttons
       %ol
         %li= submit_tag 'Next', :class => "rounded-all"

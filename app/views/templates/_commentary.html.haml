@@ -1,0 +1,7 @@
+.comment.rounded-all
+  = simple_format commentary.commentary
+.comment-author.rounded-all
+  .gravatar= gravatar_for commentary.githubber, 30
+  .author
+    .login= link_to commentary.githubber.name, "http://github.com/#{commentary.githubber.login}", :target => "_blank"
+    .when= commentary.created_at.to_s(:long)

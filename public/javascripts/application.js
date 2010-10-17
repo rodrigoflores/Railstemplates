@@ -37,17 +37,18 @@ var Application = {
 	},
 	commentaryCreation: function(){
 	  $("#new_commentary")
+	    .bind('ajax:loading', function(rawResponse, msg) {
+	      $("#commentaries").parent().find('.error').remove();
+	    })
 	    .bind('ajax:success', function(rawResponse,msg) {
-	      data = $.parseJSON(msg);
-				$("#commentary_commentary").removeClass("error").val("");
-	      var div = $("<div />").addClass('commentary').css("display", "none");
-	      div.append($("<p><strong>" + data.author.githubber.name + "</strong></p>"));
-	      div.append("<p>" + data.text + "</p>");
-
+	      var div = $("<div />").addClass('commentary').css("display", "none").html(msg);
 	      $('#commentaries').prepend(div);
+	      $('#commentary_commentary').val('');
 				div.slideDown();
 	    }).bind('ajax:failure', function(rawResponse, msg){
-				$("#commentary_commentary").addClass("error");
+	      
+	      
+				$("#commentaries .buttons li input").after($("<div />").text("This comment is not valid!").addClass('error'));
 	    });
     }
 };

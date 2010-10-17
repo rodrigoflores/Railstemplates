@@ -526,6 +526,61 @@ body {
             z-index: 1; }
         body #template-view #right .holder-content #tag_list a {
           color: #36424a; }
+        body #template-view #right .holder-content #commentaries p.notice {
+          margin: 0 0 10px 0; }
+        body #template-view #right .holder-content #commentaries .commentary {
+          float: left;
+          width: 100%;
+          margin: 0 0 10px 0; }
+        body #template-view #right .holder-content #commentaries .comment {
+          background: url("/images/embed/backgrounds/common2.png") repeat;
+          padding: 5px; }
+          body #template-view #right .holder-content #commentaries .comment p {
+            margin: 0 0 5px 0; }
+        body #template-view #right .holder-content #commentaries .comment-author {
+          padding: 5px; }
+          body #template-view #right .holder-content #commentaries .comment-author .gravatar {
+            float: left; }
+          body #template-view #right .holder-content #commentaries .comment-author .author {
+            margin: 0 0 0 10px;
+            float: left; }
+            body #template-view #right .holder-content #commentaries .comment-author .author .login {
+              font-size: 14px; }
+              body #template-view #right .holder-content #commentaries .comment-author .author .login a {
+                color: white; }
+            body #template-view #right .holder-content #commentaries .comment-author .author .when {
+              font-size: 10px; }
+        body #template-view #right .holder-content #commentaries form fieldset {
+          border: none; }
+          body #template-view #right .holder-content #commentaries form fieldset li {
+            list-style: none; }
+        body #template-view #right .holder-content #commentaries form .inputs label {
+          font-weight: bold;
+          margin: 0 0 5px 0;
+          display: block; }
+        body #template-view #right .holder-content #commentaries form .inputs textarea {
+          background: url("/images/embed/backgrounds/common2.png") repeat;
+          color: white;
+          padding: 2px;
+          width: 255px;
+          height: 200px;
+          font: 12px "Trebuchet MS", arial, sans-serif;
+          border: none; }
+        body #template-view #right .holder-content #commentaries form .buttons .error {
+          float: left;
+          width: 130px;
+          margin: 10px 0 0 0;
+          color: #c22d0a; }
+        body #template-view #right .holder-content #commentaries form .buttons input {
+          float: right;
+          margin: 10px 0 0 0;
+          padding: 4px 10px;
+          border: none;
+          font-size: 18px;
+          color: white;
+          background: url("/images/embed/backgrounds/common4.png") repeat; }
+        body #template-view #right .holder-content #commentaries form .buttons input:hover {
+          background: url("/images/embed/backgrounds/common3.png") repeat; }
   body #all-templates ul {
     list-style: none; }
     body #all-templates ul li {

@@ -535,7 +535,8 @@ body {
         body #template-view #right .holder-content #commentaries .comment {
           background: url("/images/embed/backgrounds/common2.png") repeat;
           padding: 5px;
-          position: relative; }
+          position: relative;
+          margin: 0 0 2px 0; }
           body #template-view #right .holder-content #commentaries .comment p {
             margin: 0 0 5px 0; }
           body #template-view #right .holder-content #commentaries .comment .arrow-comment {

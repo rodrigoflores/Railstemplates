@@ -7,8 +7,10 @@
   #downloads
   = pluralize_with_html @template.download_counter, "Download"
 
-  = link_to 'Like it', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
-  
+  - if githubber_signed_in?
+    = link_to 'Like it', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
+  - else
+    = link_to 'Like it', new_githubber_session_path, :id => 'like_button'
   
   #working_status
     %h2 Working?

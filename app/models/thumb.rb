@@ -4,3 +4,15 @@ class Thumb < ActiveRecord::Base
   
   validates_uniqueness_of(:githubber_id, :scope_id => [:template_id])
 end
+
+# == Schema Information
+#
+# Table name: thumbs
+#
+#  id           :integer(4)      not null, primary key
+#  up           :boolean(1)
+#  template_id  :integer(4)
+#  githubber_id :integer(4)
+#  created_at   :datetime
+#  updated_at   :datetime
+#

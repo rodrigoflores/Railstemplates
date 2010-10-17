@@ -6,12 +6,22 @@
     = pluralize_with_html @template.likes.count, "Like"
   #downloads
   = pluralize_with_html @template.download_counter, "Download"
-  = pluralize_with_html @template.works, "Work"
 
-  = link_to 'Like', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
-  = link_to 'work', template_works_path(@template, :work => true), :method => :put, :id => 'work_button', :remote => true
-  = link_to "don't work", template_works_path(@template, :work => false), :method => :put, :id => 'work_button', :remote => true
-
+  - if githubber_signed_in?
+    = link_to 'Like it', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
+  - else
+    = link_to 'Like it', new_githubber_session_path, :id => 'like_button'
+  
+  #working_status
+    %h2 Working?
+    %ul
+      -if githubber_signed_in?
+        %li= link_to 'Yes !', template_works_path(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
+        %li= link_to "No :(", template_works_path(@template, :work => false), :method => :POST, :id => 'not_work_button', :remote => true
+      - else
+        %li= link_to 'Yes!', new_githubber_session_path, :id => 'work_button'
+        %li= link_to 'No :(', new_githubber_session_path, :id => 'not_work_button'
+    / working status goes here
 %p
   %strong Download Link
   = link_to download_url(@template), download_url
@@ -19,8 +29,7 @@
 
 = @template.description
 
-%p= @template.tag_list
-
+%p.tag_list= @template.tags.map { |t| content_tag(:span, t)}.join(", ").html_safe
 
 #sample{:'data-url' => @template.gist_file}
   %h2 Sample

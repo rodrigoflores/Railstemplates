@@ -1,5 +1,7 @@
 Railstemplates::Application.routes.draw do
 
+  devise_for :githubbers
+
   authenticate :githubber do
     
     resources :templates, :except => [:index, :show] do
@@ -15,12 +17,13 @@ Railstemplates::Application.routes.draw do
   end
 
   resources :templates, :only => :show
+  match '/templates', :to => redirect("/all")
   get "/download/:id", :to => "templates#download", :as => :download
-  devise_for :githubbers
+  get '/all', :to => "templates#all", :as => :all_templates
   
   get "/search", :to => "searches#search", :as => :search
-  get '/all', :to => "templates#all", :as => :all_templates
   root :to => "pages#index"
+  
   constraints(DownloadConstraint) do
     match "/:id",  :to => "templates#download"
   end

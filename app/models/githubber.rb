@@ -23,8 +23,8 @@ class Githubber < ActiveRecord::Base
     likes.create(:template => template)
   end
   
-  def work(template, work)
-    thumbs.create(:template => template, :work => work)
+  def work(template, working)
+    thumbs.create(:template => template, :up => working)
   end
   
 end

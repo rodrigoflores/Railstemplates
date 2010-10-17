@@ -11,4 +11,4 @@ ssh_opts = '-A'
 
 user = 'deploy'
 path = '/home/deploy'
-app_folder = 'rails3templates'
+

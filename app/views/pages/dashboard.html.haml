@@ -1,1 +1,20 @@
-= link_to "Create a new template", new_template_path
+%section#left
+  #my-templates
+    %h2 # My Templates
+    %ul
+      - current_githubber.templates.each do |template|
+        %li{ :class => cycle( "one", "two")}
+          %table
+            %tr
+              %td.name-template= link_to template.title, template
+              %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
+              %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template"
+  .break
+  #liked
+    %h2 # Favourite templates
+    %ul
+      - 10.times do
+        %li{ :class => cycle( "one", "two")}
+          = link_to "Title", "#"
+%section#right
+  = link_to "Create a new template", new_template_path, :class => "link-default"

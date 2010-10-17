@@ -21,13 +21,17 @@ a:hover {
   display: block; }
 
 .link-default {
-  margin: 11px 0 0;
   font-size: 14px;
-  padding: 4px 26px 4px 5px;
-  background: url("../images/embed/icons/github.png") right -32px no-repeat;
+  padding: 4px 5px;
+  background: url("../images/embed/backgrounds/common.png") repeat;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
-  border-radius: 6px; }
+  border-radius: 6px;
+  float: left; }
+
+.link-default:hover {
+  background: url("../images/embed/backgrounds/common3.png") repeat;
+  text-decoration: none; }
 
 .line-divisor {
   margin: 25px 0;
@@ -38,6 +42,20 @@ a:hover {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+  table td a.edit-template,
+  table td a.delete-template {
+    background: url("../images/embed/icons/edit.png") right 0 no-repeat;
+    height: 16px;
+    float: left;
+    padding: 0 20px 0 0; }
+  table td a.delete-template {
+    background: url("../images/embed/icons/delete.png") right 0 no-repeat; }
+  table td.name-template {
+    width: 80%; }
 
 body {
   color: #36424a;
@@ -143,6 +161,8 @@ body {
         background-position: 0 top; }
   body #footer {
     float: left; }
+  body #main {
+    float: left; }
   body #holder-home {
     width: 980px;
     float: left;
@@ -169,11 +189,13 @@ body {
         font-size: 26px;
         font-weight: normal;
         background: url("../images/embed/texts/title2.png") no-repeat;
-        height: 25px;
+        height: 27px;
         width: 775px;
         margin: 10px 20px 20px 20px; }
   body #ranked,
-  body #latest {
+  body #latest,
+  body #liked,
+  body #my-templates {
     margin: 30px 0 0 0;
     width: 465px;
     padding: 10px;
@@ -183,41 +205,77 @@ body {
     -webkit-border-radius: 6px;
     border-radius: 6px; }
     body #ranked h2,
-    body #latest h2 {
+    body #latest h2,
+    body #liked h2,
+    body #my-templates h2 {
       float: left;
       width: 100%;
-      color: white;
+      color: #36424a;
       margin: 0 0 20px;
       font-size: 16px; }
     body #ranked ul,
-    body #latest ul {
+    body #latest ul,
+    body #liked ul,
+    body #my-templates ul {
       list-style: none;
       float: left;
       width: 100%; }
       body #ranked ul li,
-      body #latest ul li {
+      body #latest ul li,
+      body #liked ul li,
+      body #my-templates ul li {
         float: left;
         width: 457px;
         padding: 8px 4px; }
         body #ranked ul li a,
         body #ranked ul li span,
         body #latest ul li a,
-        body #latest ul li span {
+        body #latest ul li span,
+        body #liked ul li a,
+        body #liked ul li span,
+        body #my-templates ul li a,
+        body #my-templates ul li span {
           float: left; }
         body #ranked ul li a,
-        body #latest ul li a {
+        body #latest ul li a,
+        body #liked ul li a,
+        body #my-templates ul li a {
           margin: 0 5px 0 0; }
         body #ranked ul li span,
-        body #latest ul li span {
+        body #latest ul li span,
+        body #liked ul li span,
+        body #my-templates ul li span {
           color: #36424a; }
           body #ranked ul li span em,
-          body #latest ul li span em {
+          body #latest ul li span em,
+          body #liked ul li span em,
+          body #my-templates ul li span em {
             color: #cccaa9; }
       body #ranked ul .one,
-      body #latest ul .one {
+      body #latest ul .one,
+      body #liked ul .one,
+      body #my-templates ul .one {
         background: url("../images/embed/backgrounds/common2.png") repeat; }
       body #ranked ul li:hover,
-      body #latest ul li:hover {
+      body #latest ul li:hover,
+      body #liked ul li:hover,
+      body #my-templates ul li:hover {
         background: url("../images/embed/backgrounds/common4.png") repeat; }
   body #ranked {
     float: right; }
+  body #my-templates {
+    margin: 0; }
+
+section#left {
+  float: left;
+  width: 700px; }
+  section#left #my-templates,
+  section#left #liked {
+    width: 670px; }
+    section#left #my-templates li,
+    section#left #liked li {
+      width: 662px; }
+
+section#right {
+  float: right;
+  width: 300px; }

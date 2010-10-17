@@ -2,7 +2,7 @@
   - @templates.each do |template|
     %tr
       %td= link_to template.title, template
-      %td= link_to 'edit', edit_template_path(template)
-      %td= link_to 'delete', template_path(template), :method => :delete
+      %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
+      %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template"
 
 = will_paginate @templates

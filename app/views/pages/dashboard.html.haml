@@ -8,7 +8,7 @@
             %tr
               %td.name-template= link_to template.title, template
               %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
-              %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template"
+              %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template", :confirm => "Are you sure? There's no undo!"
   .break
   #liked.rounded-all
     %h2 # Favourite templates

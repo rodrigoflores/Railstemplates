@@ -24,17 +24,16 @@ class Template < ActiveRecord::Base
   end
   
   def download!
-    increment(:download_counter)
-    save
+    increment!(:download_counter)
     content
   end
   
-  def works
-    self.thumbs.count(:conditions => { :up => true })
+  def upvotes
+    self.thumbs.where(:up => true).count
   end
   
-  def not_works
-    self.thumbs.count(:conditions => { :up => false })
+  def downvotes
+    self.thumbs.where(:up => false).count
   end
 
 end

@@ -18,7 +18,7 @@ class LikesController < ApplicationController
     template = Template.find(params[:template_id])
     like = current_githubber.unlike_it template
     if like
-      render :json => { :status => "OK" }
+      render :json => {}
     else
       render :json => {}, :status => 406
     end

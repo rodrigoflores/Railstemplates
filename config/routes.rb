@@ -17,7 +17,6 @@ Railstemplates::Application.routes.draw do
 
   resources :templates, :only => [:show, :index]
   get "/download/:id", :to => "templates#download", :as => :download
-  get '/all', :to => "templates#all", :as => :all_templates
 
   get "/search", :to => "searches#search", :as => :search
 

@@ -40,7 +40,7 @@ feature "My Templates", %q{
     page.should have_content template.reload.description
   end
   
-  scenario "Delete template" do
+  scenario "Deleting template", :js => true do
     template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
     click_link "Dashboard"
     click_link "Delete"

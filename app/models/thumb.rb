@@ -16,16 +16,3 @@ end
 #  created_at   :datetime
 #  updated_at   :datetime
 #
-
-# == Schema Information
-#
-# Table name: thumbs
-#
-#  id           :integer(4)      not null, primary key
-#  up           :boolean(1)
-#  template_id  :integer(4)
-#  githubber_id :integer(4)
-#  created_at   :datetime
-#  updated_at   :datetime
-#
-

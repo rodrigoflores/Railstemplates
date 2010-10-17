@@ -24,7 +24,7 @@ class Githubber < ActiveRecord::Base
   end
   
   def unlike_it(template)
-    like = likes.first(:conditions => { :template_id => template.id })
+    like = likes.first(:template => template)
     like.destroy if like
   end
   

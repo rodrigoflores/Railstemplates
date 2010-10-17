@@ -6,7 +6,7 @@
     %h2 Code Viewer
     .holder-content
       // Template
-      #source_code{:'data-url' => @template.gist_file}
+      #source_code.loading{:'data-url' => @template.gist_file}
 
   // Right Column
   %section#right.rounded-all

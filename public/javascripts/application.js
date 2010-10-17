@@ -26,6 +26,7 @@ var Templates = {
 				var preview = $("<code class='prettyprint' />");
 				sample.append(preview.html(response.content.replace(/\n/ig, '<br />')));
 				prettyPrint();
+				sample.removeClass("loading");
 			});
 		}
 	}

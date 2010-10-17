@@ -35,7 +35,6 @@ class Template < ActiveRecord::Base
   def downvotes
     self.thumbs.where(:up => false).count
   end
-
 end
 
 

@@ -47,6 +47,7 @@ class Template < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: templates
@@ -54,7 +55,7 @@ end
 #  id               :integer(4)      not null, primary key
 #  title            :string(255)
 #  description      :string(255)
-#  gist_file        :string(255)
+#  source_url       :string(255)
 #  githubber_id     :integer(4)
 #  created_at       :datetime
 #  updated_at       :datetime

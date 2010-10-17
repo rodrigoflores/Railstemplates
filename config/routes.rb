@@ -21,7 +21,7 @@ Railstemplates::Application.routes.draw do
   get "/download/:id", :to => "templates#download", :as => :download
   get '/all', :to => "templates#all", :as => :all_templates
   
-  et "/search", :to => "searches#search", :as => :search
+  get "/search", :to => "searches#search", :as => :search
   root :to => "pages#index"
   
   constraints(DownloadConstraint) do

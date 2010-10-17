@@ -1,4 +1,4 @@
-%h2= "Searching for #{params[:search]}"
+%h1.parent_title= "Searching for #{params[:search]}"
 
 
 %p
@@ -6,6 +6,16 @@
   = @total
   results for  
   = "\'#{params[:search]}\'"
-%ul
-  - @templates.each do |template|
-    %li= link_to template.title, template_path(template)
+  #all-templates
+    %ul
+      - @templates.each do |template|
+        %li
+          %section#left.rounded-all
+            %h2= link_to template.title, template
+            = simple_format template.description
+          %section#right.rounded-all
+            %p.download= pluralize(template.download_counter, "person has downloaded it", "people have downloaded it")
+            %p.liked= pluralize(template.likes.count, "person like it", "people like it")
+
+
+    = will_paginate @templates

@@ -22,4 +22,11 @@ feature "Comment A Template", %q{
       click_button "Create Commentary"
     }.to change(@template.commentaries, :count).by(1)    
   end
+  
+  scenario "should say that you must be logged in to comment", :js => true do
+    click_link "All templates"
+    pending "A error on the page"
+    click_link @template.title
+    page.should have_content("Log in to comment this template")
+  end
 end

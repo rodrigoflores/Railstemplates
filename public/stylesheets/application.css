@@ -92,8 +92,7 @@ body {
       width: 417px;
       height: 54px; }
     body header #current_githubber {
-      float: right;
-      width: 324px; }
+      float: right; }
       body header #current_githubber img {
         float: left;
         background: url("/images/embed/backgrounds/common.png") repeat;
@@ -105,7 +104,7 @@ body {
       body header #current_githubber p {
         float: left;
         font-size: 16px;
-        margin: 15px 0 0 10px;
+        margin: 15px 20px 0 10px;
         color: white; }
       body header #current_githubber em {
         color: #36424a; }
@@ -431,7 +430,11 @@ body {
       -webkit-border-radius: 0px 6px 6px 6px;
       border-radius: 0px 6px 6px 6px; }
       body #template-view #right h2 {
+        margin-bottom: 3px; }
+      body #template-view #right .author {
         margin-bottom: 10px; }
+        body #template-view #right .author a {
+          color: #cccccc; }
       body #template-view #right .corner {
         position: absolute;
         top: 0px;

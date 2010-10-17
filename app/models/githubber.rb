@@ -27,6 +27,9 @@ class Githubber < ActiveRecord::Base
     thumbs.create(:template => template, :up => working)
   end
   
+  def liked?(template)
+    !!likes.find_by_template_id(template.id)
+  end
 end
 
 

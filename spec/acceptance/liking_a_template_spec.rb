@@ -8,20 +8,25 @@ feature "Liking a template", %q{
   
   background do
     stub_oauth!
-    sign_in!
     visit homepage
+    @template = Factory(:template, :title => 'belem do para', :description => "Trolololo.", :githubber => Factory(:githubber))
   end
 
-  scenario "Liking a template", :js => true do
-    template = Factory(:template, :title => 'belem do para', :description => "Trolololo.", :githubber => Factory(:githubber))
+  scenario "Trying to like a template when not authenticated" do
     click_link "All templates"
-    click_link template.title
+    click_link @template.title
+    click_link "I like it"
+    should_be_on "githubbers/sign_in"
+  end
+  scenario "Liking a template", :js => true do
+    sign_in!
+    click_link "All templates"
+    click_link @template.title
     
     page.should have_content "0 people like it"
     click_link 'I like it'
 
-    click_link "All templates"
-    click_link template.title
     page.should have_content "1 person like it"
+    page.should_not have_css "#like_button"
   end
 end

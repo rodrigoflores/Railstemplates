@@ -28,15 +28,7 @@
           / = clippy download_url(@template)
         = pluralize(@template.download_counter, "person has downloaded it", "people have downloaded it")
       .line-divisor.rounded-all
-      #likes
-        %h3 Popularity
-        %p= pluralize(@template.likes.count, "person like it", "people like it")
-        .link-default.rounded-all
-          - if githubber_signed_in?
-            = link_to 'I like it', template_likes_path(@template), :method => :POST, :id => 'like_button', :remote => true
-          - else
-            = link_to 'I like it', new_githubber_session_path, :id => 'like_button'
-        .break
+      = render :partial => 'like_status', :locals => { :template => @template }
       .line-divisor.rounded-all
       #working_status
         %h3 Did it work for you?

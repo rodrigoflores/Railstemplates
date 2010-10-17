@@ -66,11 +66,12 @@
 
       #commentaries
         %h3 Comments
-        - if @template.commentaries.size > 0
-          - @template.commentaries.reverse.each do |commentary|
-            .commentary= render :partial => "commentary", :object => commentary
-        - else
-          %p.notice Be the first to comment about this template!
+        .comments-list
+          - if @template.commentaries.size > 0
+            - @template.commentaries.reverse.each do |commentary|
+              .commentary= render :partial => "commentary", :object => commentary
+          - else
+            %p.notice Be the first to comment about this template!
           
         - if current_githubber
           - semantic_form_for @commentary, :url => template_commentaries_path(@template), :remote => true, :html => { "data-type" => "html" } do |form|

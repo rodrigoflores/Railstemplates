@@ -9,6 +9,7 @@ class TemplatesController < InheritedResources::Base
 
   def show
     @template = Template.find(params[:id])
+    @commentary = @template.commentaries.new(:githubber_id => current_githubber.try(:id))
     respond_with(@template)
   end
 

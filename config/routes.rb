@@ -7,6 +7,7 @@ Railstemplates::Application.routes.draw do
     resources :templates, :except => [:index, :show] do
       resources :likes, :only => :create
       resources :works, :only => :create
+      resources :commentaries, :only => :create
     end
     resources :gists, :only => [:new, :create]
     resources :repos, :only => [:new, :create]

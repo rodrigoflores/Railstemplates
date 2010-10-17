@@ -6,6 +6,7 @@ describe Githubber do
     it { should have_many :likes }
     it { should have_many :templates }
     it { should have_many :thumbs }
+    it { should have_many :commentaries }
   end
   
   describe "liked?" do

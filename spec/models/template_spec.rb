@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Template do
   it { should have_many :likes }
   it { should have_many :thumbs}
+  it { should have_many :commentaries }
   it { should belong_to :githubber}
   it { should validate_presence_of :title, :gist_file }
 

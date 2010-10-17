@@ -16,6 +16,7 @@ class Template < ActiveRecord::Base
 
   has_many :likes, :dependent => :delete_all
   has_many :thumbs, :dependent => :delete_all
+  has_many :commentaries, :dependent => :delete_all
   belongs_to :githubber
   validates :title, :gist_file, :presence => true
   

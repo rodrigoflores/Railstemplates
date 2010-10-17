@@ -1,9 +1,9 @@
-#holder-home
+#holder-home.rounded-all
   #home-message
     %h1.replacement Take a shortcut to your templates
     %h2.replacement Find the best to kick off your project
 
-#latest
+#latest.rounded-all
   %h2 # Most Downloaded
   %ul
     - @latest.each do |template|
@@ -13,7 +13,7 @@
           %em -
           = time_ago_in_words(template.created_at)
 
-#ranked
+#ranked.rounded-all
   %h2 # Most Liked
   %ul
     - @ranked.each do |ranked|

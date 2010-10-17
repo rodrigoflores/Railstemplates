@@ -2,9 +2,11 @@ embed_images: datauri
 
 javascripts:
   base:
+    - public/javascripts/plugins/jquery-ui.js
     - public/javascripts/rails.js
     - public/javascripts/plugins/prettify.js
     - public/javascripts/plugins/jquery.placeholder-1.0.1.js
+    - public/javascripts/plugins/droapps-ui.customselect.js
     - public/javascripts/application.js
 stylesheets:
   base:

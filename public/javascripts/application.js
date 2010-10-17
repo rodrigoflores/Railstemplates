@@ -30,9 +30,16 @@ var Html5 = {
 	}
 }
 
+var Front = {
+	customSelect: function() {
+		$('select').customselect();
+	}
+}
+
 $(function() {
 	Templates.preview();
 	Html5.placeholder();
+	Front.customSelect();
   // Application.like();
   // Application.work();
 });

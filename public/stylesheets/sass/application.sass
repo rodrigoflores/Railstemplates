@@ -27,9 +27,6 @@ a:hover
   font-size: 14px
   padding: 4px 5px
   background: url("../images/embed/backgrounds/common.png") repeat
-  -moz-border-radius: 6px
-  -webkit-border-radius: 6px
-  border-radius: 6px
   float: left
 
 .link-default:hover
@@ -43,9 +40,6 @@ a:hover
   width: 996px
   padding: 2px
   background: url("../images/embed/backgrounds/common3.png") repeat
-  -moz-border-radius: 6px
-  -webkit-border-radius: 6px
-  border-radius: 6px
 
 table
   width: 100%
@@ -63,6 +57,17 @@ table
   td.name-template
     width: 80%
 
+.rounded-all
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  border-radius: 6px
+
+h2
+  float: left
+  width: 100%
+  color: #36424A
+  margin: 0 0 20px
+  font-size: 16px
 
 // Structure --------------------
 body
@@ -70,11 +75,13 @@ body
   font: 12px "Trebuchet MS", arial, sans-serif
   background: url("../images/embed/backgrounds/main.jpg") repeat
   article
+    display: block
     margin: 0 auto
     width: 1000px
 
   // HEADER ----------------------
   header
+    display: block
     margin: 36px 0 0
     width: 100%
     float: left
@@ -112,9 +119,6 @@ body
         font-size: 14px
         padding: 4px 26px 4px 5px
         background: url("../images/embed/icons/github.png") right -32px no-repeat
-        -moz-border-radius: 6px
-        -webkit-border-radius: 6px
-        border-radius: 6px
       a:hover
         text-decoration: none
         background: url("../images/embed/icons/github.png") right -2px no-repeat
@@ -131,17 +135,11 @@ body
           font-size: 14px
           padding: 3px 5px
           background: url("../images/embed/backgrounds/common.png") repeat
-          -moz-border-radius: 6px
-          -webkit-border-radius: 6px
-          border-radius: 6px
         a:hover
           text-decoration: none
           background: url("../images/embed/backgrounds/common3.png") repeat
     .sign-in
       float: right
-      -moz-border-radius: 6px
-      -webkit-border-radius: 6px
-      border-radius: 6px
 
     // SEARCH AREA --------------
     #search_box
@@ -149,9 +147,6 @@ body
       width: 324px
       height: 47px
       background: url("../images/embed/backgrounds/common.png") repeat
-      -moz-border-radius: 6px
-      -webkit-border-radius: 6px
-      border-radius: 6px
       label
         display: none
       input
@@ -180,10 +175,12 @@ body
 
   // FOOTER -------------------
   #footer
+    display: block
     float: left
 
   // MAIN ---------------------
   #main
+    display: block
     float: left
 
   // HOME ---------------------
@@ -192,9 +189,6 @@ body
     float: left
     padding: 10px
     background: url("../images/embed/backgrounds/common3.png") repeat
-    -moz-border-radius: 6px
-    -webkit-border-radius: 6px
-    border-radius: 6px
     #home-message
       background: url("../images/embed/backgrounds/common2.png") repeat
       color: #fff
@@ -227,9 +221,6 @@ body
     padding: 10px
     float: left
     background: url("../images/embed/backgrounds/common.png") repeat
-    -moz-border-radius: 6px
-    -webkit-border-radius: 6px
-    border-radius: 6px
     h2
       float: left
       width: 100%
@@ -263,15 +254,63 @@ body
     float: right
   #my-templates
     margin: 0
-// Dashboard -------------------
-section#left
-  float: left
-  width: 700px
-  #my-templates,
-  #liked
-    width: 670px
-    li
-      width: 662px
-section#right
-  float: right
-  width: 300px
+
+  // Dashboard -------------------
+  section#left
+    display: block
+    float: left
+    width: 700px
+    #my-templates,
+    #liked
+      width: 670px
+      li
+        width: 662px
+  section#right
+    display: block
+    float: right
+    width: 300px
+
+  // Create Template --------------
+  #create-template
+    width: 980px
+    float: left
+    background: url("../images/embed/backgrounds/common.png") repeat
+    padding: 10px
+    form
+      float: left
+      width: 100%
+      fieldset
+        border: none
+        ol
+          list-style: none
+      fieldset.inputs
+        label
+          float: left
+          width: 100%
+          margin: 10px 0 8px
+          abbr
+            display: none
+        input,
+        textarea
+          float: left
+          padding: 2px
+          width: 978px
+          height: 35px
+          border: none
+          font-size: 18px
+          color: #fff
+          background: url("../images/embed/backgrounds/common2.png") repeat
+        textarea
+          height: 200px
+          font: 18px "Trebuchet MS", arial, sans-serif
+      fieldset.buttons
+        input
+          float: right
+          margin: 10px 0 0 0
+          padding: 4px 10px
+          border: none
+          font-size: 18px
+          color: #fff
+          background: url("../images/embed/backgrounds/common4.png") repeat
+        input:hover
+          background: url("../images/embed/backgrounds/common3.png") repeat

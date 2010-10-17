@@ -25,12 +25,12 @@
       %header
         = link_to "Rails Templates", root_path, :id => "rails-templates", :class => "replacement"
         = render :partial => 'shared/header'
-      .line-divisor
+      .line-divisor.rounded-all
       // MAIN CONTENT
       %section#main
         = yield
       // FOOTER
-      .line-divisor
+      .line-divisor.rounded-all
       %section#footer
         = render :partial => 'shared/footer'
 

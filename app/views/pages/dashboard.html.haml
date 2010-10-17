@@ -1,5 +1,5 @@
 %section#left
-  #my-templates
+  #my-templates.rounded-all
     %h2 # My Templates
     %ul
       - current_githubber.templates.each do |template|
@@ -10,11 +10,11 @@
               %td= link_to 'Edit', edit_template_path(template), :class => "edit-template"
               %td= link_to 'Delete', template_path(template), :method => :delete, :class => "delete-template"
   .break
-  #liked
+  #liked.rounded-all
     %h2 # Favourite templates
     %ul
       - 10.times do
         %li{ :class => cycle( "one", "two")}
           = link_to "Title", "#"
 %section#right
-  = link_to "Create a new template", new_template_path, :class => "link-default"
+  = link_to "Create a new template", new_template_path, :class => "link-default rounded-all"

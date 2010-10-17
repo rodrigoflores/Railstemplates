@@ -1,9 +1,9 @@
-
-%h1 First step
-
-explanation text goes here
-= form_for @template do
-  = text_field_tag :github_url
-  = submit_tag 'Next'
-  
- 
+#create-template.rounded-all
+  %h2 Step 1
+  = form_for @template do
+    %fieldset.inputs
+      %ol
+        %li= text_field_tag :github_url, nil, :placeholder=>'Paste here your gist URL'
+    %fieldset.buttons
+      %ol
+        %li= submit_tag 'Next', :class => "rounded-all"

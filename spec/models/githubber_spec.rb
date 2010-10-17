@@ -19,6 +19,17 @@ describe Githubber do
     end
   end
 
+  describe "voted?" do
+    let(:githubber) { Factory(:githubber) }
+    let(:template) { Factory(:template) }
+
+    it "verifies if the githubber had voted the template" do
+      githubber.voted?(template).should be_false
+      githubber.vote(template, true)
+      githubber.voted?(template).should be_true
+    end
+  end
+
 end
 
 

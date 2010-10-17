@@ -40,6 +40,10 @@ class Githubber < ActiveRecord::Base
   def liked?(template)
     !!likes.find_by_template_id(template.id)
   end
+
+  def voted?(template)
+    !!thumbs.find_by_template_id(template.id)
+  end
 end
 
 

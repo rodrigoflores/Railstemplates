@@ -37,14 +37,15 @@ $(function() {
 
 	function workingStatus() {
 
+		var elements = $("#not_work_button[data-remote], #work_button[data-remote]"),
+				loader   = $("#working_status .holder-content img");
+
 		function UpdateStats(event, response) {
 			var stats = $.parseJSON(response);
 			$(".work").css({width: stats.working[1] + "%"}).attr("title", pluralize(stats.working[0], "vote", "votes"));
 			$(".doesnt-work").css({width: stats.not_working[1] + "%"}).attr("title", pluralize(stats.not_working[0], "vote", "votes"));
+			elements.attr("href", "javascript:;");
 		};
-
-		var elements = $("#not_work_button[data-remote], #work_button[data-remote]"),
-			loader   = $("#working_status .holder-content img");
 
 		elements.bind('ajax:success', UpdateStats).bind('ajax:loading',
 		function() {

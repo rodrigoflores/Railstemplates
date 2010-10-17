@@ -177,18 +177,21 @@ body {
         margin: 0 0 10px 0;
         font-size: 12px; }
   body #explanation,
+  body #error,
   body #holder-home {
     width: 980px;
     float: left;
     padding: 10px;
     background: url("/images/embed/backgrounds/common3.png") repeat; }
     body #explanation .home-message,
+    body #error .home-message,
     body #holder-home .home-message {
       background: url("/images/embed/backgrounds/common2.png") repeat;
       color: white;
       float: left;
       width: 100%; }
       body #explanation .home-message h1,
+      body #error .home-message h1,
       body #holder-home .home-message h1 {
         font-size: 40px;
         font-weight: normal;
@@ -198,6 +201,7 @@ body {
         float: left;
         margin: 20px 15px; }
       body #explanation .home-message h2,
+      body #error .home-message h2,
       body #holder-home .home-message h2 {
         float: right;
         font-size: 26px;
@@ -206,14 +210,30 @@ body {
         height: 27px;
         width: 775px;
         margin: 10px 20px 20px 20px; }
-  body #explanation {
+  body #explanation,
+  body #error {
     margin: 20px 0 0 0;
     background: url("/images/embed/backgrounds/common3.png") repeat; }
-    body #explanation .home-message {
+    body #explanation .home-message,
+    body #error .home-message {
       background: url("/images/embed/backgrounds/common2.png") repeat; }
-      body #explanation .home-message p {
+      body #explanation .home-message p,
+      body #error .home-message p {
         margin: 10px;
         font-size: 18px; }
+  body #error .home-message h1,
+  body #error .home-message p {
+    width: 100%;
+    margin: 20px 0;
+    padding: 0 0 85px 0;
+    text-align: center;
+    background: url("/images/embed/icons/404.png") center bottom no-repeat;
+    text-indent: none; }
+  body #error .home-message h1 {
+    padding: 0;
+    background: none; }
+  body #error .home-message p.other-error {
+    background: url("/images/embed/icons/500.png") center bottom no-repeat; }
   body #ranked,
   body #latest,
   body #liked,

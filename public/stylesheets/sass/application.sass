@@ -200,6 +200,7 @@ body
 
   // HOME ---------------------
   #explanation,
+  #error,
   #holder-home
     width: 980px
     float: left
@@ -227,7 +228,8 @@ body
         width: 775px
         margin: 10px 20px 20px 20px
 
-  #explanation
+  #explanation,
+  #error
     margin: 20px 0 0 0
     background: url("/images/embed/backgrounds/common3.png") repeat
     .home-message
@@ -235,6 +237,22 @@ body
       p
         margin: 10px
         font-size: 18px
+
+  #error
+    .home-message
+      h1,
+      p
+        width: 100%
+        margin: 20px 0
+        padding: 0 0 85px 0
+        text-align: center
+        background: url("/images/embed/icons/404.png") center bottom no-repeat
+        text-indent: none
+      h1
+        padding: 0
+        background: none
+      p.other-error
+        background: url("/images/embed/icons/500.png") center bottom no-repeat
 
   // Most downloaded ---------
   #ranked,

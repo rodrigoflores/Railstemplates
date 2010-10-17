@@ -1,2 +1,5 @@
-%h2 Sign in
-= link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"
+%h1.parent-title Sign in
+#create-template.rounded-all.textbox
+  %p
+    The you are trying to access needs you get logged in. 
+  %p= link_to "Sign in using Github", githubber_oauth_authorize_url(:github), :title => "Sign in using Github"

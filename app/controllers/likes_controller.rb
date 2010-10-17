@@ -11,5 +11,15 @@ class LikesController < ApplicationController
       render :json => {}, :status => 406
     end
   end
+  
+  def destroy
+    template = Template.find(params[:template_id])
+    like = current_githubber.unlike_it template
+    if like
+      render :json => { :status => "OK" }
+    else
+      render :json => {}, :status => 406
+    end
+  end
 
 end

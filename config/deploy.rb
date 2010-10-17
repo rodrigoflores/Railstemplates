@@ -5,6 +5,7 @@ hosts = %w(railstemplates)
 
 before_restarting_server do
   run "jammit"
+  run "RAILS_ENV=production rake ts:reindex"
 end
 
 ssh_opts = '-A'

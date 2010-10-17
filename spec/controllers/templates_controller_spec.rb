@@ -6,7 +6,7 @@ describe TemplatesController do
       gist = mock
       gist.stub!(:body).and_return("GIST CONTENT")
       HTTParty.stub!(:get).with("http://gist.github.com/raw/666/foo").and_return(gist)
-      template = Factory(:template, :gist_file => "http://gist.github.com/raw/666/foo", :id => 47)
+      template = Factory(:template, :source_url => "http://gist.github.com/raw/666/foo", :id => 47)
     end
 
     it "downloads the template content" do

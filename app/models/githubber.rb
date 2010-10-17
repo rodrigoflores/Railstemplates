@@ -24,12 +24,26 @@ class Githubber < ActiveRecord::Base
     likes.create(:template => template)
   end
   
+  def unlike_it(template)
+    like = likes.first(:conditions => { :template_id => template.id })
+    like.destroy if like
+  end
+  
   def vote(template, working)
-    thumbs.create(:template => template, :up => working)
+    current_vote = thumbs.first(:conditions => { :template_id => template.id })
+    if current_vote
+      current_vote.update_attributes(:up => working)
+    else
+      thumbs.create(:template => template, :up => working)
+    end
   end
   
   def liked?(template)
     !!likes.find_by_template_id(template.id)
+  end
+
+  def voted?(template)
+    !!thumbs.find_by_template_id(template.id)
   end
 end
 

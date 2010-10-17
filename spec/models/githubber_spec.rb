@@ -20,6 +20,28 @@ describe Githubber do
     end
   end
 
+  describe "unlike_it" do
+    let(:githubber) { Factory(:githubber) }
+    let(:template) { Factory(:template) }
+
+    it "destroys the like" do
+      githubber.like_it(template)
+      githubber.unlike_it(template)
+      githubber.liked?(template).should be_false
+    end
+  end
+
+  describe "voted?" do
+    let(:githubber) { Factory(:githubber) }
+    let(:template) { Factory(:template) }
+
+    it "verifies if the githubber had voted the template" do
+      githubber.voted?(template).should be_false
+      githubber.vote(template, true)
+      githubber.voted?(template).should be_true
+    end
+  end
+
 end
 
 

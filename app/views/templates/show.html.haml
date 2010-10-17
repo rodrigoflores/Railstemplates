@@ -8,7 +8,7 @@
     %h2 Code Viewer
     .holder-content
       // Template
-      #source_code.loading{:'data-url' => @template.gist_file}
+      #source_code.loading{:'data-url' => @template.source_url}
 
   // Right Column
   %section#right.rounded-all
@@ -21,13 +21,14 @@
       = link_to @template.githubber.name, "http://github.com/#{@template.githubber.login}"
 
     .holder-content
-      // Template's Descrition
-      %p= @template.description
-      .line-divisor.rounded-all
+      - unless @template.description.blank?
+        // Template's Descrition
+        %p= @template.description
+        .line-divisor.rounded-all
       #downloads
         %h3 Downloads
         .holder-content.rounded-all
-          = link_to download_url(@template), download_url
+          = link_to download_url(@template), download_url(@template)
           %span.notice Copied to Clipboard!
           #d_clip_button{ :title => "Copy to Clipboard"}
 
@@ -45,7 +46,7 @@
               .holder-content.rounded-all
                 = render :partial => 'working_stats', :locals => { :template => @template }
             %li
-              .link-default.rounded-all= link_to "No", template_works_path(@template, :work => false), :method => :POST, :id => 'not_work_button', :remote => true
+              .link-default.rounded-all= link_to "No", template_works_path(@template), :method => :POST, :id => 'not_work_button', :remote => true
           - else
             %li
               .link-default.rounded-all= link_to 'Yes', new_githubber_session_path, :id => 'work_button'

@@ -37,22 +37,21 @@ $(function() {
 
 	function workingStatus() {
 
+		var elements = $("#not_work_button[data-remote], #work_button[data-remote]"),
+				loader   = $("#working_status .holder-content img");
+
 		function UpdateStats(event, response) {
 			var stats = $.parseJSON(response);
 			$(".work").css({width: stats.working[1] + "%"}).attr("title", pluralize(stats.working[0], "vote", "votes"));
 			$(".doesnt-work").css({width: stats.not_working[1] + "%"}).attr("title", pluralize(stats.not_working[0], "vote", "votes"));
 		};
 
-		var elements = $("#not_work_button[data-remote], #work_button[data-remote]"),
-			loader   = $("#working_status .holder-content img");
-
-		elements.bind('ajax:success', UpdateStats).bind('ajax:loading',
-		function() {
-		    loader.show();
-		}).bind('ajax:complete',
-		function() {
-		    loader.hide();
-		});
+		elements
+		.bind('ajax:before', function() { return $(this).attr("disabled") != "disabled"; })
+		.bind('ajax:success', UpdateStats)
+		.bind('ajax:loading', function() { loader.show(); elements.attr("disabled", "disabled"); })
+		.bind('ajax:complete', function() { loader.hide(); })
+		.bind('ajax:after', function() { elements.removeAttr("disabled");});
 	}
 
 	function likeStatus() {

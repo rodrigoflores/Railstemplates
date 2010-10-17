@@ -4,7 +4,7 @@ class WorksController < ApplicationController
   def create
     template = Template.find(params[:template_id])
     vote = current_githubber.vote template, params[:work].present?
-    if vote.persisted?
+    if vote
       render :json => template.stats
     else
       render :json => {}, :status => 406

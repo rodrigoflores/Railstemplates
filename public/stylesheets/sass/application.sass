@@ -61,6 +61,13 @@ table
   -moz-border-radius: 6px
   -webkit-border-radius: 6px
   border-radius: 6px
+  
+.textbox
+  p
+    margin: 0 0 10px 0
+    
+  ol
+    margin: 0 20px
 
 h2
   float: left
@@ -200,6 +207,7 @@ body
 
   // HOME ---------------------
   #explanation,
+  #error,
   #holder-home
     width: 980px
     float: left
@@ -227,7 +235,8 @@ body
         width: 775px
         margin: 10px 20px 20px 20px
 
-  #explanation
+  #explanation,
+  #error
     margin: 20px 0 0 0
     background: url("/images/embed/backgrounds/common3.png") repeat
     .home-message
@@ -236,11 +245,28 @@ body
         margin: 10px
         font-size: 18px
 
+  #error
+    .home-message
+      h1,
+      p
+        width: 100%
+        margin: 20px 0
+        padding: 0 0 85px 0
+        text-align: center
+        background: url("/images/embed/icons/404.png") center bottom no-repeat
+        text-indent: none
+      h1
+        padding: 0
+        background: none
+      p.other-error
+        background: url("/images/embed/icons/500.png") center bottom no-repeat
+
   // Most downloaded ---------
   #ranked,
   #latest,
   #liked,
-  #my-templates
+  #my-templates,
+  #getting-started
     margin: 30px 0 0 0
     width: 465px
     padding: 10px
@@ -290,15 +316,19 @@ body
     float: left
     width: 700px
     #my-templates,
-    #liked
+    #liked,
+    #getting-started
       width: 670px
+      margin: 0 0 30px 0
       li
         width: 655px
     #liked
+      td.name-template
+        width: 575px
       li
-        a
-          width: 100%
-          background: url("/images/embed/icons/heart.png") right top no-repeat
+        a.unlike-template
+          background: url("/images/embed/icons/broken-heart.png") left top no-repeat transparent
+          padding: 0 0 0 24px
   section#right
     display: block
     float: right
@@ -314,9 +344,10 @@ body
       list-style: none
     h2
       margin-bottom: 5px
-    h2.invalid
-      text-align: center
+    .invalid
+      text-align: left
       margin-top: 5px
+      color: #c22d0a
     h4
       float: left
       width: 960px
@@ -356,6 +387,9 @@ body
         textarea
           height: 200px
           font: 18px "Trebuchet MS", arial, sans-serif
+        select
+          option
+            background: url("/images/embed/backgrounds/common3.png") repeat
       fieldset.buttons
         input
           float: right
@@ -566,3 +600,6 @@ body
 #downloads .notice
   display: none
   color: white
+  float: left
+  width: 210px
+  height: 18px

@@ -15,6 +15,7 @@ Railstemplates::Application.routes.draw do
   end
 
   resources :templates, :only => :show
+  match '/templates', :to => redirect("/all")
   get "/download/:id", :to => "templates#download", :as => :download
   devise_for :githubbers
   

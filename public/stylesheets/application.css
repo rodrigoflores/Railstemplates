@@ -574,6 +574,8 @@ body {
           height: 200px;
           font: 12px "Trebuchet MS", arial, sans-serif;
           border: none; }
+        body #template-view #right .holder-content #commentaries form .buttons #commit-button {
+          height: 50px; }
         body #template-view #right .holder-content #commentaries form .buttons .error {
           float: left;
           width: 130px;
@@ -589,6 +591,8 @@ body {
           background: url("/images/embed/backgrounds/common4.png") repeat; }
         body #template-view #right .holder-content #commentaries form .buttons input:hover {
           background: url("/images/embed/backgrounds/common3.png") repeat; }
+        body #template-view #right .holder-content #commentaries form .buttons #commit-button.loading {
+          background: url("/images/embed/icons/comment-loader.gif") no-repeat 204px 14px; }
   body #all-templates ul {
     list-style: none; }
     body #all-templates ul li {

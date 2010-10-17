@@ -3,7 +3,7 @@
   %p= like_counter(template)
   - if githubber_signed_in? && !current_githubber.liked?(template)
     .link-default.rounded-all
-      = link_to 'I like it', template_likes_path(template), :method => :POST, :id => 'like_button', :remote => true
+      = link_to 'I like it', template_likes_path(template), :method => :post, :id => 'like_button', :remote => true, "data-type" => "html"
   
   - if !githubber_signed_in?
     .link-default.rounded-all

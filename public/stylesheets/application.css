@@ -74,7 +74,7 @@ body {
   background: url("/images/embed/backgrounds/main.jpg") repeat; }
   body article {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     width: 1000px; }
   body header {
     display: block;
@@ -296,6 +296,9 @@ body {
       body section#left #my-templates li,
       body section#left #liked li {
         width: 655px; }
+    body section#left #liked li a {
+      width: 100%;
+      background: url("/images/embed/icons/heart.png") right top no-repeat; }
   body section#right {
     display: block;
     float: right;
@@ -309,6 +312,13 @@ body {
       list-style: none; }
     body #create-template h2 {
       margin-bottom: 5px; }
+    body #create-template h4 {
+      float: left;
+      width: 960px;
+      padding: 10px;
+      margin-bottom: 5px;
+      background: url("/images/embed/backgrounds/common2.png") repeat;
+      font-size: 18px; }
     body #create-template form {
       float: left;
       width: 100%; }

@@ -78,7 +78,7 @@
             - form.inputs do
               = form.input :commentary, :label => "What you think about it?", :required => false
             - form.buttons do
-              %li
+              %li#commit-button
                 = form.submit 'Comment!', :class => "rounded-all"
         - else
           %p

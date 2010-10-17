@@ -42,15 +42,21 @@ var Application = {
 	    .bind('ajax:loading', function(rawResponse, msg) {
 	      $("#commentaries .notice").fadeOut('fast');
 	      $("#commentaries").parent().find('.error').remove();
+	      $("#commentaries .buttons input").hide();
+	      $('#commit-button').addClass('loading');
 	    })
+	    
+	    .bind('ajax:complete', function(rawResponse) {
+	      $("#commentaries .buttons input").show();
+	      $('#commit-button').removeClass('loading');
+	    })
+	    
 	    .bind('ajax:success', function(rawResponse,msg) {
 	      var div = $("<div />").addClass('commentary').css("display", "none").html(msg);
 	      $('.comments-list').prepend(div);
 	      $('#commentary_commentary').val('');
 				div.slideDown();
 	    }).bind('ajax:failure', function(rawResponse, msg){
-	      
-	      
 				$("#commentaries .buttons li input").after($("<div />").text("This comment is not valid!").addClass('error'));
 	    });
     }

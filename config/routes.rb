@@ -13,16 +13,15 @@ Railstemplates::Application.routes.draw do
     
     get '/dashboard' => "pages#dashboard", :as => :dashboard
 
-    get '/mine', :to => "templates#index", :as => :mine_templates
   end
 
-  resources :templates, :only => :show
-  match '/templates', :to => redirect("/all")
+  resources :templates, :only => [:show, :index]
   get "/download/:id", :to => "templates#download", :as => :download
   get '/all', :to => "templates#all", :as => :all_templates
-  get '/learn', :to => "pages#learn", :as => :learn
-  
+
   get "/search", :to => "searches#search", :as => :search
+
+  get '/learn', :to => "pages#learn", :as => :learn
   root :to => "pages#index"
   
   constraints(DownloadConstraint) do

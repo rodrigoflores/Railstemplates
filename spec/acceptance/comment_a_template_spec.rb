@@ -16,6 +16,7 @@ feature "Comment A Template", %q{
     sign_in!
     click_link "All templates"
     click_link @template.title
+
     fill_in "Comment this template", :with => "This template is fucking awesome"
     expect {
       click_button "Create Commentary"

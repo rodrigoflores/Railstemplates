@@ -63,7 +63,7 @@
         
       
       #commentaries
-        - @template.commentaries.each do |commentary|
+        - @template.commentaries.reverse.each do |commentary|
           .commentary
             %p
               %strong= commentary.githubber.name

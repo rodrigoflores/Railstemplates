@@ -1,6 +1,6 @@
 module TemplatesHelper  
   def like_counter(template)
-    if current_githubber.liked?(template)
+    if githubber_signed_in? && current_githubber.liked?(template)
       if template.likes.count == 1
         "You like this template"
       else

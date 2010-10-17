@@ -39,15 +39,15 @@ var Application = {
 	  $("#new_commentary")
 	    .bind('ajax:success', function(rawResponse,msg) {
 	      data = $.parseJSON(msg);
-	      var div = $("<div />");
-	      div.addClass('commentary')
-	      author = $("<p><strong>" + data.author.githubber.name + "</strong></p>\n");
-	      div.append(author)
-	      commentary = $("<p>" + data.text + "</p>");
-	      div.append(commentary);
-	      $('#commentaries').append(div);
+				$("#commentary_commentary").removeClass("error").val("");
+	      var div = $("<div />").addClass('commentary').css("display", "none");
+	      div.append($("<p><strong>" + data.author.githubber.name + "</strong></p>"));
+	      div.append("<p>" + data.text + "</p>");
+
+	      $('#commentaries').prepend(div);
+				div.slideDown();
 	    }).bind('ajax:failure', function(rawResponse, msg){
-	      alert("Deu erro");
+				$("#commentary_commentary").addClass("error");
 	    });
     }
 };

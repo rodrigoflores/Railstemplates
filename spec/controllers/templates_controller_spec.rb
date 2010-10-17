@@ -6,18 +6,18 @@ describe TemplatesController do
       gist = mock
       gist.stub!(:body).and_return("GIST CONTENT")
       HTTParty.stub!(:get).with("http://gist.github.com/raw/666/foo").and_return(gist)
-      @template = Factory(:template, :gist_file => "http://gist.github.com/raw/666/foo")
+      template = Factory(:template, :gist_file => "http://gist.github.com/raw/666/foo", :id => 47)
     end
 
     it "downloads the template content" do
-      get :download, :id => @template.to_param
+      get :download, :id => 47
       response.body.should == "GIST CONTENT"
     end
 
-    xit "increments the download counter" do
-      lambda {
-        get :download, :id => @template.to_param
-      }.should change(@template, :download_counter).by(1)
+    it "increments the download counter" do
+      Template.find(47).download_counter.should == 0
+      get :download, :id => 47
+      Template.find(47).download_counter.should == 1
     end
   end
 end

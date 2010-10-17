@@ -11,7 +11,7 @@ feature "Viewing All The Templates", %q{
     visit homepage
   end
   scenario "Opening the page" do
-    click_link "All Templates"
+    click_link "All templates"
 
     Template.all.each do |t|
       page.should have_link t.title

@@ -23,11 +23,11 @@ a:hover {
 .link-default {
   font-size: 14px;
   padding: 4px 5px;
-  background: url("../images/embed/backgrounds/common.png") repeat;
+  background: url("/images/embed/backgrounds/common.png") repeat;
   float: left; }
 
 .link-default:hover {
-  background: url("../images/embed/backgrounds/common3.png") repeat;
+  background: url("/images/embed/backgrounds/common3.png") repeat;
   text-decoration: none; }
 
 .line-divisor {
@@ -35,19 +35,19 @@ a:hover {
   float: left;
   width: 996px;
   padding: 2px;
-  background: url("../images/embed/backgrounds/common3.png") repeat; }
+  background: url("/images/embed/backgrounds/common3.png") repeat; }
 
 table {
   width: 100%;
   border-collapse: collapse; }
   table td a.edit-template,
   table td a.delete-template {
-    background: url("../images/embed/icons/edit.png") right 0 no-repeat;
+    background: url("/images/embed/icons/edit.png") right 0 no-repeat;
     height: 16px;
     float: left;
     padding: 0 20px 0 0; }
   table td a.delete-template {
-    background: url("../images/embed/icons/delete.png") right 0 no-repeat; }
+    background: url("/images/embed/icons/delete.png") right 0 no-repeat; }
   table td.name-template {
     width: 80%; }
 
@@ -66,7 +66,7 @@ h2 {
 body {
   color: #36424a;
   font: 12px "Trebuchet MS", arial, sans-serif;
-  background: url("../images/embed/backgrounds/main.jpg") repeat; }
+  background: url("/images/embed/backgrounds/main.jpg") repeat; }
   body article {
     display: block;
     margin: 0 auto;
@@ -77,7 +77,7 @@ body {
     width: 100%;
     float: left; }
     body header #rails-templates {
-      background: url("../images/embed/logos/rails_templates.png") repeat;
+      background: url("/images/embed/logos/rails_templates.png") repeat;
       float: left;
       width: 417px;
       height: 54px; }
@@ -86,11 +86,11 @@ body {
       width: 324px; }
       body header #current_githubber img {
         float: left;
-        background: url("../images/embed/backgrounds/common.png") repeat;
+        background: url("/images/embed/backgrounds/common.png") repeat;
         padding: 4px;
         opacity: 0.8; }
       body header #current_githubber img:hover {
-        background: url("../images/embed/backgrounds/common3.png") repeat;
+        background: url("/images/embed/backgrounds/common3.png") repeat;
         opacity: 1; }
       body header #current_githubber p {
         float: left;
@@ -105,10 +105,10 @@ body {
         margin: 11px 0 0;
         font-size: 14px;
         padding: 4px 26px 4px 5px;
-        background: url("../images/embed/icons/github.png") right -32px no-repeat; }
+        background: url("/images/embed/icons/github.png") right -32px no-repeat; }
       body header #current_githubber a:hover {
         text-decoration: none;
-        background: url("../images/embed/icons/github.png") right -2px no-repeat; }
+        background: url("/images/embed/icons/github.png") right -2px no-repeat; }
     body header #menu {
       float: left;
       list-style: none;
@@ -119,17 +119,17 @@ body {
         body header #menu li a {
           font-size: 14px;
           padding: 3px 5px;
-          background: url("../images/embed/backgrounds/common.png") repeat; }
+          background: url("/images/embed/backgrounds/common.png") repeat; }
         body header #menu li a:hover {
           text-decoration: none;
-          background: url("../images/embed/backgrounds/common3.png") repeat; }
+          background: url("/images/embed/backgrounds/common3.png") repeat; }
     body header .sign-in {
       float: right; }
     body header #search_box {
       float: right;
       width: 324px;
       height: 47px;
-      background: url("../images/embed/backgrounds/common.png") repeat; }
+      background: url("/images/embed/backgrounds/common.png") repeat; }
       body header #search_box label {
         display: none; }
       body header #search_box input {
@@ -141,12 +141,12 @@ body {
         border: none;
         font-size: 18px;
         color: white;
-        background: url("../images/embed/backgrounds/common2.png") repeat; }
+        background: url("/images/embed/backgrounds/common2.png") repeat; }
       body header #search_box input.search-button {
         float: right;
         width: 26px;
         height: 25px;
-        background: url("../images/embed/icons/search-button.png") 0 bottom repeat;
+        background: url("/images/embed/icons/search-button.png") 0 bottom repeat;
         border: none;
         text-indent: -99999px;
         line-height: 0;
@@ -165,16 +165,16 @@ body {
     width: 980px;
     float: left;
     padding: 10px;
-    background: url("../images/embed/backgrounds/common3.png") repeat; }
+    background: url("/images/embed/backgrounds/common3.png") repeat; }
     body #holder-home #home-message {
-      background: url("../images/embed/backgrounds/common2.png") repeat;
+      background: url("/images/embed/backgrounds/common2.png") repeat;
       color: white;
       float: left;
       width: 100%; }
       body #holder-home #home-message h1 {
         font-size: 40px;
         font-weight: normal;
-        background: url("../images/embed/texts/title1.png") no-repeat;
+        background: url("/images/embed/texts/title1.png") no-repeat;
         width: 949px;
         height: 48px;
         float: left;
@@ -183,7 +183,7 @@ body {
         float: right;
         font-size: 26px;
         font-weight: normal;
-        background: url("../images/embed/texts/title2.png") no-repeat;
+        background: url("/images/embed/texts/title2.png") no-repeat;
         height: 27px;
         width: 775px;
         margin: 10px 20px 20px 20px; }
@@ -195,7 +195,7 @@ body {
     width: 465px;
     padding: 10px;
     float: left;
-    background: url("../images/embed/backgrounds/common.png") repeat; }
+    background: url("/images/embed/backgrounds/common.png") repeat; }
     body #ranked h2,
     body #latest h2,
     body #liked h2,
@@ -247,12 +247,12 @@ body {
       body #latest ul .one,
       body #liked ul .one,
       body #my-templates ul .one {
-        background: url("../images/embed/backgrounds/common2.png") repeat; }
+        background: url("/images/embed/backgrounds/common2.png") repeat; }
       body #ranked ul li:hover,
       body #latest ul li:hover,
       body #liked ul li:hover,
       body #my-templates ul li:hover {
-        background: url("../images/embed/backgrounds/common4.png") repeat; }
+        background: url("/images/embed/backgrounds/common4.png") repeat; }
   body #ranked {
     float: right; }
   body #my-templates {
@@ -274,7 +274,7 @@ body {
   body #create-template {
     width: 980px;
     float: left;
-    background: url("../images/embed/backgrounds/common.png") repeat;
+    background: url("/images/embed/backgrounds/common.png") repeat;
     padding: 10px; }
     body #create-template form {
       float: left;
@@ -289,6 +289,7 @@ body {
         margin: 10px 0 8px; }
         body #create-template form fieldset.inputs label abbr {
           display: none; }
+      body #create-template form fieldset.inputs select,
       body #create-template form fieldset.inputs input,
       body #create-template form fieldset.inputs textarea {
         float: left;
@@ -298,7 +299,11 @@ body {
         border: none;
         font-size: 18px;
         color: white;
-        background: url("../images/embed/backgrounds/common2.png") repeat; }
+        background: url("/images/embed/backgrounds/common2.png") repeat; }
+      body #create-template form fieldset.inputs select:focus,
+      body #create-template form fieldset.inputs input:focus,
+      body #create-template form fieldset.inputs textarea:focus {
+        background: url("/images/embed/backgrounds/common3.png") repeat; }
       body #create-template form fieldset.inputs textarea {
         height: 200px;
         font: 18px "Trebuchet MS", arial, sans-serif; }
@@ -309,6 +314,6 @@ body {
         border: none;
         font-size: 18px;
         color: white;
-        background: url("../images/embed/backgrounds/common4.png") repeat; }
+        background: url("/images/embed/backgrounds/common4.png") repeat; }
       body #create-template form fieldset.buttons input:hover {
-        background: url("../images/embed/backgrounds/common3.png") repeat; }
+        background: url("/images/embed/backgrounds/common3.png") repeat; }

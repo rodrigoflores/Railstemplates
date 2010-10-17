@@ -1,7 +1,7 @@
 class Githubber < ActiveRecord::Base
   has_many :templates
-  has_many :likes
-  has_many :thumbs
+  has_many :likes, :dependent => :delete_all
+  has_many :thumbs, :dependent => :delete_all
   devise :database_authenticatable, :trackable, :oauthable
 
   attr_accessible :name, :email, :login, :password, :github_token

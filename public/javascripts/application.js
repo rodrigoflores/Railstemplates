@@ -19,7 +19,8 @@ var Application = {
 
 var Templates = {
 	preview: function() {
-		var sample = $("#sample[data-url]");
+		var sample = $("#source_code[data-url]");
+
 		if(sample.size()) {
 			$.getJSON("http://jsonproxy.heroku.com/fetch?path=" + sample.attr("data-url") + "&callback=?", function(response) {
 				var preview = $("<code class='prettyprint' />");

@@ -1,22 +1,21 @@
 #template-view
 
-  // Left Column ------------------------------------
+  // Left Column
   %section#left.rounded-all
 
     %h2 Code Viewer
     .holder-content
-      // Template -----------------------------------
-      #sample{:'data-url' => @template.gist_file}
-        / = simple_format(@template.sample.gsub(" ","&nbsp;"))
+      // Template
+      #source_code{:'data-url' => @template.gist_file}
 
-  // Right Column -----------------------------------
+  // Right Column
   %section#right.rounded-all
     .corner &nbsp;
-    // Template's Name ------------------------------
+    // Template's Name
     %h2= link_to @template.title, download_url(@template)
 
     .holder-content
-      // Template's Descrition ----------------------
+      // Template's Descrition
       %p= @template.description
       .line-divisor.rounded-all
       #downloads

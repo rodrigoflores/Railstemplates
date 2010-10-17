@@ -6,7 +6,17 @@ describe Githubber do
     it { should have_many :likes }
     it { should have_many :templates }
     it { should have_many :thumbs }
+  end
+  
+  describe "liked?" do
+    let(:githubber) { Factory(:githubber) }
+    let(:template) { Factory(:template) }
     
+    it "verifies if the githubber had liked the template" do
+      githubber.liked?(template).should be_false
+      githubber.like_it(template)
+      githubber.liked?(template).should be_true
+    end
   end
 
 end

@@ -32,5 +32,4 @@
 %p.tag_list= @template.tags.map { |t| content_tag(:span, t)}.join(", ").html_safe
 
 #sample{:'data-url' => @template.gist_file}
-  %h2 Sample
-  / = simple_format(@template.sample.gsub(" ","&nbsp;"))
+  %h2 Content

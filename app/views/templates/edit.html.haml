@@ -1,9 +1,11 @@
-= semantic_form_for @template, :url => template_path do |form|
-  %h4
-    Your template file:
-    %strong= @template.gist_file
-  = form.inputs do
-    = form.input :title
-    = form.input :description
-  = form.buttons do
-    = form.commit_button
+#create-template.rounded-all
+  %h2 Edit your template
+  = semantic_form_for @template, :url => template_path do |form|
+    %h4
+      Your template file:
+      %strong= @template.gist_file
+    = form.inputs do
+      = form.input :title, :input_html => { :placeholder => "Title" }
+      = form.input :description, :as => :text, :input_html => { :placeholder => "Description" }
+    = form.buttons do
+      = form.submit 'Update!', :class => "rounded-all"

@@ -12,24 +12,32 @@ $(function() {
 			});
 		}
 	};
-	
+
 	function workingStatus() {
-		
+
 		function UpdateStats(event, response) {
 			var stats = $.parseJSON(response);
 			$(".work").css({width: stats.working[1] + "%"}).attr("title", pluralize(stats.working[0], "vote", "votes"));
 			$(".doesnt-work").css({width: stats.not_working[1] + "%"}).attr("title", pluralize(stats.not_working[0], "vote", "votes"));
 		};
-		
-		$("#not_work_button[data-remote], #work_button[data-remote]")
-			.bind('ajax:success', UpdateStats);
+
+		var elements = $("#not_work_button[data-remote], #work_button[data-remote]"),
+			loader   = $("#working_status .holder-content img");
+
+		elements.bind('ajax:success', UpdateStats).bind('ajax:loading',
+		function() {
+		    loader.show();
+		}).bind('ajax:complete',
+		function() {
+		    loader.hide();
+		});
 	}
 
 	function likeStatus() {
-		
+
 		function UpdateLikeStatus(event, response) {
 			response = $.parseJSON(response);
-			
+
 			$(this).parent().fadeOut(function() {
 				$(this).remove();
 			});
@@ -38,11 +46,11 @@ $(function() {
 				$(this).text(response.status).fadeIn();
 			});
 		}
-		
+
 		$("#like_button[data-remote]")
 			.bind('ajax:success', UpdateLikeStatus);
 	}
-	
+
 	function pluralize(count, singular, plural) {
 		return count + " " + (count == 1 ? singular : plural);
 	}

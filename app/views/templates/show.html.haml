@@ -29,7 +29,7 @@
 
 = @template.description
 
-%p= @template.tag_list
+%p.tag_list= @template.tags.map { |t| content_tag(:span, t)}.join(", ").html_safe
 
 
 #sample{:'data-url' => @template.gist_file}

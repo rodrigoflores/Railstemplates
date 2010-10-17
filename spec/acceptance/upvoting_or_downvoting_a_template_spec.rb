@@ -9,10 +9,10 @@ feature "Add Work Button", %q{
   background do
     stub_oauth!
     sign_in!
-    @template = Factory(:template, :githubber => current_githubber)
   end
 
   scenario "Upvoting a template", :js => true do
+    @template = Factory(:template, :githubber => current_githubber)
     click_link "All templates"
     click_link @template.title
     within :css, "#working_status" do
@@ -22,6 +22,7 @@ feature "Add Work Button", %q{
   end
 
   scenario "Downvoting a template", :js => true do
+    @template = Factory(:template, :githubber => current_githubber)
     click_link "All templates"
     click_link @template.title
 

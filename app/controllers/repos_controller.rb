@@ -5,6 +5,6 @@ class ReposController < ApplicationController
   
   private
   def set_github_path
-    params[:template][:gist_file] = @github.raw_url rescue nil
+    params[:template][:source_url] = @github.raw_url rescue nil
   end
 end

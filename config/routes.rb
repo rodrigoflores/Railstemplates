@@ -16,20 +16,14 @@ Railstemplates::Application.routes.draw do
   end
 
   resources :templates, :only => [:show, :index]
-  get "/download/:id", :to => "templates#download", :as => :download
+  get "/d/:id", :to => "templates#download", :as => :download
 
   get "/search", :to => "searches#search", :as => :search
 
   get '/learn', :to => "pages#learn", :as => :learn
-
   get '/404', :to => "pages#error_404", :as => :error_404
-
   get '/500', :to => "pages#error_500", :as => :error_404
+  get '/*fallback', :to => "pages#error_404"
 
   root :to => "pages#index"
-
-  constraints(DownloadConstraint) do
-    match "/:id",  :to => "templates#download"
-  end
-
 end

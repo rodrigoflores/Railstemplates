@@ -8,7 +8,7 @@
     %h2 Code Viewer
     .holder-content
       // Template
-      #source_code.loading{:'data-url' => @template.gist_file}
+      #source_code.loading{:'data-url' => @template.source_url}
 
   // Right Column
   %section#right.rounded-all
@@ -27,7 +27,7 @@
       #downloads
         %h3 Downloads
         .holder-content.rounded-all
-          = link_to download_url(@template), download_url
+          = link_to download_url(@template), download_url(@template)
           %span.notice Copied to Clipboard!
           #d_clip_button{ :title => "Copy to Clipboard"}
 

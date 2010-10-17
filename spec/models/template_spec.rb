@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Template do
   it { should have_many :likes }
-  it { should have_many :thumbs}
-  it { should belong_to :githubber}
-  it { should validate_presence_of :title, :gist_file }
+  it { should have_many :thumbs }
+  it { should belong_to :githubber }
+  it { should validate_presence_of :title, :source_url }
 
   describe "content" do
     before do
@@ -13,11 +13,11 @@ describe Template do
     end
 
     it "fetches the content from a given gist" do
-      Template.new(:gist_file => "http://gist.github.com/raw/1337/template.rb").content.should == "GIST CONTENT"
+      Template.new(:source_url => "http://gist.github.com/raw/1337/template.rb").content.should == "GIST CONTENT"
     end
 
     it "fetches the content from a file" do
-      Template.new(:gist_file => "http://github.com/sabbre/base-template/raw/master/template.rb").content.should == "REPO CONTENT"
+      Template.new(:source_url => "http://github.com/sabbre/base-template/raw/master/template.rb").content.should == "REPO CONTENT"
     end
   end
 

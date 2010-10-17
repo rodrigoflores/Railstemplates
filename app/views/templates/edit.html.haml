@@ -3,7 +3,7 @@
   = semantic_form_for @template, :url => template_path do |form|
     %h4
       Your template file:
-      %strong=link_to @template.gist_file, @template.gist_file
+      %strong=link_to @template.source_url, @template.source_url
     = form.inputs do
       = form.input :title, :input_html => { :placeholder => "Your template title" }
       = form.input :description, :as => :text, :input_html => { :placeholder => "Your template description" }

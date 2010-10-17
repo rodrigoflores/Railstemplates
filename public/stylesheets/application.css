@@ -651,6 +651,8 @@ body {
     body #all-templates .pagination .prev {
       text-indent: auto;
       background: none; }
+  body .search-counter {
+    margin: 0 0 10px 0; }
 
 #source_code.loading {
   height: 300px;

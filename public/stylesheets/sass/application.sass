@@ -61,11 +61,11 @@ table
   -moz-border-radius: 6px
   -webkit-border-radius: 6px
   border-radius: 6px
-  
+
 .textbox
   p
     margin: 0 0 10px 0
-    
+
   ol
     margin: 0 20px
 
@@ -259,6 +259,7 @@ body
         background: none
       p.other-error
         background: url("/images/embed/icons/500.png") center bottom no-repeat
+
 
   // Most downloaded ---------
   #ranked,
@@ -533,48 +534,57 @@ body
         #tag_list
           a
             color: #36424A
-            
+
         #commentaries
           p.notice
             margin: 0 0 10px 0
-        
+
           .commentary
             float: left
             width: 100%
             margin: 0 0 10px 0
-            
+
           .comment
             background: url("/images/embed/backgrounds/common2.png") repeat
             padding: 5px
-            
+            position: relative
+
             p
               margin: 0 0 5px 0
-        
+
+            .arrow-comment
+              position: absolute
+              width: 10px
+              height: 5px
+              background: url("/images/embed/icons/small-arrow.png") repeat
+              bottom: -5px
+              left: 13px
+
           .comment-author
             padding: 5px
-            
+
             .gravatar
               float: left
-          
+
             .author
               margin: 0 0 0 10px
               float: left
-              
+
               .login
                 font-size: 14px
                 a
                   color: #fff
-                
+
               .when
                 font-size: 10px
           form
             fieldset
               border: none
-              
+
               li
                 list-style: none
-                
-            .inputs              
+
+            .inputs
               label
                 font-weight: bold
                 margin: 0 0 5px 0
@@ -586,14 +596,14 @@ body
                 width: 255px
                 height: 200px
                 font: 12px "Trebuchet MS", arial, sans-serif
-                border: none                
+                border: none
             .buttons
               .error
                 float: left
                 width: 130px
                 margin: 10px 0 0 0
                 color: #c22d0a
-            
+
               input
                 float: right
                 margin: 10px 0 0 0
@@ -605,7 +615,7 @@ body
               input:hover
                 background: url("/images/embed/backgrounds/common3.png") repeat
 
-            
+
   // ALL TEMPLATES -----------------------
   #all-templates
     ul
@@ -671,7 +681,7 @@ body
 #source_code.loading
   height: 300px
   background: url("/images/embed/icons/loader.gif") no-repeat center 142px
-  
+
 // Copy to Clipboard notice
 #downloads .notice
   display: none

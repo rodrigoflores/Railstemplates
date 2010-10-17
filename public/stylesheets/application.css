@@ -534,9 +534,17 @@ body {
           margin: 0 0 10px 0; }
         body #template-view #right .holder-content #commentaries .comment {
           background: url("/images/embed/backgrounds/common2.png") repeat;
-          padding: 5px; }
+          padding: 5px;
+          position: relative; }
           body #template-view #right .holder-content #commentaries .comment p {
             margin: 0 0 5px 0; }
+          body #template-view #right .holder-content #commentaries .comment .arrow-comment {
+            position: absolute;
+            width: 10px;
+            height: 5px;
+            background: url("/images/embed/icons/small-arrow.png") repeat;
+            bottom: -5px;
+            left: 13px; }
         body #template-view #right .holder-content #commentaries .comment-author {
           padding: 5px; }
           body #template-view #right .holder-content #commentaries .comment-author .gravatar {

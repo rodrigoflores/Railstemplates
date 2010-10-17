@@ -4,11 +4,11 @@ var Application = {
 			// ul > li > table > tbody > tr > td WTF
 		  $(this).parents("li").fadeOut(function() {
 	      $(this).remove();
-	      
+
 	      if($('#my-templates li').length <= 0) {
   		    $('#my-templates').fadeOut(function() {
   		      $(this).remove();
-  		      
+
   		      if($("#left .textbox").length <= 1) {
               $('#getting-started').fadeIn();
       		  }
@@ -46,14 +46,12 @@ var Application = {
 	      $('#commentary_commentary').val('');
 				div.slideDown();
 	    }).bind('ajax:failure', function(rawResponse, msg){
-	      
-	      
+
+
 				$("#commentaries .buttons li input").after($("<div />").text("This comment is not valid!").addClass('error'));
 	    });
     }
 };
-
-
 
 var Html5 = {
 	placeholder: function() {

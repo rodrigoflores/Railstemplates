@@ -23,7 +23,7 @@ a:hover {
 .link-default {
   font-size: 14px;
   padding: 4px 5px;
-  background: url("/images/embed/backgrounds/common.png") repeat;
+  background: url("/images/embed/backgrounds/common4.png") repeat;
   float: left; }
 
 .link-default:hover {
@@ -33,7 +33,7 @@ a:hover {
 .line-divisor {
   margin: 25px 0;
   float: left;
-  width: 996px;
+  width: 99.6%;
   padding: 2px;
   background: url("/images/embed/backgrounds/common3.png") repeat; }
 
@@ -42,14 +42,14 @@ table {
   border-collapse: collapse; }
   table td a.edit-template,
   table td a.delete-template {
-    background: url("/images/embed/icons/edit.png") right 0 no-repeat;
+    background: url("/images/embed/icons/edit.png") left 0 no-repeat;
     height: 16px;
     float: left;
-    padding: 0 20px 0 0; }
+    padding: 0 0 0 25px; }
   table td a.delete-template {
-    background: url("/images/embed/icons/delete.png") right 0 no-repeat; }
+    background: url("/images/embed/icons/delete.png") left 0 no-repeat; }
   table td.name-template {
-    width: 80%; }
+    width: 78%; }
 
 .rounded-all {
   -moz-border-radius: 6px;
@@ -62,6 +62,11 @@ h2 {
   color: #36424a;
   margin: 0 0 20px;
   font-size: 16px; }
+
+h1.parent-title {
+  font-size: 20px;
+  margin: 0 0 20px;
+  color: #36424a; }
 
 body {
   color: #36424a;
@@ -155,12 +160,22 @@ body {
         cursor: pointer; }
       body header #search_box input.search-button:hover {
         background-position: 0 top; }
+  body #main,
   body #footer {
     display: block;
-    float: left; }
-  body #main {
-    display: block;
-    float: left; }
+    float: left;
+    width: 100%; }
+  body #footer {
+    margin: 0 0 30px; }
+    body #footer .holder-content {
+      text-align: center;
+      font-size: 10px; }
+      body #footer .holder-content a {
+        color: #36424a;
+        font-weight: bold; }
+      body #footer .holder-content p {
+        margin: 0 0 10px 0;
+        font-size: 12px; }
   body #explanation,
   body #holder-home {
     width: 980px;
@@ -193,9 +208,9 @@ body {
         margin: 10px 20px 20px 20px; }
   body #explanation {
     margin: 20px 0 0 0;
-    background: url("/images/embed/backgrounds/common4.png") repeat; }
+    background: url("/images/embed/backgrounds/common3.png") repeat; }
     body #explanation .home-message {
-      background: url("/images/embed/backgrounds/common3.png") repeat; }
+      background: url("/images/embed/backgrounds/common2.png") repeat; }
       body #explanation .home-message p {
         margin: 10px;
         font-size: 18px; }
@@ -229,8 +244,8 @@ body {
       body #liked ul li,
       body #my-templates ul li {
         float: left;
-        width: 457px;
-        padding: 8px 4px; }
+        width: 449px;
+        padding: 8px; }
         body #ranked ul li a,
         body #ranked ul li span,
         body #latest ul li a,
@@ -249,6 +264,7 @@ body {
         body #latest ul li span,
         body #liked ul li span,
         body #my-templates ul li span {
+          float: right;
           color: #36424a; }
           body #ranked ul li span em,
           body #latest ul li span em,
@@ -288,6 +304,10 @@ body {
     float: left;
     background: url("/images/embed/backgrounds/common.png") repeat;
     padding: 10px; }
+    body #create-template ul {
+      list-style: none; }
+    body #create-template h2 {
+      margin-bottom: 5px; }
     body #create-template form {
       float: left;
       width: 100%; }
@@ -329,3 +349,163 @@ body {
         background: url("/images/embed/backgrounds/common4.png") repeat; }
       body #create-template form fieldset.buttons input:hover {
         background: url("/images/embed/backgrounds/common3.png") repeat; }
+  body #template-view {
+    float: left;
+    width: 100%; }
+    body #template-view #left {
+      background: url("/images/embed/backgrounds/common.png") repeat;
+      width: 660px;
+      padding: 10px; }
+      body #template-view #left h2 {
+        margin-bottom: 10px; }
+      body #template-view #left .holder-content {
+        background: url("/images/embed/backgrounds/common2.png") repeat;
+        float: left;
+        padding: 10px;
+        width: 640px; }
+    body #template-view #right {
+      margin: 20px 0 0 0;
+      position: relative;
+      width: 280px;
+      background: url("/images/embed/backgrounds/common3.png") repeat;
+      padding: 10px;
+      -moz-border-radius: 0px 6px 6px 6px;
+      -webkit-border-radius: 0px 6px 6px 6px;
+      border-radius: 0px 6px 6px 6px; }
+      body #template-view #right h2 {
+        margin-bottom: 10px; }
+      body #template-view #right .corner {
+        position: absolute;
+        top: 0px;
+        left: -21px;
+        width: 36px;
+        height: 77px;
+        background: url("/images/embed/backgrounds/corner.png") no-repeat; }
+      body #template-view #right .holder-content {
+        background: url("/images/embed/backgrounds/common2.png") repeat;
+        float: left;
+        padding: 10px;
+        width: 260px; }
+        body #template-view #right .holder-content ul {
+          list-style: none; }
+        body #template-view #right .holder-content .line-divisor {
+          margin: 10px 0; }
+        body #template-view #right .holder-content h3 {
+          font-size: 14px;
+          margin: 0 0 5px; }
+        body #template-view #right .holder-content #downloads .holder-content,
+        body #template-view #right .holder-content #likes .holder-content {
+          width: 242px;
+          margin: 5px 0;
+          padding: 5px 8px; }
+          body #template-view #right .holder-content #downloads .holder-content a,
+          body #template-view #right .holder-content #likes .holder-content a {
+            overflow: hidden;
+            float: left;
+            width: 210px;
+            height: 18px; }
+          body #template-view #right .holder-content #downloads .holder-content #d_clip_button,
+          body #template-view #right .holder-content #likes .holder-content #d_clip_button {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            background: url("/images/embed/icons/clipboard.png") no-repeat;
+            float: right; }
+        body #template-view #right .holder-content #likes .link-default {
+          float: right; }
+          body #template-view #right .holder-content #likes .link-default a {
+            padding-right: 20px;
+            background: url("/images/embed/icons/heart.png") right 0 no-repeat; }
+        body #template-view #right .holder-content #likes p {
+          float: left;
+          margin: 6px 0 0 0; }
+        body #template-view #right .holder-content #working_status ul li {
+          float: left;
+          margin: 0 5px 0 0; }
+          body #template-view #right .holder-content #working_status ul li .link-default {
+            background: url("/images/embed/backgrounds/common3.png") repeat; }
+          body #template-view #right .holder-content #working_status ul li a {
+            padding-right: 20px; }
+          body #template-view #right .holder-content #working_status ul li a#work_button {
+            background: url("/images/embed/icons/work.png") right 0 no-repeat; }
+          body #template-view #right .holder-content #working_status ul li a#not_work_button {
+            background: url("/images/embed/icons/not_work.png") right 0 no-repeat; }
+          body #template-view #right .holder-content #working_status ul li .link-default:hover {
+            background: url("/images/embed/backgrounds/common2.png") repeat; }
+        body #template-view #right .holder-content #working_status ul li:last-child {
+          margin: 0; }
+        body #template-view #right .holder-content #working_status .holder-content {
+          background: url("/images/embed/backgrounds/common3.png") repeat;
+          float: left;
+          width: 142px;
+          margin: 0;
+          padding: 5px; }
+          body #template-view #right .holder-content #working_status .holder-content .work {
+            background: #759466;
+            width: 80%;
+            height: 16px;
+            float: left; }
+          body #template-view #right .holder-content #working_status .holder-content .doesnt-work {
+            width: 20%;
+            height: 16px;
+            background: #d24f56;
+            float: left; }
+        body #template-view #right .holder-content #tag_list a {
+          color: #36424a; }
+  body #all-templates ul {
+    list-style: none; }
+    body #all-templates ul li {
+      float: left;
+      width: 100%;
+      margin: 0 0 10px; }
+      body #all-templates ul li #left.rounded-all {
+        background: url("/images/embed/backgrounds/common2.png") repeat;
+        float: left;
+        padding: 10px;
+        width: 670px; }
+        body #all-templates ul li #left.rounded-all a {
+          float: left;
+          width: 100%; }
+        body #all-templates ul li #left.rounded-all h2 {
+          margin: 0 0 5px; }
+      body #all-templates ul li #left:hover {
+        background: url("/images/embed/backgrounds/common4.png") repeat; }
+      body #all-templates ul li #right.rounded-all {
+        width: 280px;
+        background: url("/images/embed/backgrounds/common.png") repeat;
+        padding: 10px; }
+        body #all-templates ul li #right.rounded-all p {
+          padding: 0 0 0 20px; }
+        body #all-templates ul li #right.rounded-all p:first-child {
+          margin: 0 0 10px; }
+        body #all-templates ul li #right.rounded-all .download {
+          background: url("/images/embed/icons/down.png") no-repeat; }
+        body #all-templates ul li #right.rounded-all .liked {
+          background: url("/images/embed/icons/heart.png") no-repeat; }
+  body #all-templates .pagination {
+    float: left; }
+    body #all-templates .pagination span,
+    body #all-templates .pagination a {
+      float: left;
+      margin: 0 5px;
+      color: #36424a; }
+    body #all-templates .pagination .current {
+      color: white; }
+    body #all-templates .pagination .prev_page,
+    body #all-templates .pagination .next_page {
+      text-indent: -9999px;
+      width: 16px;
+      height: 16px;
+      float: left;
+      margin: 0 10px 0 0;
+      background: url("/images/embed/icons/arrow.png") left top no-repeat; }
+    body #all-templates .pagination .next_page {
+      background: url("/images/embed/icons/arrow.png") right top no-repeat;
+      margin: 0 0 0 10px; }
+    body #all-templates .pagination .disabled.prev_page {
+      background: url("/images/embed/icons/arrow.png") left -17px no-repeat; }
+    body #all-templates .pagination .disabled.next_page {
+      background: url("/images/embed/icons/arrow.png") right -17px no-repeat; }
+    body #all-templates .pagination .prev {
+      text-indent: auto;
+      background: none; }

@@ -1,5 +1,5 @@
+%h1.parent-title Edit your template
 #create-template.rounded-all
-  %h2 Edit your template
   = semantic_form_for @template, :url => template_path do |form|
     %h4
       Your template file:
@@ -7,5 +7,6 @@
     = form.inputs do
       = form.input :title, :input_html => { :placeholder => "Title" }
       = form.input :description, :as => :text, :input_html => { :placeholder => "Description" }
+      = form.input :tag_list, :input_html => { :placeholder => "Tag List" }
     = form.buttons do
       = form.submit 'Update!', :class => "rounded-all"

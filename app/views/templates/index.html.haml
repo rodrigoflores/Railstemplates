@@ -1,9 +1,14 @@
-%table
-  - @templates.each do |template|
-    %tr
-      %td= link_to template.title, template
-      %td= pluralize(template.download_counter, "download")
-      %td= pluralize(template.likes.count, "like")
+%h1.parent-title All templates
+#all-templates
+  %ul
+    - @templates.each do |template|
+      %li
+        %section#left.rounded-all
+          %h2= link_to template.title, template
+          = simple_format template.description
+        %section#right.rounded-all
+          %p.download= pluralize(template.download_counter, "person has downloaded it", "people have downloaded it")
+          %p.liked= pluralize(template.likes.count, "person like it", "people like it")
 
 
-= will_paginate @templates
+  = will_paginate @templates

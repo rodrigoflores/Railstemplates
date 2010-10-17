@@ -16,6 +16,7 @@ module TemplatesHelper
              width="110"
              height="14"
              name="clippy"
+             wmode="transparent"
              quality="high"
              allowScriptAccess="always"
              type="application/x-shockwave-flash"

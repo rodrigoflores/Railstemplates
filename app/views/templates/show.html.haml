@@ -1,36 +1,66 @@
-%h1
-  =link_to @template.title, download_url(@template)
+#template-view
 
-#stats
-  #likes
-    = pluralize_with_html @template.likes.count, "Like"
-  #downloads
-  = pluralize_with_html @template.download_counter, "Download"
+  // Left Column ------------------------------------
+  %section#left.rounded-all
 
-  - if githubber_signed_in?
-    = link_to 'Like it', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
-  - else
-    = link_to 'Like it', new_githubber_session_path, :id => 'like_button'
-  
-  #working_status
-    %h2 Working?
-    %ul
-      -if githubber_signed_in?
-        %li= link_to 'Yes !', template_works_path(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
-        %li= link_to "No :(", template_works_path(@template, :work => false), :method => :POST, :id => 'not_work_button', :remote => true
-      - else
-        %li= link_to 'Yes!', new_githubber_session_path, :id => 'work_button'
-        %li= link_to 'No :(', new_githubber_session_path, :id => 'not_work_button'
-    / working status goes here
-%p
-  %strong Download Link
-  = link_to download_url(@template), download_url
-  = clippy download_url(@template)
+    %h2 Code Viewer
 
-= @template.description
+    .holder-content
+      // Template -----------------------------------
+      #sample{:'data-url' => @template.gist_file}
+        / = simple_format(@template.sample.gsub(" ","&nbsp;"))
 
-%p.tag_list= @template.tags.map { |t| content_tag(:span, t)}.join(", ").html_safe
+  // Right Column -----------------------------------
+  %section#right.rounded-all
+    .corner &nbsp;
+    // Template's Name ------------------------------
+    %h2= link_to @template.title, download_url(@template)
 
-#sample{:'data-url' => @template.gist_file}
-  %h2 Sample
-  / = simple_format(@template.sample.gsub(" ","&nbsp;"))
+    .holder-content
+      // Template's Descrition ----------------------
+      %p= @template.description
+      .line-divisor.rounded-all
+      #downloads
+        %h3 Downloads
+        .holder-content.rounded-all
+          = link_to download_url(@template), download_url
+          #d_clip_button{ :title => "Copy to Clipboard"}
+          / = clippy download_url(@template)
+        = pluralize(@template.download_counter, "person has downloaded it", "people have downloaded it")
+      .line-divisor.rounded-all
+      #likes
+        %h3 Popularity
+        %p= pluralize(@template.likes.count, "person like it", "people like it")
+        .link-default.rounded-all
+          - if githubber_signed_in?
+            = link_to 'I like it', template_likes_path(@template), :method => :put, :id => 'like_button', :remote => true
+          - else
+            = link_to 'I like it', new_githubber_session_path, :id => 'like_button'
+        .break
+      .line-divisor.rounded-all
+      #working_status
+        %h3 Did it work for you?
+        %ul
+          -if githubber_signed_in?
+            %li
+              .link-default.rounded-all= link_to 'Yes', template_works_path(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
+            %li
+              .holder-content.rounded-all
+                .work{ :title => "Work"}
+                .doesnt-work{ :title => "Doesn't Work"}
+            %li
+              .link-default.rounded-all= link_to "No", template_works_path(@template, :work => false), :method => :POST, :id => 'not_work_button', :remote => true
+          - else
+            %li
+              .link-default.rounded-all= link_to 'Yes', new_githubber_session_path, :id => 'work_button'
+            %li
+              .holder-content.rounded-all
+                .work{ :title => "Work"}
+                .doesnt-work{ :title => "Doesn't Work"}
+            %li
+              .link-default.rounded-all= link_to 'No', new_githubber_session_path, :id => 'not_work_button'
+      .line-divisor.rounded-all
+      .break
+      #tag_list
+        %h3 Tags
+        = @template.tags.map { |t| link_to(t, "#") }.join(", ").html_safe

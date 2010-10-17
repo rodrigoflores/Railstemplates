@@ -5,7 +5,7 @@
 
 #explanation.rounded-all
   .home-message
-    %p Share, find and rate. participate with other developers to build and customize the best templates for your Rails apps
+    %p Share, find and rate. Participate with other developers to build and customize the best templates for your Rails apps.
 
 #latest.rounded-all
   %h2 # Most Downloaded
@@ -14,7 +14,6 @@
       %li{ :class => cycle( "one", "two")}
         = link_to template.title, template
         %span
-          %em{:title => l(template.created_at, :format => :long)} -
           = time_ago_in_words(template.created_at) + " ago"
 
 #ranked.rounded-all

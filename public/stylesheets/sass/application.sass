@@ -26,7 +26,7 @@ a:hover
 .link-default
   font-size: 14px
   padding: 4px 5px
-  background: url("/images/embed/backgrounds/common.png") repeat
+  background: url("/images/embed/backgrounds/common4.png") repeat
   float: left
 
 .link-default:hover
@@ -37,7 +37,7 @@ a:hover
 .line-divisor
   margin: 25px 0
   float: left
-  width: 996px
+  width: 99.6%
   padding: 2px
   background: url("/images/embed/backgrounds/common3.png") repeat
 
@@ -47,15 +47,15 @@ table
   td
     a.edit-template,
     a.delete-template
-      background: url("/images/embed/icons/edit.png") right 0 no-repeat
+      background: url("/images/embed/icons/edit.png") left 0 no-repeat
       height: 16px
       float: left
-      padding: 0 20px 0 0
+      padding: 0 0 0 25px
     a.delete-template
-      background: url("/images/embed/icons/delete.png") right 0 no-repeat
+      background: url("/images/embed/icons/delete.png") left 0 no-repeat
 
   td.name-template
-    width: 80%
+    width: 78%
 
 .rounded-all
   -moz-border-radius: 6px
@@ -68,6 +68,12 @@ h2
   color: #36424A
   margin: 0 0 20px
   font-size: 16px
+
+h1.parent-title
+  font-size: 20px
+  margin: 0 0 20px
+  color: #36424A
+
 
 // Structure --------------------
 body
@@ -173,15 +179,24 @@ body
       input.search-button:hover
         background-position: 0 top
 
-  // FOOTER -------------------
+  // MAIN / FOOTER -------------------
+  #main,
   #footer
     display: block
     float: left
+    width: 100%
 
-  // MAIN ---------------------
-  #main
-    display: block
-    float: left
+  #footer
+    margin: 0 0 30px
+    .holder-content
+      text-align: center
+      font-size: 10px
+      a
+        color: #36424A
+        font-weight: bold
+      p
+        margin: 0 0 10px 0
+        font-size: 12px
 
   // HOME ---------------------
   #explanation,
@@ -214,9 +229,9 @@ body
 
   #explanation
     margin: 20px 0 0 0
-    background: url("/images/embed/backgrounds/common4.png") repeat
+    background: url("/images/embed/backgrounds/common3.png") repeat
     .home-message
-      background: url("/images/embed/backgrounds/common3.png") repeat
+      background: url("/images/embed/backgrounds/common2.png") repeat
       p
         margin: 10px
         font-size: 18px
@@ -243,14 +258,15 @@ body
       width: 100%
       li
         float: left
-        width: 457px
-        padding: 8px 4px
+        width: 449px
+        padding: 8px
         a,
         span
           float: left
         a
           margin: 0 5px 0 0
         span
+          float: right
           color: #36424A
           em
             color: #CCCAA9
@@ -286,6 +302,10 @@ body
     float: left
     background: url("/images/embed/backgrounds/common.png") repeat
     padding: 10px
+    ul
+      list-style: none
+    h2
+      margin-bottom: 5px
     form
       float: left
       width: 100%
@@ -329,3 +349,185 @@ body
           background: url("/images/embed/backgrounds/common4.png") repeat
         input:hover
           background: url("/images/embed/backgrounds/common3.png") repeat
+
+  // Template View ------------------------
+  #template-view
+    float: left
+    width: 100%
+    #left
+      background: url("/images/embed/backgrounds/common.png") repeat
+      width: 660px
+      padding: 10px
+      h2
+        margin-bottom: 10px
+      .holder-content
+        background: url("/images/embed/backgrounds/common2.png") repeat
+        float: left
+        padding: 10px
+        width: 640px
+
+    #right
+      margin: 20px 0 0 0
+      position: relative
+      width: 280px
+      background: url("/images/embed/backgrounds/common3.png") repeat
+      padding: 10px
+      -moz-border-radius: 0px 6px 6px 6px
+      -webkit-border-radius: 0px 6px 6px 6px
+      border-radius: 0px 6px 6px 6px
+      h2
+        margin-bottom: 10px
+      .corner
+        position: absolute
+        top: 0px
+        left: -21px
+        width: 36px
+        height: 77px
+        background: url("/images/embed/backgrounds/corner.png") no-repeat
+      .holder-content
+        background: url("/images/embed/backgrounds/common2.png") repeat
+        float: left
+        padding: 10px
+        width: 260px
+        ul
+          list-style:  none
+        .line-divisor
+          margin: 10px 0
+        h3
+          font-size: 14px
+          margin: 0 0 5px
+        #downloads,
+        #likes
+          .holder-content
+            width: 242px
+            margin: 5px 0
+            padding: 5px 8px
+            a
+              overflow: hidden
+              float: left
+              width: 210px
+              height: 18px
+            #d_clip_button
+              cursor: pointer
+              width: 16px
+              height: 16px
+              background: url("/images/embed/icons/clipboard.png") no-repeat
+              float: right
+            #d_clip_button.hover
+
+            #d_clip_button.active
+
+        #likes
+          .link-default
+            float: right
+            a
+              padding-right: 20px
+              background: url("/images/embed/icons/heart.png") right 0 no-repeat
+          p
+            float: left
+            margin: 6px 0 0 0
+
+        #working_status
+          ul
+            li
+              float: left
+              margin: 0 5px 0 0
+              .link-default
+                background: url("/images/embed/backgrounds/common3.png") repeat
+              a
+                padding-right: 20px
+              a#work_button
+                background: url("/images/embed/icons/work.png") right 0 no-repeat
+              a#not_work_button
+                background: url("/images/embed/icons/not_work.png") right 0 no-repeat
+              .link-default:hover
+                background: url("/images/embed/backgrounds/common2.png") repeat
+            li:last-child
+              margin: 0
+          .holder-content
+            background: url("/images/embed/backgrounds/common3.png") repeat
+            float: left
+            width: 142px
+            margin: 0
+            padding: 5px
+            .work
+              background: #759466
+              width: 80%
+              height: 16px
+              float: left
+            .doesnt-work
+              width: 20%
+              height: 16px
+              background: #d24f56
+              float: left
+
+        #tag_list
+          a
+            color: #36424A
+  // ALL TEMPLATES -----------------------
+  #all-templates
+    ul
+      list-style: none
+      li
+        float: left
+        width: 100%
+        margin: 0 0 10px
+        #left.rounded-all
+          background: url("/images/embed/backgrounds/common2.png") repeat
+          float: left
+          padding: 10px
+          width: 670px
+          a
+            float: left
+            width: 100%
+          h2
+            margin: 0 0 5px
+        #left:hover
+          background: url("/images/embed/backgrounds/common4.png") repeat
+        #right.rounded-all
+          width: 280px
+          background: url("/images/embed/backgrounds/common.png") repeat
+          padding: 10px
+          p
+            padding: 0 0 0 20px
+          p:first-child
+            margin: 0 0 10px
+          .download
+            background: url("/images/embed/icons/down.png") no-repeat
+          .liked
+            background: url("/images/embed/icons/heart.png") no-repeat
+    .pagination
+      float: left
+      span,
+      a
+        float: left
+        margin: 0 5px
+        color: #36424A
+      .current
+        color: #fff
+      .prev_page,
+      .next_page
+        text-indent: -9999px
+        width: 16px
+        height: 16px
+        float: left
+        margin: 0 10px 0 0
+        background: url("/images/embed/icons/arrow.png") left top no-repeat
+      .next_page
+        background: url("/images/embed/icons/arrow.png") right top no-repeat
+        margin: 0 0 0 10px
+
+      .disabled.prev_page
+        background: url("/images/embed/icons/arrow.png") left -17px no-repeat
+      .disabled.next_page
+        background: url("/images/embed/icons/arrow.png") right -17px no-repeat
+      .prev
+        text-indent: auto
+        background: none
+
+
+
+
+
+
+

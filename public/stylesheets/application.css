@@ -312,6 +312,9 @@ body {
       list-style: none; }
     body #create-template h2 {
       margin-bottom: 5px; }
+    body #create-template h2.invalid {
+      text-align: center;
+      margin-top: 5px; }
     body #create-template h4 {
       float: left;
       width: 960px;

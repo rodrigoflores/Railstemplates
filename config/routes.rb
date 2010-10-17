@@ -20,6 +20,7 @@ Railstemplates::Application.routes.draw do
   match '/templates', :to => redirect("/all")
   get "/download/:id", :to => "templates#download", :as => :download
   get '/all', :to => "templates#all", :as => :all_templates
+  get '/learn', :to => "pages#learn", :as => :learn
   
   get "/search", :to => "searches#search", :as => :search
   root :to => "pages#index"

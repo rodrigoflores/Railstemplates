@@ -23,7 +23,5 @@ Railstemplates::Application.routes.draw do
   get '/learn', :to => "pages#learn", :as => :learn
   root :to => "pages#index"
   
-  constraints(DownloadConstraint) do
-    match "/:id",  :to => "templates#download"
-  end
+  match "/:id",  :to => "templates#download", :constraints => DownloadConstraint.new
 end

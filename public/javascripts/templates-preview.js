@@ -25,7 +25,25 @@ $(function() {
 			.bind('ajax:success', UpdateStats);
 	}
 
+	function likeStatus() {
+		
+		function UpdateLikeStatus(event, response) {
+			response = $.parseJSON(response);
+			
+			$(this).parent().fadeOut(function() {
+				$(this).remove();
+			});
+
+			$("#likes p").fadeOut(function() {
+				$(this).text(response.status).fadeIn();
+			});
+		}
+		
+		$("#like_button[data-remote]")
+			.bind('ajax:success', UpdateLikeStatus);
+	}
 
 	highlight();
+	likeStatus();
 	workingStatus();
 });

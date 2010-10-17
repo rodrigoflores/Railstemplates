@@ -18,7 +18,7 @@ feature "Liking a template", %q{
     click_link template.title
     
     page.should have_content "0 people like it"
-    click_link 'I Like it'
+    click_link 'I like it'
 
     click_link "All templates"
     click_link template.title

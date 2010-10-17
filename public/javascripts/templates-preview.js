@@ -44,14 +44,14 @@ $(function() {
 			var stats = $.parseJSON(response);
 			$(".work").css({width: stats.working[1] + "%"}).attr("title", pluralize(stats.working[0], "vote", "votes"));
 			$(".doesnt-work").css({width: stats.not_working[1] + "%"}).attr("title", pluralize(stats.not_working[0], "vote", "votes"));
-			elements.attr("href", "javascript:;");
 		};
 
 		elements
 		.bind('ajax:before', function() { return $(this).attr("disabled") != "disabled"; })
 		.bind('ajax:success', UpdateStats)
 		.bind('ajax:loading', function() { loader.show(); elements.attr("disabled", "disabled"); })
-		.bind('ajax:complete', function() { loader.hide(); });
+		.bind('ajax:complete', function() { loader.hide(); })
+		.bind('ajax:after', function() { elements.removeAttr("disabled");});
 	}
 
 	function likeStatus() {

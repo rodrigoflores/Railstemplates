@@ -41,12 +41,12 @@
         %ul
           -if githubber_signed_in?
             %li
-              .link-default.rounded-all= link_to 'Yes', votable_link_to(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
+              .link-default.rounded-all= link_to 'Yes', template_works_path(@template, :work => true), :method => :POST, :id => 'work_button', :remote => true
             %li
               .holder-content.rounded-all
                 = render :partial => 'working_stats', :locals => { :template => @template }
             %li
-              .link-default.rounded-all= link_to "No", votable_link_to(@template), :method => :POST, :id => 'not_work_button', :remote => true
+              .link-default.rounded-all= link_to "No", template_works_path(@template), :method => :POST, :id => 'not_work_button', :remote => true
           - else
             %li
               .link-default.rounded-all= link_to 'Yes', new_githubber_session_path, :id => 'work_button'

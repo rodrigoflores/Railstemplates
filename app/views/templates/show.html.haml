@@ -24,6 +24,7 @@
         %h3 Downloads
         .holder-content.rounded-all
           = link_to download_url(@template), download_url
+          %span.notice Copied to Clipboard!
           #d_clip_button{ :title => "Copy to Clipboard"}
 
         = pluralize(@template.download_counter, "person has downloaded it", "people have downloaded it")

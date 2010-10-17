@@ -7,8 +7,9 @@ javascripts:
     - public/javascripts/plugins/jquery.placeholder-1.0.1.js
     - public/javascripts/application.js
   preview:
-    - public/javascripts/templates-preview.js
     - public/javascripts/plugins/prettify.js
+    - public/javascripts/plugins/zeroclipboard.js
+    - public/javascripts/templates-preview.js
 stylesheets:
   base:
     - public/stylesheets/application.css

@@ -537,3 +537,8 @@ body {
 #source_code.loading {
   height: 300px;
   background: url("/images/embed/icons/loader.gif") no-repeat center 142px; }
+
+#downloads .notice {
+  display: none;
+  color: white;
+  font-weight: bold; }

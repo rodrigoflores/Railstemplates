@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: http://github.com/lucasmazza/inploy.git
-  revision: c2f71da3300d7b25c1c8d80ab8e8e716445542fb
+  revision: 3c445cf521bce51aa84e618d615a85dc91678ac4
   specs:
     inploy (1.6.8)
 

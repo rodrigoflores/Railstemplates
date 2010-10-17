@@ -40,7 +40,7 @@ feature "My Templates", %q{
     page.should have_content template.reload.description
   end
   
-  scenario "Deleting template", :js => true do
+  scenario "Deleting template" do
     template = Factory(:template, :githubber => current_githubber, :description => "ahndfiasfndpia")
     click_link "Dashboard"
     pending "Selenium does not approve window.confirm :(" do

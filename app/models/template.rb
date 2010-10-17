@@ -14,17 +14,13 @@ class Template < ActiveRecord::Base
 
   scope :ranked, limit(5).joins(:likes).group('templates.id').order('count(likes.id) DESC')
 
-  has_many :likes
-  has_many :thumbs
+  has_many :likes, :dependent => :delete_all
+  has_many :thumbs, :dependent => :delete_all
   belongs_to :githubber
   validates :title, :gist_file, :presence => true
   
   def content
     Github.new(self.gist_file).raw
-  end
-  
-  def sample
-    content.split("\n")[0,20].join("\n")
   end
   
   def download!

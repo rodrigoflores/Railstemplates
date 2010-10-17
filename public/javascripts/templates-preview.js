@@ -1,4 +1,26 @@
 $(function() {
+	function copy() {
+		var link = $("#downloads a");
+		var notice = $("#downloads span.notice");
+		var normalize = function() {
+			notice.fadeOut(function() { link.fadeIn(); });
+		};
+
+		var onCopied = function() {
+			link.fadeOut(function() {
+				notice.fadeIn(function() {
+					setTimeout(normalize, 1000);
+				});
+			});
+		};
+		
+		ZeroClipboard.moviePath = '/swf/ZeroClipboard.swf';
+		clip = new ZeroClipboard.Client();
+		clip.setHandCursor(true);
+		clip.addEventListener('complete', onCopied);
+		clip.setText(link.text());
+		clip.glue('d_clip_button');
+	}
 
 	function highlight() {
 		var sample = $("#source_code[data-url]");
@@ -58,4 +80,5 @@ $(function() {
 	highlight();
 	likeStatus();
 	workingStatus();
+	copy();
 });

@@ -14,7 +14,11 @@
   %section#right.rounded-all
     .corner &nbsp;
     // Template's Name
-    %h2= link_to @template.title, download_url(@template)
+    %h2
+      = link_to @template.title, download_url(@template)
+      %br
+      by
+      = link_to @template.githubber.name, "http://github.com/#{@template.githubber.login}"
 
     .holder-content
       // Template's Descrition
@@ -24,6 +28,7 @@
         %h3 Downloads
         .holder-content.rounded-all
           = link_to download_url(@template), download_url
+          %span.notice Copied to Clipboard!
           #d_clip_button{ :title => "Copy to Clipboard"}
 
         = pluralize(@template.download_counter, "person has downloaded it", "people have downloaded it")

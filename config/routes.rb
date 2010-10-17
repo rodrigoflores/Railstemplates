@@ -31,4 +31,5 @@ Railstemplates::Application.routes.draw do
   constraints(DownloadConstraint) do
     match "/:id",  :to => "templates#download"
   end
+
 end

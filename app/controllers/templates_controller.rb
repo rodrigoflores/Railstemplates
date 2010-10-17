@@ -20,7 +20,7 @@ class TemplatesController < InheritedResources::Base
   def create
     @github = Github.new(params[:github_url])
     if @github.invalid?
-      #TODO: Set flash message
+      flash[:invalid]= "Looks like '#{params[:github_url]}' is neither a gist or a file under a github repository."
       redirect_to new_template_path
       return
     end

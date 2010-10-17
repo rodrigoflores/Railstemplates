@@ -19,6 +19,12 @@ feature "Creating A Template", %q{
       response.stub(:body).and_return("REPO TEMPLATE")
     end
   end
+  
+  scenario "trying to create a template without a valid url" do
+    fill_in "github_url", :with => "http://google.com/"
+    click "Next"
+    page.should have_css "h2.invalid", "Looks like 'http://google.com' is neither a gist or a file under a github repository."
+  end
 
   scenario "successfully creating a template from a gist" do
     fill_in "github_url", :with => "http://gist.github.com/1337"

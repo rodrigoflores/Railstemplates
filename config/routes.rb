@@ -1,5 +1,7 @@
 Railstemplates::Application.routes.draw do
 
+  devise_for :githubbers
+
   authenticate :githubber do
     
     resources :templates, :except => [:index, :show] do
@@ -17,7 +19,6 @@ Railstemplates::Application.routes.draw do
   resources :templates, :only => :show
   match '/templates', :to => redirect("/all")
   get "/download/:id", :to => "templates#download", :as => :download
-  devise_for :githubbers
   
   get "/search", :to => "searches#search", :as => :search
   get '/all', :to => "templates#all", :as => :all_templates

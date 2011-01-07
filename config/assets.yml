@@ -5,7 +5,9 @@ javascripts:
     - public/javascripts/plugins/jquery-ui.js
     - public/javascripts/rails.js
     - public/javascripts/plugins/jquery.placeholder-1.0.1.js
+    - public/javascripts/analytics.js
     - public/javascripts/application.js
+
   preview:
     - public/javascripts/plugins/prettify.js
     - public/javascripts/plugins/zeroclipboard.js

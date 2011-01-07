@@ -1,15 +1,30 @@
-template = 'rails3'
-application = 'rails3templates'
-repository = 'git@github.com:railsrumble/rr10-team-108.git'
-hosts = %w(railstemplates)
+require 'bundler/capistrano'
 
-before_restarting_server do
-  run "jammit"
-  run "RAILS_ENV=production rake ts:reindex"
+set :application, 'railstemplates.rlmflores.me'
+set :repository, "git@github.com:rodrigoflores/Railstemplates.git"
+
+set :user, 'deploy'
+set :use_sudo, false
+set :deploy_to, "/home/#{user}/#{application}"
+
+set :scm, :git
+set :branch, "production"
+
+set :config_dir, "#{deploy_to}/shared/config"
+
+
+
+server application, :app, :web, :db, :primary => true
+
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
 end
 
-ssh_opts = '-A'
-
-user = 'deploy'
-path = '/home/deploy'
-
+after "deploy:symlink" do
+  run "ln -nfs #{config_dir}/database.yml #{release_path}/config/database.yml"
+  run "cd #{release_path} ; jammit"
+end

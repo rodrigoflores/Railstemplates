@@ -19,6 +19,7 @@ gem 'will_paginate'
 gem 'thinking-sphinx', '~> 2.0', :require => 'thinking_sphinx'
 gem 'acts-as-taggable-on'
 gem 'inherited_resources', '1.1.2'
+gem 'capistrano', "2.5.19"
 
 group :development do
   gem 'annotate'
@@ -26,7 +27,7 @@ group :development do
   gem 'mongrel'
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'metric_fu'
-  gem 'capistrano', "2.5.19"
+
 end
 
 group :development, :test do

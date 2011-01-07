@@ -135,7 +135,6 @@ GEM
     inherited_resources (1.1.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
-    inploy (1.8)
     jammit (0.5.4)
       closure-compiler (>= 0.1.0)
       yui-compressor (>= 0.9.1)
@@ -289,7 +288,6 @@ DEPENDENCIES
   haml-rails
   httparty!
   inherited_resources (= 1.1.2)
-  inploy
   jammit
   jquery_tag
   launchy

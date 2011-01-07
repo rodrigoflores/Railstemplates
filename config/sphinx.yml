@@ -4,4 +4,5 @@ test:
   port: 9313
 production:
   port: 9312
+  pid_file: /var/run/sphinx/searchd.pid
 

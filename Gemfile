@@ -26,6 +26,7 @@ group :development do
   gem 'mongrel'
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'metric_fu'
+  gem 'capistrano', "2.5.19"
 end
 
 group :development, :test do

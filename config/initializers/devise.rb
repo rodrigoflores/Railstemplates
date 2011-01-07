@@ -157,10 +157,10 @@ Devise.setup do |config|
   #   :access_token_path => '/login/oauth/access_token',
   #   :scope             => %w(user public_repo)
     dev = ['fed31d1e80ac6fc16cea', '224005972731157427bba7ddda6828bbf07ee3be']
-    prod = ['700cd6ab1cb8bb360393', 'd7bd202a6c2d367f5563c8b62030e617ab546d67']
-    
+    prod = ['69569bb35f3f3ebc8391', 'b9b36a32daf38e4fc9e46e7080c4d4bb6c7931c3']
+
     keys = Rails.env.production? ? prod : dev
-    
+
     config.oauth :github, keys.first, keys.last,
      :site => 'https://github.com/',
      :authorize_path => '/login/oauth/authorize',

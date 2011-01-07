@@ -28,3 +28,6 @@ after "deploy:symlink" do
   run "ln -nfs #{config_dir}/database.yml #{release_path}/config/database.yml"
   run "cd #{release_path} ; jammit"
 end
+
+        require 'config/boot'
+        require 'hoptoad_notifier/capistrano'

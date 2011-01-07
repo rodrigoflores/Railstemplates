@@ -19,6 +19,8 @@ gem 'thinking-sphinx', '~> 2.0', :require => 'thinking_sphinx'
 gem 'acts-as-taggable-on'
 gem 'inherited_resources', '1.1.2'
 gem 'capistrano', "2.5.19"
+gem 'hoptoad_notifier'
+
 
 group :development do
   gem 'annotate'

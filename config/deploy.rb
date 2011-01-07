@@ -1,6 +1,6 @@
 require 'bundler/capistrano'
 
-set :application, 'railstemplates.rlmflores.me'
+set :application, 'railstemplates.org'
 set :repository, "git@github.com:rodrigoflores/Railstemplates.git"
 
 set :user, 'deploy'

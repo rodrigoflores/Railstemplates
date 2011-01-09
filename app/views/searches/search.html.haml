@@ -1,10 +1,9 @@
-%h1.parent-title= "Searching for #{params[:search]}"
+%h1.parent-title= "Searching for #{@query}"
 
 %p.search-counter
   We have found
-  = @total
-  results for
-  = "\'#{params[:search]}\'"
+  = pluralize(@total, 'result') + " for"
+  = "\'#{@query}\'"
 
 #all-templates
   %ul

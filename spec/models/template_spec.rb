@@ -5,7 +5,8 @@ describe Template do
   it { should have_many :thumbs}
   it { should have_many :commentaries }
   it { should belong_to :githubber}
-  it { should validate_presence_of :title, :source_url }
+  it { should validate_presence_of :title }
+  it { should validate_presence_of :source_url }
 
   describe "content" do
     before do
@@ -26,7 +27,7 @@ describe Template do
     subject do
       Factory.build(:template)
     end
-    
+
     context "when assigning" do
       it "should accept a list of tags" do
         subject.tag_list = "rails, mysql, solr"
@@ -35,14 +36,14 @@ describe Template do
       end
     end
   end
-  
+
   context "vote status" do
     before do
       @template = Factory(:template)
       @blank = Factory(:template)
       2.times { Factory(:githubber).vote(@template, true) }
     end
-    
+
     it "summarizes the percentages" do
       @template.stats[:working].should == [2, 100.0]
       @template.stats[:not_working].should == [0, 0.0]
@@ -51,7 +52,7 @@ describe Template do
       @blank.stats[:not_working].should == [0, 0.0]
 
     end
-    
+
   end
 end
 

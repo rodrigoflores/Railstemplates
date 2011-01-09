@@ -28,7 +28,6 @@ group :development do
   gem 'mongrel'
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'metric_fu'
-
 end
 
 group :development, :test do
@@ -38,9 +37,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'remarkable', '>=4.0.0.alpha4'
-  gem 'remarkable_activemodel', '>=4.0.0.alpha4'
-  gem 'remarkable_activerecord', '>=4.0.0.alpha4'
+  gem 'shoulda'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'

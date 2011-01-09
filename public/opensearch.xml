@@ -1,0 +1,7 @@
+<OpenSearchDescription>
+  <ShortName>RailsTemplates.org</ShortName>
+  <Description>Rails Templates - Share, find and rate.</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">http://railstemplates.org/favicon.ico</Image>
+  <Url type="text/html" method="get" template="http://railstemplates.org//search?q={searchTerms}"/>
+</OpenSearchDescription>

@@ -26,7 +26,6 @@ group :development do
   gem 'annotate'
   gem 'rails3-generators'
   gem 'mongrel'
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'metric_fu'
 end
 

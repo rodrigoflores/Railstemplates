@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
 
-  def search
+  def show
     @query = params[:q]
     search = ThinkingSphinx.search(@query)
     @total = search.count

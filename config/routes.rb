@@ -18,8 +18,7 @@ Railstemplates::Application.routes.draw do
 
   resources :templates, :only => [:show, :index]
   get "/d/:id", :to => "templates#download", :as => :download
-
-  get "/search", :to => "searches#search", :as => :search
+  resource :search, :only => :show
 
   get '/learn', :to => "pages#learn", :as => :learn
   get '/404', :to => "pages#error_404", :as => :error_404

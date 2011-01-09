@@ -27,7 +27,8 @@ end
 after "deploy:symlink" do
   run "ln -nfs #{config_dir}/database.yml #{release_path}/config/database.yml"
   run "cd #{release_path} ; jammit"
+  run "cd #{release_path} ; rake ts:conf RAILS_ENV=production ; rake ts:reindex RAILS_ENV=production"
 end
 
-        require 'config/boot'
-        require 'hoptoad_notifier/capistrano'
+require 'config/boot'
+require 'hoptoad_notifier/capistrano'
